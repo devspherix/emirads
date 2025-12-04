@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Chivo_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/layout/navbar";
 
 const brandSans = Space_Grotesk({
   variable: "--font-brand-sans",
@@ -63,6 +64,7 @@ export default function RootLayout({
       <body
         className={`${brandSans.variable} ${brandMono.variable} antialiased bg-[radial-gradient(circle_at_top,_rgba(16,20,50,.8),_#03030a_55%)] text-white`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

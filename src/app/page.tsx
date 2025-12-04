@@ -3,155 +3,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowUpRight, Car, Sparkles, Wrench } from "lucide-react";
+import { Container } from "@/components/layout/container";
+import { buttonBase, buttonVariants } from "@/components/ui/button";
+import { GlassPanel } from "@/components/ui/glass-panel";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { Tag } from "@/components/ui/tag";
 import {
-  ArrowUpRight,
-  Car,
-  Mail,
-  MapPin,
-  Phone,
-  Sparkles,
-  Wrench,
-} from "lucide-react";
-
-const services = [
-  {
-    title: "Signage Studio",
-    tag: "Signages",
-    description:
-      "Front lit, backlit, neon, push-through and precision 2D signage programs for retail, hospitality and destination facades.",
-    items: [
-      "Front lit signage engineering",
-      "Backlit & halo-lit fascias",
-      "Hand-blown neon + LED neon",
-      "Push-through acrylic letters",
-      "2D CNC-routed brand marks",
-    ],
-  },
-  {
-    title: "Vehicle Branding",
-    tag: "Fleet",
-    description:
-      "Turn an entire fleet into rolling media. We manage design, material selection, print, lamination and on-site wrapping.",
-    items: [
-      "Full vehicle wraps",
-      "Partial wraps & gradients",
-      "Plotter cut graphics",
-      "Protective over-lamination",
-      "Fleet rollout scheduling",
-    ],
-  },
-  {
-    title: "Event & Experience",
-    tag: "Events",
-    description:
-      "Immersive pop-ups, stages, kiosks and exhibition booths with integrated lighting, AV and brand storytelling.",
-    items: [
-      "Pop-up retail & kiosks",
-      "Stage + truss dressing",
-      "Wayfinding & zoning",
-      "Rapid deployment teams",
-      "On-site technical support",
-    ],
-  },
-  {
-    title: "Fabrication Lab",
-    tag: "Fabrication",
-    description:
-      "Joinery, aluminum, acrylic, glass and metal craft under one roof so we can prototype fast and deliver faster.",
-    items: [
-      "Joinery & bespoke carpentry",
-      "Aluminum & mild steel works",
-      "Glass bending & lamination",
-      "Acrylic thermoforming",
-      "In-house paint booth",
-    ],
-  },
-];
-
-const featuredProjects = [
-  {
-    name: "Glow District Retail",
-    scope: "Neon signage + interior wayfinding",
-    stats: ["2 week turnaround", "IP65 lighting system", "12m custom fascia"],
-  },
-  {
-    name: "Velocity Motorsports",
-    scope: "Full fleet wrap program",
-    stats: ["18 vehicles", "Weatherproof vinyl", "Carbon accents"],
-  },
-  {
-    name: "Expo Pavilion Pop-up",
-    scope: "Event build + experiential zones",
-    stats: ["600 sqm build", "Modular joinery", "AV integration"],
-  },
-];
-
-const processSteps = [
-  {
-    title: "Discover & audit",
-    detail:
-      "Site survey, structural checks, material study and compliance with mall / municipality regulations.",
-  },
-  {
-    title: "Design & prototype",
-    detail:
-      "3D visualization, lighting calculations and sample panels so stakeholders can sign off fast.",
-  },
-  {
-    title: "Fabricate & wrap",
-    detail:
-      "In-house joinery, metal, paint, print and electrical teams ensure tighter tolerances and QC.",
-  },
-  {
-    title: "Install & maintain",
-    detail:
-      "Night installs, access equipment, safety plans and post-install maintenance programs.",
-  },
-];
-
-const stats = [
-  { label: "Installations delivered", value: "950+" },
-  { label: "Fleet vehicles wrapped", value: "180+" },
-  { label: "Events & pop-ups yearly", value: "40+" },
-  { label: "Years crafting signage", value: "12" },
-];
-
-const craftingMaterials = [
-  "Acrylic + Polycarbonate",
-  "Aluminum composite",
-  "Solid surface",
-  "Edge-lit glass",
-  "Powder-coated metals",
-  "Programmable LED",
-  "Sustainable plywood",
-  "Canvas & textile",
-];
-
-const contactMethods = [
-  {
-    label: "Call the workshop",
-    value: "+971 52 555 0123",
-    href: "tel:+971525550123",
-    icon: Phone,
-  },
-  {
-    label: "Email a brief",
-    value: "hello@emirads.com",
-    href: "mailto:hello@emirads.com?subject=Project%20Brief%20-%20Emirads",
-    icon: Mail,
-  },
-  {
-    label: "Visit the yard",
-    value: "Dubai Production City, UAE",
-    href: "https://maps.app.goo.gl/dummy",
-    icon: MapPin,
-  },
-];
+  contactMethods,
+  craftingMaterials,
+  featuredProjects,
+  heroStats,
+  processSteps,
+  servicesList,
+} from "@/content/site";
+import { cn } from "@/lib/utils";
 
 const fadeUp = {
   initial: { opacity: 0, y: 32 },
   whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] },
+  transition: { duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] as const },
 };
 
 export default function Home() {
@@ -162,8 +33,8 @@ export default function Home() {
         <div className="absolute right-0 top-48 h-96 w-96 rounded-full bg-[radial-gradient(circle,_rgba(236,0,140,0.4),_transparent_70%)] blur-3xl" />
         <div className="absolute left-20 bottom-0 h-64 w-64 rounded-full bg-[radial-gradient(circle,_rgba(255,229,0,0.35),_transparent_60%)] blur-3xl" />
       </div>
-      <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-16 sm:px-8 lg:px-12 lg:pt-24">
-        <div className="glass-panel relative overflow-hidden px-6 py-10 sm:px-12 sm:py-14">
+      <Container className="relative">
+        <GlassPanel className="relative overflow-hidden px-6 py-10 sm:px-12 sm:py-14">
           <div className="absolute inset-x-12 top-0 h-px bg-gradient-to-r from-[var(--brand-cyan)] via-[var(--brand-magenta)] to-[var(--brand-yellow)] opacity-60" />
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
             <motion.div
@@ -171,10 +42,10 @@ export default function Home() {
               {...fadeUp}
               viewport={{ once: true, amount: 0.4 }}
             >
-              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-1 text-sm tracking-widest text-white/80">
+              <Tag className="flex items-center gap-2 text-xs tracking-[0.5em]">
                 <Sparkles className="h-4 w-4 text-[var(--brand-yellow)]" />
                 EMIRADS • SIGNAGE + BRAND ENVIRONMENTS
-              </div>
+              </Tag>
               <div className="flex items-center gap-4">
                 <Image
                   src="/logo-emirads.svg"
@@ -203,14 +74,14 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="mailto:hello@emirads.com?subject=Project%20Discovery%20Call"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-black transition hover:-translate-y-0.5 hover:shadow-[0_20px_60px_-30px_rgba(255,255,255,0.9)]"
+                  className={cn(buttonBase, buttonVariants.primary)}
                 >
                   Schedule a discovery call
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="#services"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/40 px-5 py-3 text-base text-white/90 transition hover:border-white hover:bg-white/10"
+                  className={cn(buttonBase, buttonVariants.secondary)}
                 >
                   View capabilities deck
                 </Link>
@@ -226,7 +97,7 @@ export default function Home() {
                 Quick stats
               </p>
               <div className="mt-4 grid grid-cols-2 gap-6">
-                {stats.map((item) => (
+                {heroStats.map((item) => (
                   <div key={item.label}>
                     <p className="text-3xl font-semibold text-white">
                       {item.value}
@@ -236,7 +107,9 @@ export default function Home() {
                 ))}
               </div>
               <div className="mt-8 space-y-2 rounded-2xl bg-black/30 p-4 text-sm text-white/70">
-                <p className="font-semibold text-white">Rapid delivery window</p>
+                <p className="font-semibold text-white">
+                  Rapid delivery window
+                </p>
                 <p>
                   Concept to lit signage in as little as 12 days with our
                   in-house joinery, metal and print lines.
@@ -245,18 +118,20 @@ export default function Home() {
             </motion.div>
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-4 text-sm text-white/60">
-            <span className="tag bg-white/10 text-[var(--brand-yellow)]">
+            <Tag tone="yellow" className="text-[0.7rem] tracking-[0.4em]">
               Signages
-            </span>
-            <span className="tag bg-white/10 text-[var(--brand-magenta)]">
+            </Tag>
+            <Tag tone="magenta" className="text-[0.7rem] tracking-[0.4em]">
               Vehicle wraps
-            </span>
-            <span className="tag bg-white/10 text-[var(--brand-cyan)]">
+            </Tag>
+            <Tag tone="cyan" className="text-[0.7rem] tracking-[0.4em]">
               Events
-            </span>
-            <span className="tag bg-white/10 text-white">Joinery & Interiors</span>
+            </Tag>
+            <Tag className="text-[0.7rem] tracking-[0.4em]">
+              Joinery & Interiors
+            </Tag>
           </div>
-        </div>
+        </GlassPanel>
 
         <section id="services" className="mt-16 space-y-10">
           <motion.div
@@ -264,14 +139,10 @@ export default function Home() {
             {...fadeUp}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <div>
-              <p className="text-sm uppercase tracking-[0.4em] text-white/60">
-                Capabilities
-              </p>
-              <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-                Everything from neon glasswork to aluminum structures.
-              </h2>
-            </div>
+            <SectionHeading
+              eyebrow="Capabilities"
+              title="Everything from neon glasswork to aluminum structures."
+            />
             <p className="max-w-xl text-base text-white/70">
               One partner for illuminated signage, vehicle graphics, event
               builds, joinery, interior fit-out, neon, aluminum and glass work.
@@ -280,36 +151,39 @@ export default function Home() {
             </p>
           </motion.div>
           <div className="grid gap-6 md:grid-cols-2">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                className="group glass-panel relative flex flex-col gap-4 p-6 transition duration-300 hover:border-white/30 hover:bg-white/10"
-                initial={{ opacity: 0, y: 36 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.45, delay: index * 0.08 }}
-              >
-                <div className="flex items-center justify-between">
-                  <span className="tag bg-white/10 text-[var(--brand-cyan)]">
-                    {service.tag}
-                  </span>
-                  <ArrowUpRight className="h-5 w-5 text-white/50 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-white" />
-                </div>
-                <h3 className="text-2xl font-semibold text-white">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-white/70">{service.description}</p>
-                <ul className="mt-4 space-y-2 text-sm text-white/75">
-                  {service.items.map((item) => (
-                    <li key={item} className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-magenta)]" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-transparent via-transparent to-white/5 opacity-0 transition group-hover:opacity-100" />
-              </motion.div>
-            ))}
+            {servicesList.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <motion.div
+                  key={service.title}
+                  className="group relative flex flex-col gap-4 rounded-[2rem] border border-white/10 bg-white/5 p-6 transition duration-300 hover:border-white/30 hover:bg-white/10"
+                  initial={{ opacity: 0, y: 36 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.45, delay: index * 0.08 }}
+                >
+                  <div className="flex items-center justify-between">
+                    <Tag tone="cyan" className="tracking-[0.4em]">
+                      {service.tag}
+                    </Tag>
+                    <Icon className="h-6 w-6 text-white/70" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-white">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-white/70">{service.description}</p>
+                  <ul className="mt-4 space-y-2 text-sm text-white/75">
+                    {service.items.map((item) => (
+                      <li key={item} className="flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[var(--brand-magenta)]" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-transparent via-transparent to-white/5 opacity-0 transition group-hover:opacity-100" />
+                </motion.div>
+              );
+            })}
           </div>
         </section>
 
@@ -319,7 +193,7 @@ export default function Home() {
             {...fadeUp}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <div className="glass-panel p-6 sm:p-8">
+            <GlassPanel className="p-6 sm:p-8">
               <div className="flex items-center justify-between">
                 <p className="text-sm uppercase tracking-[0.4em] text-white/60">
                   Vehicle branding
@@ -346,8 +220,8 @@ export default function Home() {
                   ),
                 )}
               </div>
-            </div>
-            <div className="glass-panel p-6 sm:p-8">
+            </GlassPanel>
+            <GlassPanel className="p-6 sm:p-8">
               <div className="flex items-center justify-between">
                 <p className="text-sm uppercase tracking-[0.4em] text-white/60">
                   Neon & lighting
@@ -375,7 +249,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </GlassPanel>
           </motion.div>
         </section>
 
@@ -474,73 +348,77 @@ export default function Home() {
 
         <section className="mt-20 grid gap-6 lg:grid-cols-2">
           <motion.div
-            className="glass-panel flex flex-col gap-6 p-6 sm:p-8"
+            className="flex flex-col gap-6"
             {...fadeUp}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <div className="flex items-center justify-between">
-              <p className="text-sm uppercase tracking-[0.3em] text-white/60">
-                Joinery · Interior · Aluminum · Glass
+            <GlassPanel className="flex h-full flex-col gap-6 p-6 sm:p-8">
+              <div className="flex items-center justify-between">
+                <p className="text-sm uppercase tracking-[0.3em] text-white/60">
+                  Joinery · Interior · Aluminum · Glass
+                </p>
+                <Wrench className="h-6 w-6 text-[var(--brand-magenta)]" />
+              </div>
+              <h3 className="text-3xl font-semibold text-white">
+                Bespoke counters, kiosks, feature walls and aluminum structures.
+              </h3>
+              <p className="text-white/70">
+                Event counters, mall kiosks, media walls, suspended canopies and
+                storefront interiors delivered with CNC joinery, aluminum
+                welding and glass bending labs inside our facility.
               </p>
-              <Wrench className="h-6 w-6 text-[var(--brand-magenta)]" />
-            </div>
-            <h3 className="text-3xl font-semibold text-white">
-              Bespoke counters, kiosks, feature walls and aluminum structures.
-            </h3>
-            <p className="text-white/70">
-              Event counters, mall kiosks, media walls, suspended canopies and
-              storefront interiors delivered with CNC joinery, aluminum welding
-              and glass bending labs inside our facility.
-            </p>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                "Joinery work",
-                "Interior fit-out",
-                "Aluminum work",
-                "Glass work",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm font-semibold text-white/80"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  "Joinery work",
+                  "Interior fit-out",
+                  "Aluminum work",
+                  "Glass work",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm font-semibold text-white/80"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </GlassPanel>
           </motion.div>
           <motion.div
-            className="glass-panel flex flex-col gap-6 p-6 sm:p-8"
+            className="flex flex-col gap-6"
             {...fadeUp}
             transition={{ ...fadeUp.transition, delay: 0.15 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <div className="flex items-center justify-between">
-              <p className="text-sm uppercase tracking-[0.3em] text-white/60">
-                Event support
+            <GlassPanel className="flex h-full flex-col gap-6 p-6 sm:p-8">
+              <div className="flex items-center justify-between">
+                <p className="text-sm uppercase tracking-[0.3em] text-white/60">
+                  Event support
+                </p>
+                <Sparkles className="h-6 w-6 text-[var(--brand-yellow)]" />
+              </div>
+              <h3 className="text-3xl font-semibold text-white">
+                24/7 event branding, rigging and rapid response.
+              </h3>
+              <p className="text-white/70">
+                Dedicated night teams, safety supervisors and transport fleet
+                keep event programs on schedule — from launch events to road
+                shows and festivals.
               </p>
-              <Sparkles className="h-6 w-6 text-[var(--brand-yellow)]" />
-            </div>
-            <h3 className="text-3xl font-semibold text-white">
-              24/7 event branding, rigging and rapid response.
-            </h3>
-            <p className="text-white/70">
-              Dedicated night teams, safety supervisors and transport fleet keep
-              event programs on schedule — from launch events to road shows and
-              festivals.
-            </p>
-            <ul className="space-y-3 text-white/75">
-              {[
-                "Event branding & wayfinding",
-                "On-site maintenance and replacements",
-                "Glass & neon emergency repair",
-                "Permits, authority drawings & compliance",
-              ].map((item) => (
-                <li key={item} className="flex gap-2 text-sm">
-                  <span className="h-1.5 w-1.5 rounded-full bg-white/60" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+              <ul className="space-y-3 text-white/75">
+                {[
+                  "Event branding & wayfinding",
+                  "On-site maintenance and replacements",
+                  "Glass & neon emergency repair",
+                  "Permits, authority drawings & compliance",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2 text-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-white/60" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </GlassPanel>
           </motion.div>
         </section>
 
@@ -608,7 +486,7 @@ export default function Home() {
             </Link>
           </div>
         </footer>
-      </div>
+      </Container>
     </main>
   );
 }
