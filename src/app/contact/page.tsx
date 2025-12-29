@@ -57,7 +57,7 @@ export default function ContactPage() {
                     type="email"
                     name="email"
                     required
-                    placeholder="hello@brand.com"
+                    placeholder="shizaeim9720@outlook.com"
                     className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-base text-white focus:border-white/40 focus:outline-none"
                   />
                 </label>

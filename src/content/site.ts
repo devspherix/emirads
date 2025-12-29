@@ -128,20 +128,20 @@ export const craftingMaterials = [
 export const contactMethods = [
   {
     label: "Call the workshop",
-    value: "+971 52 555 0123",
-    href: "tel:+971525550123",
+    value: "+971 55 268 2030",
+    href: "tel:+971552682030",
     icon: Phone,
   },
   {
     label: "Email a brief",
-    value: "hello@emirads.com",
-    href: "mailto:hello@emirads.com?subject=Project%20Brief%20-%20Emirads",
-    icon: Mail,
+    value: "shizaeim9720@outlook.com",
+    href: "mailto:shizaeim9720@outlook.com?subject=Project%20Brief%20-%20Emirads",
+    icon: Mail, 
   },
   {
     label: "Visit the yard",
     value: "Dubai Production City, UAE",
-    href: "https://maps.app.goo.gl/dummy",
+    href: "https://www.google.com/maps/search/Dubai%2C+UAE",
     icon: MapPin,
   },
 ];

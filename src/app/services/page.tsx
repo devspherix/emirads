@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/container";
 import { GlassPanel } from "@/components/ui/glass-panel";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Tag } from "@/components/ui/tag";
+import { SignageGallery } from "@/components/gallery/signage-gallery";
 import {
   featuredProjects,
   processSteps,
@@ -115,6 +116,8 @@ export default function ServicesPage() {
             </GlassPanel>
           ))}
         </div>
+
+        <SignageGallery showHeading={true} />
       </Container>
     </main>
   );

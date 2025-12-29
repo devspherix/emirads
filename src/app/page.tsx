@@ -9,6 +9,7 @@ import { buttonBase, buttonVariants } from "@/components/ui/button";
 import { GlassPanel } from "@/components/ui/glass-panel";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Tag } from "@/components/ui/tag";
+import { SignageGallery } from "@/components/gallery/signage-gallery";
 import {
   contactMethods,
   craftingMaterials,
@@ -73,7 +74,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="mailto:hello@emirads.com?subject=Project%20Discovery%20Call"
+                  href="mailto:shizaeim9720@outlook.com?subject=Project%20Discovery%20Call"
                   className={cn(buttonBase, buttonVariants.primary)}
                 >
                   Schedule a discovery call
@@ -296,6 +297,8 @@ export default function Home() {
           </div>
         </section>
 
+        <SignageGallery />
+
         <section className="mt-20 rounded-[2.5rem] border border-white/10 bg-white/5 p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] sm:p-10">
           <motion.div
             className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]"
@@ -441,7 +444,7 @@ export default function Home() {
                 milestone within 24 hours.
               </p>
               <Link
-                href="mailto:hello@emirads.com?subject=Launch%20my%20project"
+                href="mailto:shizaeim9720@outlook.com?subject=Launch%20my%20project"
                 className="mt-6 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-base font-semibold text-black transition hover:-translate-y-0.5"
               >
                 Send us your project
@@ -475,7 +478,7 @@ export default function Home() {
         <footer className="mt-16 flex flex-col gap-4 border-t border-white/10 py-8 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Emirads. All rights reserved.</p>
           <div className="flex gap-3 text-white/60">
-            <Link href="mailto:hello@emirads.com">hello@emirads.com</Link>
+            <Link href="mailto:shizaeim9720@outlook.com">shizaeim9720@outlook.com</Link>
             <span className="opacity-40">/</span>
             <Link href="https://instagram.com/" target="_blank">
               Instagram

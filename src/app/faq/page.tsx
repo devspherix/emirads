@@ -18,7 +18,7 @@ export default function FaqPage() {
           align="center"
           eyebrow="Knowledge base"
           title="Frequently asked questions"
-          description="If you do not find what you need, email hello@emirads.com and the team will respond within the same business day."
+          description="If you do not find what you need, email shizaeim9720@outlook.com and the team will respond within the same business day."
         />
         <div className="space-y-4">
           {faqs.map((faq) => (
