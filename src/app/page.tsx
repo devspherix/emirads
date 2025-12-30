@@ -74,7 +74,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="mailto:shizaeim9720@outlook.com?subject=Project%20Discovery%20Call"
+                  href="mailto:info@emirads.ae?subject=Project%20Discovery%20Call"
                   className={cn(buttonBase, buttonVariants.primary)}
                 >
                   Schedule a discovery call
@@ -444,7 +444,7 @@ export default function Home() {
                 milestone within 24 hours.
               </p>
               <Link
-                href="mailto:shizaeim9720@outlook.com?subject=Launch%20my%20project"
+                href="mailto:info@emirads.ae?subject=Launch%20my%20project"
                 className="mt-6 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-base font-semibold text-black transition hover:-translate-y-0.5"
               >
                 Send us your project
@@ -478,7 +478,7 @@ export default function Home() {
         <footer className="mt-16 flex flex-col gap-4 border-t border-white/10 py-8 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Emirads. All rights reserved.</p>
           <div className="flex gap-3 text-white/60">
-            <Link href="mailto:shizaeim9720@outlook.com">shizaeim9720@outlook.com</Link>
+            <Link href="mailto:info@emirads.ae">info@emirads.ae</Link>
             <span className="opacity-40">/</span>
             <Link href="https://instagram.com/" target="_blank">
               Instagram

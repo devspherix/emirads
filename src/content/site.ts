@@ -134,8 +134,8 @@ export const contactMethods = [
   },
   {
     label: "Email a brief",
-    value: "shizaeim9720@outlook.com",
-    href: "mailto:shizaeim9720@outlook.com?subject=Project%20Brief%20-%20Emirads",
+    value: "info@emirads.ae",
+    href: "mailto:info@emirads.ae?subject=Project%20Brief%20-%20Emirads",
     icon: Mail, 
   },
   {
