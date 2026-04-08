@@ -2,15 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Zap } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/content/site";
 import { cn } from "@/lib/utils";
-import { buttonBase, buttonVariants } from "../ui/button";
-
-const accentColors = ["#FF3AF2", "#00F5D4", "#FFE600", "#FF6B35", "#7B2FFF"];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -20,207 +16,146 @@ export function Navbar() {
   const close = () => setOpen(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <motion.header
-      className="sticky top-0 z-50 border-b-4 border-[#FF3AF2]"
-      style={{ boxShadow: "0 4px 0 #FFE600, 0 8px 0 #7B2FFF" }}
+      className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100"
+          : "bg-white border-b border-gray-100",
+      )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
     >
-      <div
-        className={cn(
-          "absolute inset-0 transition-all duration-300",
-          scrolled
-            ? "bg-[#0D0D1A]/97 backdrop-blur-3xl"
-            : "bg-[#0D0D1A]/85 backdrop-blur-xl",
-        )}
-      />
-      {/* Ticker strip */}
-      <div className="relative overflow-hidden bg-[#FF3AF2] py-1">
-        <div className="animate-ticker flex w-max gap-0">
-          {[...Array(2)].map((_, i) => (
-            <span key={i} className="flex shrink-0 items-center gap-6 px-6 text-[10px] font-black uppercase tracking-widest text-[#0D0D1A]">
-              {["⚡ SIGNAGE STUDIO", "🚗 VEHICLE WRAPS", "✨ NEON WORKS", "🏗️ FABRICATION LAB", "🎪 EVENT BUILDS", "📍 DUBAI UAE"].map((t) => (
-                <span key={t}>{t}</span>
-              ))}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <div className="relative mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 sm:px-8 lg:px-12">
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}
-        >
-          <Link
-            href="/"
-            className="flex items-center gap-3 transition-all"
-            onClick={close}
+      {/* Main nav row */}
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 sm:px-8 lg:px-12">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3" onClick={close}>
+          <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-tr from-[#038CE3] via-[#db016e] to-[#ffe724]">
+            <span className="relative z-10 text-xl font-black text-white">E</span>
+            <div className="absolute -right-1 top-1 h-2 w-2 bg-white opacity-30" />
+          </div>
+          <span
+            className="text-xl font-black uppercase tracking-tighter text-black"
+            style={{ fontFamily: "var(--font-display)" }}
           >
-            <motion.div
-              whileHover={{ rotate: 10 }}
-              transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              className="relative"
-            >
-              <div className="absolute inset-0 rounded-2xl bg-[#FF3AF2] blur-md opacity-60 animate-pulse-glow" />
-              <Image
-                src="/logo-emirads.svg"
-                alt="Emirads"
-                width={44}
-                height={44}
-                className="relative rounded-2xl border-4 border-[#FFE600] bg-white p-1 shadow-lg"
-                style={{ boxShadow: "4px 4px 0 #FF3AF2" }}
-                priority
-              />
-            </motion.div>
-            <div>
-              <span
-                className="block text-xl font-black uppercase tracking-widest text-white"
-                style={{ textShadow: "2px 2px 0px #FF3AF2, 4px 4px 0px #7B2FFF" }}
-              >
-                Emirads
-              </span>
-              <span className="block text-[9px] font-black uppercase tracking-[0.4em] text-[#00F5D4]">
-                Signage · Branding
-              </span>
-            </div>
-          </Link>
-        </motion.div>
+            Emirads
+          </span>
+        </Link>
 
+        {/* Desktop nav */}
         <nav className="hidden items-center gap-1 lg:flex">
           {navLinks.map((item, index) => {
-            const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
-            const color = accentColors[index % accentColors.length];
+            const isActive =
+              pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (
-              <motion.div
+              <Link
                 key={item.href}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
+                href={item.href}
+                className={cn(
+                  "relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200",
+                  isActive
+                    ? "text-[#db016e] font-bold"
+                    : "text-gray-700 hover:text-[#db016e]",
+                )}
               >
-                <Link
-                  href={item.href}
-                  className={cn(
-                    "relative px-4 py-2 text-sm font-black uppercase tracking-widest transition-all duration-200 rounded-full",
-                    isActive ? "text-white" : "text-white/70 hover:text-white",
-                  )}
-                >
-                  {isActive && (
-                    <motion.div
-                      layoutId="navbar-indicator"
-                      className="absolute inset-0 -z-10 rounded-full border-2"
-                      style={{ borderColor: color, backgroundColor: `${color}20` }}
-                      initial={false}
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                  <motion.div
-                    className="absolute bottom-1 left-0 h-0.5 rounded-full"
-                    style={{ backgroundColor: color }}
-                    initial={{ width: 0 }}
-                    whileHover={{ width: "100%" }}
-                    transition={{ duration: 0.2 }}
+                {isActive && (
+                  <motion.span
+                    layoutId="nav-pill"
+                    className="absolute inset-0 -z-10 rounded-full bg-[#db016e]/8"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
-                  {item.label}
-                </Link>
-              </motion.div>
+                )}
+                {item.label}
+              </Link>
             );
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          {/* <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
+        {/* Desktop CTA */}
+        <div className="hidden lg:flex items-center gap-3">
+          <Link
+            href="/quote"
+            className="group relative overflow-hidden rounded-full bg-black px-6 py-2.5 text-sm font-bold uppercase tracking-wider text-white transition-all hover:scale-105 active:scale-95"
           >
-            <Link
-              href="/auth/login"
-              className={cn(buttonBase, "px-4 py-2 text-xs", buttonVariants.ghost)}
-            >
-              Login
-            </Link>
-          </motion.div> */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: 0.35 }}
-          >
-            <Link
-              href="/quote"
-              className={cn(buttonBase, "px-5 py-2.5 text-xs", buttonVariants.primary)}
-            >
+            <span className="relative z-10 flex items-center gap-2">
               <Zap className="h-3.5 w-3.5" />
-              Get Instant Price
-            </Link>
-          </motion.div>
+              Request a Quote
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#db016e] to-[#C00062] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+          </Link>
         </div>
 
-        <motion.button
-          className="relative rounded-full border-4 border-[#FF3AF2] bg-[#FF3AF2]/10 p-2 text-white transition-all hover:bg-[#FF3AF2]/20 lg:hidden"
-          style={{ boxShadow: "3px 3px 0 #FFE600" }}
+        {/* Mobile hamburger */}
+        <button
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-black transition-all hover:border-gray-400 lg:hidden"
           onClick={() => setOpen((prev) => !prev)}
           aria-label="Toggle navigation"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
         >
           <AnimatePresence mode="wait">
             {open ? (
-              <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
+              <motion.div
+                key="close"
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
                 <X className="h-5 w-5" />
               </motion.div>
             ) : (
-              <motion.div key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
+              <motion.div
+                key="menu"
+                initial={{ rotate: 90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: -90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
                 <Menu className="h-5 w-5" />
               </motion.div>
             )}
           </AnimatePresence>
-        </motion.button>
+        </button>
       </div>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
-            className="border-t-4 border-[#FF3AF2] bg-[#0D0D1A]/98 backdrop-blur-3xl px-6 pb-8 pt-4 sm:px-8 lg:hidden"
-            style={{ boxShadow: "inset 0 2px 0 #FFE600" }}
+            className="border-t border-gray-100 bg-white px-6 pb-8 pt-4 sm:px-8 lg:hidden"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-1">
               {navLinks.map((item, index) => {
-                const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
-                const color = accentColors[index % accentColors.length];
+                const isActive =
+                  pathname === item.href ||
+                  pathname.startsWith(`${item.href}/`);
                 return (
                   <motion.div
                     key={item.href}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.08 }}
+                    transition={{ duration: 0.25, delay: index * 0.06 }}
                   >
                     <Link
                       href={item.href}
                       className={cn(
-                        "relative flex items-center gap-3 rounded-2xl border-2 px-4 py-3 text-base font-black uppercase tracking-widest transition-all",
+                        "flex items-center gap-3 rounded-xl px-4 py-3 text-base font-medium transition-all",
                         isActive
-                          ? "text-white"
-                          : "border-white/10 text-white/70 hover:border-white/30 hover:text-white",
+                          ? "bg-[#db016e]/8 font-bold text-[#db016e]"
+                          : "text-gray-700 hover:bg-gray-50 hover:text-black",
                       )}
-                      style={isActive ? { borderColor: color, backgroundColor: `${color}15`, boxShadow: `3px 3px 0 ${color}` } : {}}
                       onClick={close}
                     >
-                      <span className="h-2 w-2 rounded-full" style={{ backgroundColor: color }} />
                       {item.label}
                     </Link>
                   </motion.div>
@@ -228,24 +163,23 @@ export function Navbar() {
               })}
             </nav>
             <div className="mt-6 flex flex-col gap-3">
-              {[
-                { href: "/quote", variant: buttonVariants.primary, label: "⚡ Get Instant Price" },
-              ].map((btn, index) => (
-                <motion.div
-                  key={btn.href}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
-                >
-                  <Link
-                    href={btn.href}
-                    className={cn(buttonBase, btn.variant, "w-full text-center")}
-                    onClick={close}
-                  >
-                    {btn.label}
-                  </Link>
-                </motion.div>
-              ))}
+              <Link
+                href="/quote"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-bold uppercase tracking-wider text-white"
+                onClick={close}
+              >
+                <Zap className="h-4 w-4" />
+                Request a Quote
+              </Link>
+              <a
+                href="https://wa.me/971585806956"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex w-full items-center justify-center gap-2 rounded-full border border-[#25D366] bg-[#25D366]/10 px-6 py-3 text-sm font-bold text-[#25D366]"
+                onClick={close}
+              >
+                💬 WhatsApp Us
+              </a>
             </div>
           </motion.div>
         )}
@@ -253,3 +187,4 @@ export function Navbar() {
     </motion.header>
   );
 }
+

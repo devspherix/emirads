@@ -3,14 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Zap, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { Container } from "@/components/layout/container";
-import { Button } from "@/components/ui/button";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { Tag } from "@/components/ui/tag";
 import { authBenefits } from "@/content/site";
-
-const fieldAccents = ["#FF3AF2", "#00F5D4", "#FFE600", "#FF6B35", "#7B2FFF"];
 
 export default function SignupPage() {
   const [message, setMessage] = useState("");
@@ -21,130 +16,78 @@ export default function SignupPage() {
   };
 
   return (
-    <main className="relative overflow-hidden bg-[#0D0D1A]">
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div className="absolute top-0 right-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,_rgba(0,245,212,0.2),_transparent_70%)] blur-3xl" />
-        <div className="absolute bottom-0 -left-32 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,_rgba(255,58,242,0.2),_transparent_70%)] blur-3xl" />
+    <main className="min-h-screen bg-white">
+      <div className="border-b border-gray-100 py-16 text-center">
+        <span className="mb-3 inline-block rounded-full border border-[#038CE3]/20 bg-[#038CE3]/5 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#038CE3]">
+          <Star size={10} className="mr-1 inline" /> Create Account
+        </span>
+        <h1 className="text-4xl font-black text-black" style={{ fontFamily: "var(--font-display)" }}>
+          Collaborate with us.
+        </h1>
+        <p className="mt-2 text-sm text-gray-500">Get real-time updates, upload design files and manage invoices.</p>
       </div>
-      <Container className="relative z-10">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
+      <Container className="py-16">
+        <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[1fr_0.85fr]">
           {/* Left: form */}
           <motion.form
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="relative overflow-hidden rounded-3xl border-4 border-[#00F5D4] p-7 sm:p-9 space-y-6"
-            style={{
-              background: "linear-gradient(135deg, #2D1B4E80, #0D0D1A)",
-              boxShadow: "8px 8px 0 #7B2FFF, 16px 16px 0 #00F5D4",
-            }}
+            transition={{ duration: 0.5 }}
+            className="space-y-5 rounded-2xl border border-gray-100 bg-white p-8 shadow-sm"
           >
-            <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,245,212,0.04) 10px, rgba(0,245,212,0.04) 20px)" }} />
-            <div className="relative">
-              <Tag tone="cyan" className="mb-4 text-[0.65rem] tracking-[0.4em]">
-                <Star className="h-3 w-3 mr-1" /> Create account
-              </Tag>
-              <SectionHeading
-                eyebrow="Join Emirads"
-                title="Collaborate with us."
-                description="Get real-time production updates, upload design files, request maintenance and manage invoices."
-              />
-            </div>
-            <div className="relative grid gap-4 sm:grid-cols-2">
-              {["First name", "Last name"].map((label, i) => (
-                <label key={label} className="flex flex-col gap-2 text-xs font-black uppercase tracking-widest text-white/80">
-                  {label}
-                  <input
-                    type="text"
-                    required
-                    className="rounded-2xl border-4 bg-[#2D1B4E]/60 px-4 py-3 text-base font-medium text-white placeholder-white/40 focus:outline-none transition-colors"
-                    style={{ borderColor: fieldAccents[i], boxShadow: `3px 3px 0 ${fieldAccents[i + 1]}` }}
-                  />
-                </label>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {["First name", "Last name"].map((label) => (
+                <div key={label}>
+                  <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-gray-500">{label}</label>
+                  <input type="text" required placeholder={label} className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#038CE3]" />
+                </div>
               ))}
             </div>
-            <label className="relative flex flex-col gap-2 text-xs font-black uppercase tracking-widest text-white/80">
-              Email
-              <input
-                type="email"
-                required
-                className="rounded-2xl border-4 border-[#FFE600] bg-[#2D1B4E]/60 px-4 py-3 text-base font-medium text-white placeholder-white/40 focus:border-[#FF3AF2] focus:outline-none transition-colors"
-                style={{ boxShadow: "3px 3px 0 #FF6B35" }}
-              />
-            </label>
-            <label className="relative flex flex-col gap-2 text-xs font-black uppercase tracking-widest text-white/80">
-              Company / Organization
-              <input
-                type="text"
-                className="rounded-2xl border-4 border-[#FF6B35] bg-[#2D1B4E]/60 px-4 py-3 text-base font-medium text-white placeholder-white/40 focus:border-[#FF3AF2] focus:outline-none transition-colors"
-                style={{ boxShadow: "3px 3px 0 #FF3AF2" }}
-              />
-            </label>
-            <label className="relative flex flex-col gap-2 text-xs font-black uppercase tracking-widest text-white/80">
-              Password
-              <input
-                type="password"
-                required
-                className="rounded-2xl border-4 border-[#7B2FFF] bg-[#2D1B4E]/60 px-4 py-3 text-base font-medium text-white placeholder-white/40 focus:border-[#FF3AF2] focus:outline-none transition-colors"
-                style={{ boxShadow: "3px 3px 0 #00F5D4" }}
-              />
-            </label>
-            <Button type="submit" fullWidth className="relative">
-              <Zap className="h-4 w-4" />
+            <div>
+              <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-gray-500">Email address</label>
+              <input type="email" required placeholder="you@company.com" className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#038CE3]" />
+            </div>
+            <div>
+              <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-gray-500">Company / Organization <span className="font-normal normal-case text-gray-400">(optional)</span></label>
+              <input type="text" placeholder="Emirads LLC" className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#038CE3]" />
+            </div>
+            <div>
+              <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-gray-500">Password</label>
+              <input type="password" required placeholder="••••••••" className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#038CE3]" />
+            </div>
+            <button type="submit" className="w-full rounded-xl bg-black py-3.5 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#038CE3]">
               Create my account
-            </Button>
-            {message ? (
-              <p className="relative text-sm font-black text-[#FFE600]" style={{ textShadow: "1px 1px 0 #FF6B35" }}>
-                ✨ {message}
-              </p>
-            ) : null}
-            <p className="relative text-sm font-medium text-white/70">
+            </button>
+            {message && (
+              <p className="rounded-xl bg-[#ffe724]/30 px-4 py-3 text-sm font-bold text-black">✅ {message}</p>
+            )}
+            <p className="text-center text-sm text-gray-500">
               Already onboard?{" "}
-              <Link href="/auth/login" className="font-black text-[#FF3AF2] underline-offset-4 hover:underline">
-                Log in
-              </Link>
+              <Link href="/auth/login" className="font-bold text-[#db016e] underline-offset-4 hover:underline">Log in</Link>
             </p>
           </motion.form>
 
-          {/* Right: benefits */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.12 }}
-            className="relative overflow-hidden rounded-3xl border-4 border-[#FF3AF2] p-8 sm:p-10 space-y-8"
-            style={{
-              background: "linear-gradient(135deg, #2D1B4E, #1A0535)",
-              boxShadow: "12px 12px 0 #FFE600, 24px 24px 0 #FF3AF2",
-            }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="rounded-2xl border border-gray-100 bg-[#f9f9f9] p-8"
           >
-            <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "conic-gradient(from 90deg at 1px 1px, transparent 90deg, rgba(255,58,242,0.06) 0)", backgroundSize: "40px 40px" }} />
-            <div className="relative">
-              <h2 className="text-3xl font-black text-white" style={{ fontFamily: "var(--font-display)", textShadow: "2px 2px 0px #FF3AF2, 4px 4px 0px #7B2FFF" }}>
-                Why clients love the portal
-              </h2>
-            </div>
-            <ul className="relative space-y-5">
+            <div className="mb-2 h-1 w-10 rounded-full bg-[#038CE3]" />
+            <h2 className="mb-1 text-xl font-black text-black" style={{ fontFamily: "var(--font-display)" }}>Why clients love the portal</h2>
+            <p className="mb-8 text-sm text-gray-500">Securely hosted. Multi-user access for agencies and teams.</p>
+            <ul className="space-y-5">
               {authBenefits.map((benefit, i) => (
-                <li key={benefit} className="flex gap-4">
-                  <div
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-4 text-sm font-black"
-                    style={{ borderColor: fieldAccents[i % 5], color: fieldAccents[i % 5], backgroundColor: `${fieldAccents[i % 5]}15`, boxShadow: `2px 2px 0 ${fieldAccents[(i + 1) % 5]}` }}
-                  >
-                    {i + 1}
-                  </div>
-                  <p className="flex-1 text-base font-medium text-white/85 pt-1.5">{benefit}</p>
+                <li key={benefit} className="flex items-start gap-4">
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-black text-xs font-black text-white">{i + 1}</div>
+                  <p className="pt-0.5 text-sm font-medium text-gray-700">{benefit}</p>
                 </li>
               ))}
             </ul>
-            <div
-              className="relative rounded-2xl border-4 border-[#FFE600] bg-[#FFE600]/10 p-5"
-              style={{ boxShadow: "4px 4px 0 #FF6B35" }}
-            >
-              <p className="font-black text-[#FFE600]" style={{ fontFamily: "var(--font-display)" }}>🔒 Secure & encrypted</p>
-              <p className="mt-2 text-sm text-white/75">
-                Securely hosted on encrypted infrastructure. Multi-user access available for agencies and enterprise teams.
-              </p>
+            <div className="mt-8 rounded-xl border border-[#ffe724]/40 bg-[#ffe724]/10 p-4">
+              <p className="text-xs font-bold text-black">🔒 Secure &amp; encrypted</p>
+              <p className="mt-1 text-xs text-gray-500">Your data is protected and never shared with third parties.</p>
             </div>
           </motion.div>
         </div>

@@ -1,64 +1,32 @@
 import type { Metadata } from "next";
-import { Outfit, DM_Sans, Bangers } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 
-const displayFont = Outfit({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
-});
-
-const bodyFont = DM_Sans({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const accentFont = Bangers({
-  variable: "--font-accent",
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Emirads | Signage & Experiential Branding",
+  title: "Emirads | Premium Signage & Branding Solutions",
   description:
-    "Emirads creates high-impact signages, vehicle wraps, event environments, and bespoke fabrication across the UAE.",
+    "Dubai's leading signage company. Front-lit & back-lit signage, vehicle wraps, LED displays, event builds and bespoke fabrication across the UAE.",
   keywords: [
-    "signage",
-    "vehicle branding",
-    "event fabrication",
+    "signage Dubai",
+    "vehicle branding UAE",
+    "LED screens Dubai",
     "neon signs",
     "Emirads",
-    "Dubai sign company",
-    "joinery",
-    "interior fitout",
+    "outdoor signage",
+    "shop signage Dubai",
+    "event fabrication UAE",
   ],
   openGraph: {
-    title: "Emirads — Bold Signage & Branded Experiences",
+    title: "Emirads — Premium Signage & Branding Solutions",
     description:
       "From neon to full-vehicle wraps, Emirads delivers illuminated signage, spatial branding, and fabrication with premium craftsmanship.",
     siteName: "Emirads",
-    images: [
-      {
-        url: "/logo-emirads.svg",
-        width: 512,
-        height: 512,
-        alt: "Emirads emblem",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Emirads — Bold Signage & Branded Experiences",
+    title: "Emirads — Premium Signage & Branding Solutions",
     description:
       "Signages, vehicle wraps, event builds, joinery, interior and neon works crafted in the UAE.",
-    creator: "@emirads",
-    images: ["/logo-emirads.svg"],
   },
 };
 
@@ -69,9 +37,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${displayFont.variable} ${bodyFont.variable} ${accentFont.variable} antialiased`}
-      >
+      <head>
+        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,400&f[]=satoshi@700,500,400&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="antialiased">
         <Navbar />
         {children}
       </body>

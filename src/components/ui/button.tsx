@@ -2,18 +2,20 @@ import { forwardRef } from "react";
 import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "outline";
 
 export const buttonBase =
-  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-black uppercase tracking-widest transition-all duration-200 will-change-transform active:scale-95";
+  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-200 will-change-transform active:scale-95 cursor-pointer";
 
 export const buttonVariants: Record<ButtonVariant, string> = {
   primary:
-    "bg-gradient-to-r from-[#FF3AF2] via-[#7B2FFF] to-[#00F5D4] text-white border-4 border-[#FFE600] hover:scale-105 hover:brightness-110 [box-shadow:6px_6px_0_#FFE600,12px_12px_0_#FF3AF2,0_0_30px_rgba(255,58,242,0.5)] hover:[box-shadow:8px_8px_0_#FFE600,16px_16px_0_#FF3AF2,0_0_50px_rgba(255,58,242,0.8)]",
+    "relative bg-black text-white overflow-hidden hover:scale-105 [&>span]:relative [&>span]:z-10",
   secondary:
-    "bg-transparent text-white border-4 border-[#00F5D4] hover:scale-105 hover:bg-[#00F5D4]/10 [box-shadow:4px_4px_0_#7B2FFF] hover:[box-shadow:6px_6px_0_#7B2FFF,0_0_20px_rgba(0,245,212,0.4)]",
+    "bg-transparent text-black border-2 border-black hover:bg-black hover:text-white",
   ghost:
-    "text-white/90 border-4 border-dashed border-white/30 hover:border-[#FF3AF2] hover:text-[#FF3AF2] hover:bg-[#FF3AF2]/5",
+    "text-gray-700 hover:text-[#db016e] hover:bg-[#db016e]/5",
+  outline:
+    "bg-transparent text-[#db016e] border-2 border-[#db016e] hover:bg-[#db016e] hover:text-white",
 };
 
 export type ButtonProps = ComponentProps<"button"> & {

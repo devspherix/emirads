@@ -129,8 +129,8 @@ export const craftingMaterials = [
 export const contactMethods = [
   {
     label: "Call the workshop",
-    value: "+971 55 268 2030",
-    href: "tel:+971552682030",
+    value: "+971 58 580 6956",
+    href: "tel:+971585806956",
     icon: Phone,
   },
   {

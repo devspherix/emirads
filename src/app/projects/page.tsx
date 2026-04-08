@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import ProjectsGrid from "./ProjectsGrid";
+import { Container } from "@/components/layout/container";
+import { Zap } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Projects | Emirads — Dubai Signage",
@@ -8,87 +10,93 @@ export const metadata: Metadata = {
     "Explore our portfolio of vehicle branding, outdoor signage, LED screens and indoor signage projects across the UAE.",
 };
 
-const accentColors = [
-  { text: "text-[#FF3AF2]" },
-  { text: "text-[#00F5D4]" },
-  { text: "text-[#FFE600]" },
-  { text: "text-[#FF6B35]" },
+const statsData = [
+  { label: "Projects delivered", value: "500+", color: "text-[#db016e]" },
+  { label: "Vehicle wraps", value: "180+", color: "text-[#038CE3]" },
+  { label: "Sq ft installed", value: "250K+", color: "text-[#7a6400]" },
+  { label: "Years active", value: "12+", color: "text-white" },
 ];
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[#0D0D1A]">
-      {/* Hero */}
-      <section className="relative pt-36 pb-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 pattern-dots opacity-20 pointer-events-none" />
-        <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-[#FF3AF2]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#7B2FFF]/10 rounded-full blur-3xl pointer-events-none" />
+    <main className="min-h-screen bg-white">
 
-        <div className="max-w-5xl mx-auto relative z-10 text-center">
-          <div className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#FFE600] bg-[#FFE600]/10 border border-[#FFE600]/30 px-4 py-1 rounded-full mb-6">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-black py-28 text-white">
+        <div className="pointer-events-none absolute inset-0 pattern-dots-light opacity-10" />
+        <Container className="relative text-center">
+          <span className="mb-5 inline-block rounded-full border border-[#ffe724]/30 bg-[#ffe724]/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#ffe724]">
             Our Work
-          </div>
+          </span>
           <h1
-            className="text-5xl md:text-7xl font-black text-white leading-none mb-4"
-            style={{ textShadow: "4px 4px 0px #7B2FFF, 8px 8px 0px #FF3AF2" }}
+            className="mb-4 text-5xl font-black leading-none text-white md:text-7xl"
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Built to Last.
-            <br />
-            <span className="text-[#FFE600]">Made to Impress.</span>
+            <span className="gradient-text-warm block">Made to Impress.</span>
           </h1>
-          <p className="text-xl text-white/60 font-medium max-w-xl mx-auto">
+          <p className="mx-auto mb-10 max-w-xl text-lg text-white/60">
             500+ projects completed across the UAE. Every job delivered on time and on spec.
           </p>
-
-          <div className="flex flex-wrap justify-center gap-10 mt-10">
-            {[
-              { label: "Projects delivered", value: "500+" },
-              { label: "Vehicle wraps", value: "180+" },
-              { label: "Sq ft installed", value: "250K+" },
-              { label: "Years active", value: "12+" },
-            ].map((s, i) => (
+          <div className="flex flex-wrap justify-center gap-10">
+            {statsData.map((s) => (
               <div key={s.label} className="text-center">
-                <div className={`text-3xl font-black ${accentColors[i].text}`}>{s.value}</div>
-                <div className="text-white/40 text-xs font-bold uppercase tracking-wider">{s.label}</div>
+                <div
+                  className={`text-4xl font-black ${s.color}`}
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  {s.value}
+                </div>
+                <div className="text-xs font-bold uppercase tracking-wider text-white/40">
+                  {s.label}
+                </div>
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Interactive filter + grid */}
       <ProjectsGrid />
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-[#FF3AF2]/10 via-[#7B2FFF]/10 to-[#00F5D4]/10 border-t border-white/5">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2
-            className="text-3xl md:text-4xl font-black text-white mb-4"
-            style={{ textShadow: "3px 3px 0px #7B2FFF" }}
-          >
-            Ready to start your project?
-          </h2>
-          <p className="text-white/50 mb-8 font-medium">
-            Get an instant price estimate or talk to our team directly.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              href="/quote"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#FFE600] text-black font-black uppercase tracking-widest rounded-xl shadow-[4px_4px_0px_#FF3AF2] hover:shadow-[2px_2px_0px_#FF3AF2] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+      <section className="bg-[#f9f9f9] py-20">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2
+              className="mb-4 text-3xl font-black text-black md:text-4xl"
+              style={{ fontFamily: "var(--font-display)" }}
             >
-              ⚡ Get Instant Price
-            </Link>
-            <a
-              href="https://wa.me/971552682030"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#25D366] text-white font-black uppercase tracking-widest rounded-xl shadow-[4px_4px_0px_#128C7E] hover:shadow-[2px_2px_0px_#128C7E] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
-            >
-              💬 WhatsApp Us
-            </a>
+              Ready to start your project?
+            </h2>
+            <p className="mb-8 text-gray-500">
+              Get an instant price estimate or talk to our team directly.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <Link
+                href="/quote"
+                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all hover:scale-105"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  <Zap className="h-4 w-4" />
+                  Get Instant Price
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#db016e] to-[#C00062] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              </Link>
+              <a
+                href="https://wa.me/971585806956"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-4 text-sm font-bold uppercase tracking-wider text-white"
+              >
+                💬 WhatsApp Us
+              </a>
+            </div>
           </div>
-        </div>
+        </Container>
       </section>
+
     </main>
   );
 }
+

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { galleryCategories, type GalleryCategory } from "@/content/gallery";
 import { ImageLightbox } from "./image-lightbox";
+import { Container } from "@/components/layout/container";
 
 const fadeUp = {
   initial: { opacity: 0, y: 32 },
@@ -12,19 +13,19 @@ const fadeUp = {
   transition: { duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] as const },
 };
 
-const accentMap: Record<GalleryCategory["color"], { border: string; shadow: string; text: string }> = {
-  cyan:    { border: "#00F5D4", shadow: "#7B2FFF", text: "#00F5D4" },
-  magenta: { border: "#FF3AF2", shadow: "#FFE600", text: "#FF3AF2" },
-  yellow:  { border: "#FFE600", shadow: "#FF6B35", text: "#FFE600" },
-  white:   { border: "#7B2FFF", shadow: "#00F5D4", text: "#7B2FFF" },
+const accentMap: Record<GalleryCategory["color"], { border: string; text: string }> = {
+  cyan:    { border: "#038CE3", text: "#038CE3" },
+  magenta: { border: "#db016e", text: "#db016e" },
+  yellow:  { border: "#7a6400", text: "#7a6400" },
+  white:   { border: "#000000", text: "#000000" },
 };
 
 const cardAccents = [
-  { border: "#FF3AF2", shadow: "#FFE600" },
-  { border: "#00F5D4", shadow: "#7B2FFF" },
-  { border: "#FFE600", shadow: "#FF6B35" },
-  { border: "#FF6B35", shadow: "#FF3AF2" },
-  { border: "#7B2FFF", shadow: "#00F5D4" },
+  { border: "#db016e", shadow: "rgba(219,1,110,0.08)" },
+  { border: "#038CE3", shadow: "rgba(3,140,227,0.08)" },
+  { border: "#ffe724", shadow: "rgba(255,231,36,0.1)" },
+  { border: "#000000", shadow: "rgba(0,0,0,0.06)" },
+  { border: "#db016e", shadow: "rgba(219,1,110,0.08)" },
 ];
 
 interface SignageGalleryProps {
@@ -54,26 +55,21 @@ export function SignageGallery({ showHeading = true }: SignageGalleryProps) {
 
   return (
     <>
-      <section id="gallery" className="mt-24 space-y-20">
+      <section id="gallery" className="mt-24">
+        <Container className="space-y-20">
         {showHeading && (
           <motion.div {...fadeUp} viewport={{ once: true, amount: 0.3 }}>
-            <div
-              className="relative overflow-hidden rounded-3xl border-4 border-[#FF3AF2] p-10 sm:p-12"
-              style={{
-                background: "linear-gradient(135deg, #2D1B4E, #1A0535)",
-                boxShadow: "12px 12px 0 #FFE600, 24px 24px 0 #FF3AF2",
-              }}
-            >
-              <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(255,58,242,0.4) 1px, transparent 1px)", backgroundSize: "24px 24px", opacity: 0.2 }} />
+            <div className="rounded-3xl bg-black p-10 sm:p-12 text-center">
+              <div className="pointer-events-none absolute inset-0 pattern-dots-light opacity-10" />
               <div className="relative text-center">
                 <div className="mb-4 flex items-center justify-center gap-3">
-                  <span className="h-px w-8 bg-[#FF3AF2]" />
-                  <p className="text-xs font-black uppercase tracking-[0.5em] text-[#FF3AF2]">Our Portfolio</p>
-                  <span className="h-px w-8 bg-[#FF3AF2]" />
+                  <span className="h-px w-8 bg-[#ffe724]" />
+                  <p className="text-xs font-bold uppercase tracking-[0.5em] text-[#ffe724]">Our Portfolio</p>
+                  <span className="h-px w-8 bg-[#ffe724]" />
                 </div>
                 <h2
                   className="text-4xl font-black text-white sm:text-5xl lg:text-6xl"
-                  style={{ fontFamily: "var(--font-display)", textShadow: "3px 3px 0px #7B2FFF, 6px 6px 0px #FF3AF2" }}
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
                   Showcasing excellence across all signage categories.
                 </h2>
@@ -90,6 +86,7 @@ export function SignageGallery({ showHeading = true }: SignageGalleryProps) {
             onImageClick={openLightbox}
           />
         ))}
+        </Container>
       </section>
 
       <ImageLightbox
@@ -124,24 +121,15 @@ function CategorySection({
       transition={{ duration: 0.6, delay: index * 0.08 }}
     >
       {/* Category header */}
-      <div className="flex items-center gap-5">
-        <div className="h-1 flex-1 rounded-full" style={{ background: `linear-gradient(90deg, transparent, ${accent.border})` }} />
-        <div
-          className="rounded-full border-4 px-6 py-3"
-          style={{
-            borderColor: accent.border,
-            backgroundColor: `${accent.border}15`,
-            boxShadow: `4px 4px 0 ${accent.shadow}`,
-          }}
+      <div className="flex items-center gap-4">
+        <span className="h-px flex-1 bg-gray-100" />
+        <h3
+          className="rounded-full border border-gray-200 px-5 py-2 text-lg font-black text-black"
+          style={{ fontFamily: "var(--font-display)", borderLeftColor: accent.border, borderLeftWidth: 4 }}
         >
-          <h3
-            className="text-2xl font-black text-white sm:text-3xl"
-            style={{ fontFamily: "var(--font-display)", textShadow: `2px 2px 0px ${accent.border}` }}
-          >
-            {category.title}
-          </h3>
-        </div>
-        <div className="h-1 flex-1 rounded-full" style={{ background: `linear-gradient(90deg, ${accent.border}, transparent)` }} />
+          {category.title}
+        </h3>
+        <span className="h-px flex-1 bg-gray-100" />
       </div>
 
       <div className={`grid gap-6 ${gridCols}`}>
@@ -181,17 +169,12 @@ function GalleryItemCard({
 
   return (
     <motion.div
-      className="group relative overflow-hidden rounded-3xl border-4 transition-all duration-300"
-      style={{
-        borderColor: accent.border,
-        background: `linear-gradient(135deg, ${accent.border}10, #2D1B4E70)`,
-        boxShadow: `6px 6px 0 ${accent.shadow}`,
-      }}
+      className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+      style={{ borderTopWidth: 4, borderTopColor: accent.border }}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      whileHover={{ y: -4, transition: { duration: 0.2 } }}
     >
       {/* Images */}
       <div className="space-y-2 p-4">
@@ -265,15 +248,15 @@ function GalleryItemCard({
       <div className="px-5 pb-5">
         <div className="flex items-center justify-between">
           <h4
-            className="text-base font-black text-white"
-            style={{ fontFamily: "var(--font-display)", textShadow: `1px 1px 0px ${accent.border}` }}
+            className="text-base font-black text-black"
+            style={{ fontFamily: "var(--font-display)" }}
           >
             {item.title}
           </h4>
           {item.images.length > 1 && (
             <span
-              className="rounded-full border-2 px-2.5 py-0.5 text-xs font-black"
-              style={{ borderColor: accent.border, color: accent.border, backgroundColor: `${accent.border}15` }}
+              className="rounded-full border px-2.5 py-0.5 text-xs font-bold"
+              style={{ borderColor: accent.border, color: accent.border }}
             >
               {item.images.length} imgs
             </span>

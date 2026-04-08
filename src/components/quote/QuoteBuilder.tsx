@@ -40,23 +40,22 @@ function StepBar({ step }: { step: number }) {
     { n: 4, label: "Submit" },
   ];
   return (
-    <div className="flex items-center justify-center gap-0 mb-10 select-none">
+    <div className="mb-10 flex select-none items-center justify-center gap-0">
       {steps.map((s, i) => (
         <div key={s.n} className="flex items-center">
           <div className="flex flex-col items-center gap-1">
             <div
-              className={`
-                w-10 h-10 rounded-full flex items-center justify-center font-black text-sm border-3 transition-all duration-300
-                ${step >= s.n
-                  ? "bg-[#FFE600] border-[#FFE600] text-black shadow-[3px_3px_0px_#FF3AF2]"
-                  : "border-white/30 text-white/40 bg-transparent"}
-              `}
+              className={`flex h-10 w-10 items-center justify-center rounded-full border-2 text-sm font-black transition-all duration-300 ${
+                step >= s.n
+                  ? "border-[#db016e] bg-[#db016e] text-white shadow-sm"
+                  : "border-gray-200 bg-white text-gray-400"
+              }`}
             >
               {step > s.n ? <CheckCircle size={18} /> : s.n}
             </div>
             <span
               className={`text-[10px] font-bold uppercase tracking-widest transition-all duration-300 ${
-                step >= s.n ? "text-[#FFE600]" : "text-white/30"
+                step >= s.n ? "text-[#db016e]" : "text-gray-400"
               }`}
             >
               {s.label}
@@ -64,8 +63,8 @@ function StepBar({ step }: { step: number }) {
           </div>
           {i < steps.length - 1 && (
             <div
-              className={`w-12 md:w-20 h-1 mb-5 mx-1 rounded-full transition-all duration-500 ${
-                step > s.n ? "bg-[#FFE600]" : "bg-white/10"
+              className={`mx-1 mb-5 h-0.5 w-12 rounded-full transition-all duration-500 md:w-20 ${
+                step > s.n ? "bg-[#db016e]" : "bg-gray-200"
               }`}
             />
           )}
@@ -84,13 +83,13 @@ function Step1ServiceSelect({
 }) {
   return (
     <div>
-      <h2 className="text-2xl md:text-3xl font-black text-white mb-2 text-center">
+      <h2 className="mb-2 text-center text-2xl font-black text-black md:text-3xl">
         What can we build for you?
       </h2>
-      <p className="text-white/60 text-center mb-8 font-medium">
+      <p className="mb-8 text-center font-medium text-gray-500">
         Select a service to get an instant price
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {servicePricingList.map((service, i) => (
           <motion.button
             key={service.id}
@@ -100,11 +99,7 @@ function Step1ServiceSelect({
             whileHover={{ y: -4, scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => onSelect(service)}
-            className="group relative text-left rounded-2xl p-5 border-2 border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-200 overflow-hidden"
-            style={{
-              "--svc-accent": service.accentColor,
-              "--svc-shadow": service.shadowColor,
-            } as React.CSSProperties}
+            className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-5 text-left shadow-sm transition-all duration-200 hover:shadow-md hover:border-gray-300"
           >
             {/* Hover border */}
             <div
@@ -117,18 +112,18 @@ function Step1ServiceSelect({
               style={{ background: service.accentColor }}
             />
             <div className="relative z-10">
-              <div className="text-4xl mb-3">{service.emoji}</div>
+              <div className="mb-3 text-4xl">{service.emoji}</div>
               <h3
-                className="text-lg font-black mb-1 transition-colors duration-200"
+                className="mb-1 text-lg font-black transition-colors duration-200"
                 style={{ color: service.accentColor }}
               >
                 {service.name}
               </h3>
-              <p className="text-white/50 text-sm font-medium leading-snug">
+              <p className="text-sm font-medium leading-snug text-gray-500">
                 {service.tagline}
               </p>
               <div
-                className="mt-4 flex items-center gap-1 text-xs font-bold uppercase tracking-wider opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+                className="mt-4 flex items-center gap-1 text-xs font-bold uppercase tracking-wider opacity-60 transition-opacity duration-200 group-hover:opacity-100"
                 style={{ color: service.accentColor }}
               >
                 Select <ArrowRight size={12} />
@@ -175,13 +170,13 @@ function Step2Specs({
     <div>
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-white/50 hover:text-white mb-6 text-sm font-bold uppercase tracking-widest transition-colors"
+        className="mb-6 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-400 transition-colors hover:text-black"
       >
         <ArrowLeft size={14} /> Back
       </button>
 
       {/* Service badge */}
-      <div className="flex items-center gap-3 mb-6">
+      <div className="mb-6 flex items-center gap-3">
         <span className="text-3xl">{service.emoji}</span>
         <div>
           <h2
@@ -190,30 +185,30 @@ function Step2Specs({
           >
             {service.name}
           </h2>
-          <p className="text-white/50 text-sm">{service.description}</p>
+          <p className="text-sm text-gray-400">{service.description}</p>
         </div>
       </div>
 
       <div className="space-y-6">
         {/* Material selector */}
         <div>
-          <label className="block text-xs font-black uppercase tracking-widest text-white/70 mb-2">
+          <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-gray-500">
             Material / Type
           </label>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {service.materials.map((m) => (
               <button
                 key={m.key}
                 onClick={() => onMaterialChange(m)}
-                className={`text-left p-3 rounded-xl border-2 transition-all duration-150 ${
+                className={`rounded-xl border-2 p-3 text-left transition-all duration-150 ${
                   selectedMaterial?.key === m.key
-                    ? "border-[#FFE600] bg-[#FFE600]/10 shadow-[3px_3px_0px_#FF3AF2]"
-                    : "border-white/10 bg-white/5 hover:border-white/30"
+                    ? "border-[#db016e] bg-[#db016e]/5"
+                    : "border-gray-200 bg-white hover:border-gray-400"
                 }`}
               >
-                <div className="font-bold text-sm text-white">{m.label}</div>
-                <div className="text-white/40 text-xs mt-0.5">{m.description}</div>
-                <div className="text-[#FFE600] font-black text-xs mt-1">
+                <div className="text-sm font-bold text-black">{m.label}</div>
+                <div className="mt-0.5 text-xs text-gray-400">{m.description}</div>
+                <div className="mt-1 text-xs font-black text-[#db016e]">
                   AED {m.ratePerUnit.toLocaleString()} / {m.unit}
                 </div>
               </button>
@@ -225,10 +220,10 @@ function Step2Specs({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {service.specs.map((field) => (
             <div key={field.key}>
-              <label className="block text-xs font-black uppercase tracking-widest text-white/70 mb-1.5">
+              <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-gray-500">
                 {field.label}
                 {field.unit && (
-                  <span className="text-white/30 ml-1 normal-case font-normal">
+                  <span className="ml-1 font-normal normal-case text-gray-400">
                     ({field.unit})
                   </span>
                 )}
@@ -238,13 +233,13 @@ function Step2Specs({
                   <select
                     value={specValues[field.key] ?? ""}
                     onChange={(e) => onSpecChange(field.key, e.target.value)}
-                    className="w-full bg-white/5 border-2 border-white/20 focus:border-[#FFE600] rounded-xl px-4 py-3 text-white font-medium outline-none transition-colors appearance-none pr-10"
+                    className="w-full appearance-none rounded-xl border-2 border-gray-200 bg-white px-4 py-3 font-medium text-black outline-none transition-colors focus:border-[#038CE3] pr-10"
                   >
                     <option value="" disabled>
                       Select…
                     </option>
                     {field.options?.map((opt) => (
-                      <option key={opt.value} value={opt.value} className="bg-[#1a0a2e]">
+                      <option key={opt.value} value={opt.value}>
                         {opt.label}
                       </option>
                     ))}
@@ -333,20 +328,20 @@ function Step3Price({
               maximumFractionDigits: 2,
             })}
           </div>
-          <p className="text-white/40 text-xs mt-2">
+          <p className="mt-2 text-xs text-gray-400">
             {service.name} — {material.label}
           </p>
         </div>
 
         {/* Breakdown */}
-        <div className="max-w-sm mx-auto mb-8 text-left space-y-2">
+        <div className="mx-auto mb-8 max-w-sm space-y-2 text-left">
           {result.breakdown.map((row, i) => (
             <div
               key={i}
-              className={`flex justify-between items-center py-2 text-sm font-medium border-b border-white/5 ${
+              className={`flex items-center justify-between border-b py-2 text-sm font-medium ${
                 row.label === "Total"
-                  ? "text-[#FFE600] font-black text-base border-t-2 border-t-[#FFE600]/30 mt-2 pt-3"
-                  : "text-white/60"
+                  ? "border-t-2 border-t-[#db016e]/30 border-b-0 mt-2 pt-3 text-base font-black text-[#db016e]"
+                  : "border-gray-100 text-gray-500"
               }`}
             >
               <span>{row.label}</span>
@@ -355,23 +350,23 @@ function Step3Price({
           ))}
         </div>
 
-        <p className="text-white/30 text-xs mb-8 max-w-sm mx-auto">
+        <p className="mx-auto mb-8 max-w-sm text-xs text-gray-400">
           * This is an estimate. Final price depends on site survey and material availability.
           VAT not included.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+        <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
           <button
             onClick={onNext}
-            className="flex items-center justify-center gap-2 px-8 py-4 bg-[#FF3AF2] text-white font-black uppercase tracking-widest rounded-xl border-2 border-[#FF3AF2] shadow-[4px_4px_0px_#FFE600] hover:shadow-[2px_2px_0px_#FFE600] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150"
+            className="flex items-center justify-center gap-2 rounded-xl bg-black px-8 py-4 text-sm font-bold uppercase tracking-widest text-white transition-all hover:scale-105"
           >
             <Send size={16} /> Get Formal Quote
           </button>
           <a
-            href="https://wa.me/971552682030"
+            href="https://wa.me/971585806956"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] text-white font-black uppercase tracking-widest rounded-xl border-2 border-[#25D366] shadow-[4px_4px_0px_#128C7E] hover:shadow-[2px_2px_0px_#128C7E] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150"
+            className="flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-8 py-4 text-sm font-bold uppercase tracking-widest text-white transition-all hover:scale-105"
           >
             💬 WhatsApp Us
           </a>
@@ -407,36 +402,29 @@ function Step4Submit({
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="text-center py-10"
+        className="py-10 text-center"
       >
-        <div className="text-7xl mb-4">📧</div>
-        <h2 className="text-3xl font-black text-[#FFE600] mb-3">Email App Opened!</h2>
-        <p className="text-white/60 max-w-sm mx-auto font-medium">
+        <div className="mb-4 text-7xl">📧</div>
+        <h2 className="mb-3 text-3xl font-black text-[#db016e]">Email App Opened!</h2>
+        <p className="mx-auto max-w-sm font-medium text-gray-500">
           Your email client has opened with the full quote pre-filled.
-          Just hit <span className="text-white font-bold">Send</span> to submit your request.
+          Just hit <span className="font-bold text-black">Send</span> to submit your request.
         </p>
-        <p className="text-white/40 text-sm mt-3 max-w-xs mx-auto">
-          Email didn't open?{" "}
-          <a
-            href="mailto:info@emirads.ae"
-            className="text-[#00F5D4] font-bold underline"
-          >
+        <p className="mx-auto mt-3 max-w-xs text-sm text-gray-400">
+          Email didn&apos;t open?{" "}
+          <a href="mailto:info@emirads.ae" className="font-bold text-[#038CE3] underline">
             Click here to email us
           </a>
           {" "}or call{" "}
-          <a
-            href="tel:+971552682030"
-            className="text-[#00F5D4] font-bold underline"
-          >
-            +971 55 268 2030
+          <a href="tel:+971585806956" className="font-bold text-[#038CE3] underline">
+            +971 58 580 6956
           </a>
         </p>
         <a
-          href="https://wa.me/971552682030"
+          href="https://wa.me/971585806956"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-[#25D366] text-white font-black uppercase tracking-widest rounded-xl text-sm"
-          style={{ boxShadow: "4px 4px 0px #128C7E" }}
+          className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-sm font-bold uppercase tracking-widest text-white"
         >
           💬 Or send via WhatsApp instead
         </a>
@@ -477,17 +465,17 @@ function Step4Submit({
     <div>
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-white/50 hover:text-white mb-6 text-sm font-bold uppercase tracking-widest transition-colors"
+        className="mb-6 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-gray-400 transition-colors hover:text-black"
       >
         <ArrowLeft size={14} /> Back to price
       </button>
 
-      <h2 className="text-2xl font-black text-white mb-1">
+      <h2 className="mb-1 text-2xl font-black text-black">
         Get Your Formal Quote
       </h2>
-      <p className="text-white/50 text-sm mb-6">
+      <p className="mb-6 text-sm text-gray-400">
         {service.name} estimate:{" "}
-        <span className="text-[#FFE600] font-black">
+        <span className="font-black text-[#db016e]">
           {result.unit}{" "}
           {result.total.toLocaleString("en-AE", {
             minimumFractionDigits: 2,
@@ -499,11 +487,11 @@ function Step4Submit({
       <div className="space-y-4">
         {fields.map((f) => (
           <div key={f.key}>
-            <label className="block text-xs font-black uppercase tracking-widest text-white/70 mb-1.5">
+            <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-gray-500">
               {f.label}
             </label>
             <div className="relative">
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30">
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
                 {f.icon}
               </div>
               <input
@@ -511,28 +499,25 @@ function Step4Submit({
                 placeholder={f.placeholder}
                 value={formData[f.key]}
                 onChange={(e) => onChange(f.key, e.target.value)}
-                className="w-full bg-white/5 border-2 border-white/20 focus:border-[#FF3AF2] rounded-xl pl-10 pr-4 py-3 text-white font-medium outline-none transition-colors placeholder:text-white/20"
+                className="w-full rounded-xl border-2 border-gray-200 bg-white py-3 pl-10 pr-4 font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#038CE3]"
               />
             </div>
           </div>
         ))}
 
         <div>
-          <label className="block text-xs font-black uppercase tracking-widest text-white/70 mb-1.5">
+          <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-gray-500">
             Project Details{" "}
-            <span className="text-white/30 normal-case font-normal">(optional)</span>
+            <span className="font-normal normal-case text-gray-400">(optional)</span>
           </label>
           <div className="relative">
-            <MessageSquare
-              size={16}
-              className="absolute left-3 top-4 text-white/30"
-            />
+            <MessageSquare size={16} className="absolute left-3 top-4 text-gray-400" />
             <textarea
               rows={3}
               placeholder="Any additional info about your project…"
               value={formData.message}
               onChange={(e) => onChange("message", e.target.value)}
-              className="w-full bg-white/5 border-2 border-white/20 focus:border-[#FF3AF2] rounded-xl pl-10 pr-4 py-3 text-white font-medium outline-none transition-colors placeholder:text-white/20 resize-none"
+              className="w-full resize-none rounded-xl border-2 border-gray-200 bg-white py-3 pl-10 pr-4 font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#038CE3]"
             />
           </div>
         </div>
@@ -540,15 +525,15 @@ function Step4Submit({
         <button
           onClick={onSubmit}
           disabled={submitting || !formData.name || !formData.phone}
-          className={`w-full py-4 rounded-xl font-black uppercase tracking-widest text-sm transition-all duration-200 flex items-center justify-center gap-2 ${
+          className={`flex w-full items-center justify-center gap-2 rounded-xl py-4 text-sm font-bold uppercase tracking-widest transition-all duration-200 ${
             !submitting && formData.name && formData.phone
-              ? "bg-[#FF3AF2] text-white shadow-[4px_4px_0px_#FFE600] hover:shadow-[2px_2px_0px_#FFE600] hover:translate-x-[2px] hover:translate-y-[2px]"
-              : "bg-white/10 text-white/30 cursor-not-allowed"
+              ? "bg-black text-white hover:scale-[1.02] active:scale-95"
+              : "cursor-not-allowed bg-gray-100 text-gray-400"
           }`}
         >
           {submitting ? (
             <>
-              <div className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+              <div className="h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-black" />
               Opening email…
             </>
           ) : (
@@ -689,11 +674,11 @@ export default function QuoteBuilder({
 
   return (
     <div
-      className={`relative rounded-3xl border-2 border-white/10 bg-gradient-to-b from-[#1a0a2e] to-[#0D0D1A] p-6 md:p-10 overflow-hidden ${className}`}
+      className={`relative overflow-hidden rounded-3xl border border-gray-100 bg-white p-6 shadow-sm md:p-10 ${className}`}
     >
-      {/* BG glow */}
-      <div className="absolute -top-20 -right-20 w-72 h-72 bg-[#FF3AF2]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-[#7B2FFF]/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Subtle gradient blobs */}
+      <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#db016e]/5 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-[#038CE3]/5 blur-3xl" />
 
       <div className="relative z-10">
         <StepBar step={step} />

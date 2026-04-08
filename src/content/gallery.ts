@@ -40,13 +40,13 @@ export const galleryCategories: GalleryCategory[] = [
       {
         title: "WAYFINDING & DIRECTIONAL SIGNS",
         images: [
-          "/images/WAYFINDING & DIRECTIONAL SIGNS 01.webp",
-          "/images/WAYFINDING & DIRECTIONAL SIGNS 02.jpg",
+          "/images/WAYFINDING AND DIRECTIONAL SIGNS 01.webp",
+          "/images/WAYFINDING AND DIRECTIONAL SIGNS 02.jpg",
         ],
       },
       {
         title: "DOOR & ROOM IDENTIFICATION SIGNS",
-        images: ["/images/DOOR & ROOM IDENTIFICATION SIGNS.jpg"],
+        images: ["/images/DOOR AND ROOM IDENTIFICATION SIGNS.jpg"],
       },
       {
         title: "LED NEON INDOOR SIGNS",
@@ -86,9 +86,9 @@ export const galleryCategories: GalleryCategory[] = [
       {
         title: "PYLON & TOTEM SIGNS",
         images: [
-          "/images/PYLON & TOTEM SIGNS.jpg",
-          "/images/PYLON & TOTEM SIGNS 02.avif",
-          "/images/PYLON & TOTEM SIGNS 03.jpeg",
+          "/images/PYLON AND TOTEM SIGNS.jpg",
+          "/images/PYLON AND TOTEM SIGNS 02.avif",
+          "/images/PYLON AND TOTEM SIGNS 03.jpeg",
         ],
       },
       {

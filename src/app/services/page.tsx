@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { Check, ArrowRight, Zap } from "lucide-react";
 import { Container } from "@/components/layout/container";
-import { GlassPanel } from "@/components/ui/glass-panel";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { Tag } from "@/components/ui/tag";
 import { SignageGallery } from "@/components/gallery/signage-gallery";
-import {
-  featuredProjects,
-  processSteps,
-  servicesList,
-} from "@/content/site";
+import { featuredProjects, processSteps, servicesList } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Services | Emirads Signage & Branding",
@@ -17,196 +11,217 @@ export const metadata: Metadata = {
     "Explore Emirads full-stack services: signages, vehicle wraps, event builds, joinery, aluminum, glass and neon fabrication.",
 };
 
-const accentColors = [
-  { border: "#FF3AF2", shadow: "#FFE600", bg: "#FF3AF2" },
-  { border: "#00F5D4", shadow: "#7B2FFF", bg: "#00F5D4" },
-  { border: "#FFE600", shadow: "#FF6B35", bg: "#FFE600" },
-  { border: "#FF6B35", shadow: "#FF3AF2", bg: "#FF6B35" },
-  { border: "#7B2FFF", shadow: "#00F5D4", bg: "#7B2FFF" },
+const serviceIconGradients = [
+  "from-[#ffe724] to-[#f59e0b]",
+  "from-[#db016e] to-[#C00062]",
+  "from-[#038CE3] to-[#032DAB]",
+  "from-[#10b981] to-[#065f46]",
 ];
-
-const tagTones = ["magenta", "cyan", "yellow", "orange"] as const;
 
 export default function ServicesPage() {
   return (
-    <main className="relative overflow-hidden bg-[#0D0D1A]">
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div className="absolute -top-32 left-0 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,_rgba(123,47,255,0.25),_transparent_70%)] blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,_rgba(255,58,242,0.2),_transparent_70%)] blur-3xl" />
-      </div>
-      <Container className="relative z-10 space-y-20">
+    <main className="min-h-screen bg-white">
 
-        {/* Header */}
-        <div
-          className="relative overflow-hidden rounded-3xl border-4 border-[#00F5D4] p-10 sm:p-14"
-          style={{
-            background: "linear-gradient(135deg, #2D1B4E, #1A0535)",
-            boxShadow: "12px 12px 0 #7B2FFF, 24px 24px 0 #00F5D4",
-          }}
-        >
-          <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(0,245,212,0.4) 1px, transparent 1px)", backgroundSize: "24px 24px", opacity: 0.25 }} />
-          <div
-            className="pointer-events-none absolute -right-4 -top-6 select-none text-[180px] font-black uppercase leading-none opacity-5"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            SVC
+      {/* Hero */}
+      <section className="bg-black py-24 text-white">
+        <Container>
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="mb-4 inline-block rounded-full border border-[#ffe724]/30 bg-[#ffe724]/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#ffe724]">
+              Service Catalogue
+            </span>
+            <h1
+              className="mb-4 text-5xl font-black leading-none text-white md:text-7xl"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Modular teams from
+              <span className="gradient-text-warm block">concept to lit signage.</span>
+            </h1>
+            <p className="text-lg text-white/60">
+              Four specialist pods — signage, fleet branding, experiential and fabrication labs.
+              Choose the pod you need or engage the full stack.
+            </p>
           </div>
-          <div className="relative">
-            <SectionHeading
-              align="center"
-              eyebrow="Service Catalogue"
-              title="Modular teams from concept to lit signage."
-              description="Four specialist pods — signage, fleet branding, experiential and fabrication labs. Choose the pod you need or engage the full stack."
-            />
-          </div>
-        </div>
+        </Container>
+      </section>
 
-        {/* Service Cards */}
-        <div className="grid gap-8 md:grid-cols-2">
-          {servicesList.map((service, index) => {
-            const accent = accentColors[index % accentColors.length];
-            const tone = tagTones[index % tagTones.length];
-            return (
-              <div
-                key={service.title}
-                className="relative flex flex-col gap-5 overflow-hidden rounded-3xl border-4 p-8"
-                style={{
-                  borderColor: accent.border,
-                  background: `linear-gradient(135deg, ${accent.border}12, #2D1B4E80)`,
-                  boxShadow: `8px 8px 0 ${accent.shadow}`,
-                }}
-              >
-                <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,230,0,0.04) 10px, rgba(255,230,0,0.04) 20px)" }} />
+      {/* Service Cards */}
+      <section className="bg-white py-20">
+        <Container>
+          <div className="grid gap-6 md:grid-cols-2">
+            {servicesList.map((service, index) => {
+              const Icon = service.icon;
+              return (
                 <div
-                  className="absolute -right-6 -bottom-6 pointer-events-none opacity-10"
-                  style={{ color: accent.border }}
+                  key={service.title}
+                  className="hover-card rounded-2xl border border-gray-100 bg-white p-8"
+                  style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.04)" }}
                 >
-                  <service.icon className="h-40 w-40" />
-                </div>
-                <div className="relative flex items-center justify-between">
-                  <Tag tone={tone}>{service.tag}</Tag>
-                  <div
-                    className="flex h-12 w-12 items-center justify-center rounded-2xl border-4"
-                    style={{ borderColor: accent.border, backgroundColor: `${accent.border}20`, boxShadow: `3px 3px 0 ${accent.shadow}` }}
-                  >
-                    <service.icon className="h-5 w-5" style={{ color: accent.border }} />
+                  <div className={`mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${serviceIconGradients[index % serviceIconGradients.length]}`}>
+                    <Icon className="h-6 w-6 text-white" />
                   </div>
+                  <h2
+                    className="mb-3 text-2xl font-black text-black sm:text-3xl"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    {service.title}
+                  </h2>
+                  <p className="mb-6 text-base text-gray-500">{service.description}</p>
+                  <ul className="space-y-2">
+                    {service.items.map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-sm text-gray-700">
+                        <Check className="h-3.5 w-3.5 shrink-0 text-[#038CE3]" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h2
-                  className="relative text-2xl font-black text-white sm:text-3xl"
-                  style={{ fontFamily: "var(--font-display)", textShadow: `2px 2px 0px ${accent.border}` }}
-                >
-                  {service.title}
-                </h2>
-                <p className="relative text-base text-white/80">{service.description}</p>
-                <ul className="relative mt-2 space-y-2">
-                  {service.items.map((item, ii) => (
-                    <li key={item} className="flex items-center gap-3 text-sm font-medium text-white/85">
-                      <span
-                        className="h-2 w-2 shrink-0 rounded-full"
-                        style={{ backgroundColor: accentColors[(index + ii) % accentColors.length].border }}
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
 
-        {/* Process */}
-        <GlassPanel accent="purple" className="p-8 sm:p-10">
-          <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "conic-gradient(from 90deg at 1px 1px, transparent 90deg, rgba(0,245,212,0.06) 0)", backgroundSize: "40px 40px" }} />
-          <div className="relative flex flex-col gap-8 lg:flex-row">
-            <div className="flex-1 space-y-4">
-              <SectionHeading
-                eyebrow="Workflow"
-                title="Tightly managed sprints with transparent checkpoints."
-                description="A single Emirads project manager orchestrates site audits, permits, fabrication schedules, QA sign-offs and installation crews."
-              />
+      {/* Process */}
+      <section className="bg-black py-20 text-white">
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+            <div>
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-px w-8 bg-[#ffe724]" />
+                <p className="text-xs font-bold uppercase tracking-[0.5em] text-[#ffe724]">Workflow</p>
+              </div>
+              <h2
+                className="mb-4 text-3xl font-black text-white sm:text-4xl"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Tightly managed sprints with transparent checkpoints.
+              </h2>
+              <p className="text-lg text-white/60">
+                A single Emirads project manager orchestrates site audits, permits,
+                fabrication schedules, QA sign-offs and installation crews.
+              </p>
             </div>
-            <div className="flex-1 space-y-5">
+            <div className="space-y-4">
               {processSteps.map((step, index) => {
-                const accent = accentColors[index % accentColors.length];
+                const numColors = ["text-[#db016e]", "text-[#038CE3]", "text-[#ffe724]", "text-white"];
+                const borderColors = ["border-[#db016e]/20", "border-[#038CE3]/20", "border-[#ffe724]/20", "border-white/10"];
                 return (
                   <div
                     key={step.title}
-                    className="flex gap-4 rounded-2xl border-4 p-5"
-                    style={{ borderColor: accent.border, background: `${accent.border}10`, boxShadow: `4px 4px 0 ${accent.shadow}` }}
+                    className={`flex gap-4 rounded-2xl border bg-white/5 p-5 ${borderColors[index % 4]}`}
                   >
                     <div
-                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-4 text-lg font-black"
-                      style={{ borderColor: accent.border, backgroundColor: `${accent.border}25`, color: accent.border, fontFamily: "var(--font-display)" }}
+                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border text-sm font-black ${numColors[index % 4]} ${borderColors[index % 4]}`}
+                      style={{ fontFamily: "var(--font-display)" }}
                     >
                       {(index + 1).toString().padStart(2, "0")}
                     </div>
                     <div>
-                      <p className="text-lg font-black text-white" style={{ fontFamily: "var(--font-display)" }}>{step.title}</p>
-                      <p className="text-sm text-white/75">{step.detail}</p>
+                      <p className="font-black text-white" style={{ fontFamily: "var(--font-display)" }}>
+                        {step.title}
+                      </p>
+                      <p className="mt-1 text-sm text-white/60">{step.detail}</p>
                     </div>
                   </div>
                 );
               })}
             </div>
           </div>
-        </GlassPanel>
+        </Container>
+      </section>
 
-        {/* Featured Projects */}
-        <div>
-          <SectionHeading
-            eyebrow="Featured Work"
-            title="Recent launches across retail, automotive and live events."
-            description="Tap into our fabrication muscle for statement pieces, multi-site rollouts or rapid event deployments."
-            className="mb-10"
-          />
-          <div className="grid gap-8 md:grid-cols-3">
+      {/* Featured Projects */}
+      <section className="bg-[#f9f9f9] py-20">
+        <Container>
+          <div className="mb-10 flex items-center gap-3">
+            <span className="h-px w-8 bg-[#db016e]" />
+            <p className="text-xs font-bold uppercase tracking-[0.5em] text-[#db016e]">Featured Work</p>
+          </div>
+          <h2
+            className="mb-10 text-4xl font-black text-black sm:text-5xl"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            Recent launches across retail,
+            <br />
+            automotive and live events.
+          </h2>
+          <div className="grid gap-6 md:grid-cols-3">
             {featuredProjects.map((project, index) => {
-              const accent = accentColors[index % accentColors.length];
+              const topColors = ["border-t-[#db016e]", "border-t-[#038CE3]", "border-t-[#ffe724]"];
+              const badgeColors = [
+                "bg-[#db016e] text-white",
+                "bg-[#038CE3] text-white",
+                "bg-[#ffe724] text-black",
+              ];
               return (
                 <div
                   key={project.name}
-                  className="relative overflow-hidden rounded-3xl border-4 p-7"
-                  style={{
-                    borderColor: accent.border,
-                    background: `linear-gradient(135deg, ${accent.border}18, #2D1B4E90)`,
-                    boxShadow: `8px 8px 0 ${accent.shadow}`,
-                  }}
+                  className={`hover-card rounded-2xl border-t-4 border border-gray-100 bg-white p-7 ${topColors[index % 3]}`}
                 >
-                  <div className="pointer-events-none absolute inset-0" style={{ backgroundImage: "conic-gradient(from 90deg at 1px 1px, transparent 90deg, rgba(0,245,212,0.05) 0)", backgroundSize: "40px 40px" }} />
-                  <div
-                    className="absolute -top-3 -right-3 flex h-10 w-10 items-center justify-center rounded-full border-4 border-[#0D0D1A] text-sm font-black"
-                    style={{ backgroundColor: accent.border, color: "#0D0D1A" }}
+                  <span className={`mb-4 inline-block rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest ${badgeColors[index % 3]}`}>
+                    {project.scope}
+                  </span>
+                  <h3
+                    className="mb-4 text-xl font-black text-black"
+                    style={{ fontFamily: "var(--font-display)" }}
                   >
-                    {String(index + 1).padStart(2, "0")}
-                  </div>
-                  <div className="relative space-y-4">
-                    <Tag tone={tagTones[index % tagTones.length]} className="text-[0.6rem] tracking-[0.4em]">
-                      {project.scope}
-                    </Tag>
-                    <h3
-                      className="text-2xl font-black text-white"
-                      style={{ fontFamily: "var(--font-display)", textShadow: `2px 2px 0px ${accent.border}` }}
-                    >
-                      {project.name}
-                    </h3>
-                    <ul className="space-y-2">
-                      {project.stats.map((stat) => (
-                        <li key={stat} className="flex items-center gap-3 text-sm font-medium text-white/85">
-                          <ArrowUpRight className="h-4 w-4 shrink-0" style={{ color: accent.border }} />
-                          {stat}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    {project.name}
+                  </h3>
+                  <ul className="space-y-2">
+                    {project.stats.map((stat) => (
+                      <li key={stat} className="flex items-center gap-2 text-sm text-gray-500">
+                        <ArrowRight className="h-3.5 w-3.5 shrink-0 text-gray-400" />
+                        {stat}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               );
             })}
           </div>
-        </div>
+        </Container>
+      </section>
 
+      {/* Gallery */}
+      <section className="bg-white">
         <SignageGallery showHeading={true} />
-      </Container>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-[#f9f9f9] py-20">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2
+              className="mb-4 text-3xl font-black text-black sm:text-4xl"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Ready to get a quote?
+            </h2>
+            <p className="mb-8 text-gray-500">
+              Use our instant price calculator or speak to our team.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <Link
+                href="/quote"
+                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-black px-8 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all hover:scale-105"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  <Zap className="h-4 w-4" />
+                  Get Instant Price
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#db016e] to-[#C00062] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gray-200 px-8 py-4 text-sm font-bold uppercase tracking-wider text-black transition-all hover:border-black"
+              >
+                Contact the team
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+
     </main>
   );
 }

@@ -1,5 +1,8 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import QuoteBuilder from "@/components/quote/QuoteBuilder";
+import { Container } from "@/components/layout/container";
+import { Zap, Check, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Get an Instant Price | Emirads — Dubai Signage",
@@ -9,116 +12,123 @@ export const metadata: Metadata = {
 
 export default function QuotePage() {
   return (
-    <main className="min-h-screen bg-[#0D0D1A]">
-      {/* Header */}
-      <section className="relative pt-36 pb-16 px-4 overflow-hidden">
-        <div className="absolute inset-0 pattern-dots opacity-20 pointer-events-none" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#FF3AF2]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-[#7B2FFF]/15 rounded-full blur-2xl pointer-events-none" />
+    <main className="min-h-screen bg-white">
 
-        <div className="max-w-3xl mx-auto text-center relative z-10">
-          <div className="inline-block text-xs font-black uppercase tracking-[0.2em] text-[#FFE600] bg-[#FFE600]/10 border border-[#FFE600]/30 px-4 py-1 rounded-full mb-6">
+      {/* Header */}
+      <section className="relative overflow-hidden bg-black py-28 text-white">
+        <div className="pointer-events-none absolute inset-0 pattern-dots-light opacity-10" />
+        <Container className="relative text-center">
+          <span className="mb-5 inline-block rounded-full border border-[#ffe724]/30 bg-[#ffe724]/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#ffe724]">
             ⚡ Instant Pricing Tool
-          </div>
+          </span>
           <h1
-            className="text-5xl md:text-7xl font-black text-white leading-none mb-4"
-            style={{
-              textShadow:
-                "4px 4px 0px #7B2FFF, 8px 8px 0px #FF3AF2",
-            }}
+            className="mb-4 text-5xl font-black leading-none text-white md:text-7xl"
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Get Your Price
-            <br />
-            <span className="text-[#FFE600]">Right Now.</span>
+            <span className="gradient-text-warm block">Right Now.</span>
           </h1>
-          <p className="text-xl text-white/60 font-medium max-w-lg mx-auto mt-4">
+          <p className="mx-auto mt-4 max-w-lg text-xl text-white/60">
             No waiting. No sales calls. Select a service, enter your specs
             and get an instant estimate in under 60 seconds.
           </p>
 
           {/* Stats row */}
-          <div className="flex flex-wrap justify-center gap-8 mt-10">
+          <div className="mt-10 flex flex-wrap justify-center gap-10">
             {[
               { label: "Services", value: "5" },
               { label: "Quote time", value: "<60s" },
               { label: "Response SLA", value: "2 hrs" },
             ].map((s) => (
               <div key={s.label} className="text-center">
-                <div className="text-3xl font-black text-[#FFE600]">{s.value}</div>
-                <div className="text-white/40 text-xs font-bold uppercase tracking-wider">{s.label}</div>
+                <div
+                  className="text-4xl font-black text-[#ffe724]"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  {s.value}
+                </div>
+                <div className="text-xs font-bold uppercase tracking-wider text-white/40">
+                  {s.label}
+                </div>
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Quote Builder */}
-      <section className="pb-24 px-4">
-        <div className="max-w-4xl mx-auto">
-          <QuoteBuilder />
-        </div>
+      <section className="bg-white py-20">
+        <Container>
+          <div className="mx-auto max-w-4xl">
+            <QuoteBuilder />
+          </div>
+        </Container>
       </section>
 
       {/* Trust strip */}
-      <section className="py-12 px-4 border-t border-white/5 bg-white/[0.02]">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-center text-white/30 text-xs font-bold uppercase tracking-widest mb-8">
+      <section className="border-t border-gray-100 bg-[#f9f9f9] py-16">
+        <Container>
+          <p className="mb-8 text-center text-xs font-bold uppercase tracking-widest text-gray-400">
             Trusted by 500+ businesses across the UAE
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+          <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
             {[
               {
                 title: "Estimate accuracy",
                 body: "Our quotes are typically within 5–10% of the final invoice.",
-                accent: "text-[#00F5D4]",
-                border: "border-[#00F5D4]",
+                color: "border-t-[#038CE3]",
               },
               {
                 title: "No obligation",
                 body: "Getting a quote commits you to nothing. Zero pressure.",
-                accent: "text-[#FF3AF2]",
-                border: "border-[#FF3AF2]",
+                color: "border-t-[#db016e]",
               },
               {
                 title: "Human follow-up",
                 body: "A real person from our team will review and confirm your quote.",
-                accent: "text-[#FFE600]",
-                border: "border-[#FFE600]",
+                color: "border-t-[#ffe724]",
               },
             ].map((item) => (
-              <div key={item.title} className={`rounded-2xl border-2 ${item.border} bg-white/5 p-6`}>
-                <h3 className={`font-black text-sm uppercase tracking-wider mb-2 ${item.accent}`}>
+              <div
+                key={item.title}
+                className={`rounded-2xl border-t-4 border border-gray-100 bg-white p-6 ${item.color}`}
+              >
+                <h3 className="mb-2 text-sm font-black uppercase tracking-wider text-black">
                   {item.title}
                 </h3>
-                <p className="text-white/50 text-sm">{item.body}</p>
+                <p className="text-sm text-gray-500">{item.body}</p>
               </div>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Fallback CTA */}
-      <section className="py-16 px-4">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="text-white/40 text-sm mb-4">Prefer to talk to a human?</p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="https://wa.me/971552682030"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] text-white font-black uppercase tracking-widest rounded-xl shadow-[4px_4px_0px_#128C7E] hover:shadow-[2px_2px_0px_#128C7E] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
-            >
-              💬 WhatsApp +971 55 268 2030
-            </a>
-            <a
-              href="tel:+971552682030"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white/20 text-white font-black uppercase tracking-widest rounded-xl hover:border-white/50 transition-colors"
-            >
-              📞 Call Us
-            </a>
+      <section className="bg-white py-16">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="mb-4 text-sm text-gray-400">Prefer to talk to a human?</p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <a
+                href="https://wa.me/971585806956"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all hover:scale-105"
+              >
+                💬 WhatsApp +971 58 580 6956
+              </a>
+              <a
+                href="tel:+971585806956"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gray-200 px-8 py-4 text-sm font-bold uppercase tracking-wider text-black transition-all hover:border-black"
+              >
+                <Phone className="h-4 w-4" />
+                Call Us
+              </a>
+            </div>
           </div>
-        </div>
+        </Container>
       </section>
+
     </main>
   );
 }
