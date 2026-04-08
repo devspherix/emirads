@@ -5,15 +5,15 @@ import { cn } from "@/lib/utils";
 type ButtonVariant = "primary" | "secondary" | "ghost";
 
 export const buttonBase =
-  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold transition will-change-transform";
+  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-black uppercase tracking-widest transition-all duration-200 will-change-transform active:scale-95";
 
 export const buttonVariants: Record<ButtonVariant, string> = {
   primary:
-    "bg-white text-black hover:-translate-y-0.5 hover:bg-white/90 hover:shadow-[0_20px_60px_-30px_rgba(255,255,255,0.9)]",
+    "bg-gradient-to-r from-[#FF3AF2] via-[#7B2FFF] to-[#00F5D4] text-white border-4 border-[#FFE600] hover:scale-105 hover:brightness-110 [box-shadow:6px_6px_0_#FFE600,12px_12px_0_#FF3AF2,0_0_30px_rgba(255,58,242,0.5)] hover:[box-shadow:8px_8px_0_#FFE600,16px_16px_0_#FF3AF2,0_0_50px_rgba(255,58,242,0.8)]",
   secondary:
-    "border border-white/40 text-white hover:border-white hover:bg-white/10",
+    "bg-transparent text-white border-4 border-[#00F5D4] hover:scale-105 hover:bg-[#00F5D4]/10 [box-shadow:4px_4px_0_#7B2FFF] hover:[box-shadow:6px_6px_0_#7B2FFF,0_0_20px_rgba(0,245,212,0.4)]",
   ghost:
-    "text-white/80 hover:text-white hover:bg-white/5 border border-transparent",
+    "text-white/90 border-4 border-dashed border-white/30 hover:border-[#FF3AF2] hover:text-[#FF3AF2] hover:bg-[#FF3AF2]/5",
 };
 
 export type ButtonProps = ComponentProps<"button"> & {

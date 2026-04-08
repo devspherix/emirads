@@ -1,8 +1,9 @@
 import { Car, Mail, MapPin, Phone, Sparkles, Wrench } from "lucide-react";
 
 export const navLinks = [
-  { label: "Work", href: "/" },
   { label: "Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "FAQs", href: "/faq" },
 ];
