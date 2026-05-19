@@ -7,9 +7,13 @@
   --surface: #f9f9f9;
 
   /* Primary Brand Colors */
+  --brand-orange: #FF6A1A;
+  --brand-orange-dark: #E25410;
+  --brand-orange-soft: #FFE9DC;
   --brand-yellow: #ffe724;
   --brand-pink: #db016e;
   --brand-blue: #038CE3;
+  --brand-cyan: #038CE3;
   --brand-dark-pink: #C00062;
   --brand-dark-blue: #032DAB;
 
@@ -29,9 +33,13 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-orange-dark: var(--brand-orange-dark);
+  --color-brand-orange-soft: var(--brand-orange-soft);
   --color-brand-yellow: var(--brand-yellow);
   --color-brand-pink: var(--brand-pink);
   --color-brand-blue: var(--brand-blue);
+  --color-brand-cyan: var(--brand-cyan);
   --color-brand-dark-pink: var(--brand-dark-pink);
   --color-brand-dark-blue: var(--brand-dark-blue);
   --font-sans: var(--font-body);
@@ -139,6 +147,28 @@ body {
 .hover-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1);
+}
+
+/* Soft persistent card shadow */
+.card-shadow {
+  box-shadow: 0 8px 24px rgba(15, 15, 25, 0.06), 0 1px 3px rgba(15, 15, 25, 0.04);
+}
+
+.card-shadow-hover {
+  transition: transform 0.35s cubic-bezier(.21,.47,.32,.98), box-shadow 0.35s ease;
+}
+
+.card-shadow-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(255, 106, 26, 0.18), 0 4px 14px rgba(15, 15, 25, 0.08);
+}
+
+/* Orange gradient text */
+.gradient-text-orange {
+  background: linear-gradient(135deg, #FF6A1A 0%, #db016e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Scrollbar */

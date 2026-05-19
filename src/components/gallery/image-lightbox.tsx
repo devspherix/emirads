@@ -13,7 +13,12 @@ interface ImageLightboxProps {
   title: string;
 }
 
-export function ImageLightbox({
+export function ImageLightbox(props: ImageLightboxProps) {
+  // Reset internal state whenever the lightbox is reopened or initialIndex changes
+  return <ImageLightboxInner key={`${props.isOpen}-${props.currentIndex}`} {...props} />;
+}
+
+function ImageLightboxInner({
   images,
   currentIndex: initialIndex,
   isOpen,
@@ -21,10 +26,6 @@ export function ImageLightbox({
   title,
 }: ImageLightboxProps) {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
-
-  useEffect(() => {
-    setCurrentIndex(initialIndex);
-  }, [initialIndex, isOpen]);
 
   useEffect(() => {
     if (isOpen) {

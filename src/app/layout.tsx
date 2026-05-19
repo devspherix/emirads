@@ -1,32 +1,33 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Emirads | Premium Signage & Branding Solutions",
+  title: "Emir Ads | Premium Printing & Branding Solutions in the UAE",
   description:
-    "Dubai's leading signage company. Front-lit & back-lit signage, vehicle wraps, LED displays, event builds and bespoke fabrication across the UAE.",
+    "We Print. We Brand. We Make You Visible. Vehicle wraps, signage, LED screens, banners and indoor/outdoor branding across Dubai and the UAE.",
   keywords: [
     "signage Dubai",
     "vehicle branding UAE",
     "LED screens Dubai",
-    "neon signs",
+    "banner printing",
+    "Emir Ads",
     "Emirads",
     "outdoor signage",
-    "shop signage Dubai",
-    "event fabrication UAE",
+    "indoor signage Dubai",
   ],
   openGraph: {
-    title: "Emirads — Premium Signage & Branding Solutions",
+    title: "Emir Ads — Premium Printing & Branding Solutions",
     description:
-      "From neon to full-vehicle wraps, Emirads delivers illuminated signage, spatial branding, and fabrication with premium craftsmanship.",
-    siteName: "Emirads",
+      "From vehicle wraps to LED screens and signage — Emir Ads makes your brand visible across the UAE.",
+    siteName: "Emir Ads",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Emirads — Premium Signage & Branding Solutions",
+    title: "Emir Ads — Premium Printing & Branding Solutions",
     description:
-      "Signages, vehicle wraps, event builds, joinery, interior and neon works crafted in the UAE.",
+      "Vehicle wraps, signage, LED screens, banners and full branding across the UAE.",
   },
 };
 
@@ -47,6 +48,7 @@ export default function RootLayout({
       <body className="antialiased">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

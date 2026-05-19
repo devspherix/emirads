@@ -47,7 +47,7 @@ function StepBar({ step }: { step: number }) {
             <div
               className={`flex h-10 w-10 items-center justify-center rounded-full border-2 text-sm font-black transition-all duration-300 ${
                 step >= s.n
-                  ? "border-[#db016e] bg-[#db016e] text-white shadow-sm"
+                  ? "border-[#FF6A1A] bg-[#FF6A1A] text-white shadow-sm"
                   : "border-gray-200 bg-white text-gray-400"
               }`}
             >
@@ -55,7 +55,7 @@ function StepBar({ step }: { step: number }) {
             </div>
             <span
               className={`text-[10px] font-bold uppercase tracking-widest transition-all duration-300 ${
-                step >= s.n ? "text-[#db016e]" : "text-gray-400"
+                step >= s.n ? "text-[#FF6A1A]" : "text-gray-400"
               }`}
             >
               {s.label}
@@ -64,7 +64,7 @@ function StepBar({ step }: { step: number }) {
           {i < steps.length - 1 && (
             <div
               className={`mx-1 mb-5 h-0.5 w-12 rounded-full transition-all duration-500 md:w-20 ${
-                step > s.n ? "bg-[#db016e]" : "bg-gray-200"
+                step > s.n ? "bg-[#FF6A1A]" : "bg-gray-200"
               }`}
             />
           )}
@@ -185,7 +185,7 @@ function Step2Specs({
           >
             {service.name}
           </h2>
-          <p className="text-sm text-gray-400">{service.description}</p>
+          <p className="text-sm text-gray-500">{service.description}</p>
         </div>
       </div>
 
@@ -202,13 +202,13 @@ function Step2Specs({
                 onClick={() => onMaterialChange(m)}
                 className={`rounded-xl border-2 p-3 text-left transition-all duration-150 ${
                   selectedMaterial?.key === m.key
-                    ? "border-[#db016e] bg-[#db016e]/5"
+                    ? "border-[#FF6A1A] bg-[#FFE9DC]"
                     : "border-gray-200 bg-white hover:border-gray-400"
                 }`}
               >
                 <div className="text-sm font-bold text-black">{m.label}</div>
-                <div className="mt-0.5 text-xs text-gray-400">{m.description}</div>
-                <div className="mt-1 text-xs font-black text-[#db016e]">
+                <div className="mt-0.5 text-xs text-gray-500">{m.description}</div>
+                <div className="mt-1 text-xs font-black text-[#FF6A1A]">
                   AED {m.ratePerUnit.toLocaleString()} / {m.unit}
                 </div>
               </button>
@@ -233,7 +233,7 @@ function Step2Specs({
                   <select
                     value={specValues[field.key] ?? ""}
                     onChange={(e) => onSpecChange(field.key, e.target.value)}
-                    className="w-full appearance-none rounded-xl border-2 border-gray-200 bg-white px-4 py-3 font-medium text-black outline-none transition-colors focus:border-[#038CE3] pr-10"
+                    className="w-full appearance-none rounded-xl border-2 border-gray-200 bg-white px-4 py-3 font-medium text-black outline-none transition-colors focus:border-[#FF6A1A] pr-10"
                   >
                     <option value="" disabled>
                       Select…
@@ -246,7 +246,7 @@ function Step2Specs({
                   </select>
                   <ChevronDown
                     size={16}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
                   />
                 </div>
               ) : (
@@ -257,7 +257,7 @@ function Step2Specs({
                   placeholder={field.placeholder}
                   value={specValues[field.key] ?? ""}
                   onChange={(e) => onSpecChange(field.key, e.target.value)}
-                  className="w-full bg-white/5 border-2 border-white/20 focus:border-[#FFE600] rounded-xl px-4 py-3 text-white font-medium outline-none transition-colors placeholder:text-white/20"
+                  className="w-full bg-white border-2 border-gray-200 focus:border-[#FF6A1A] rounded-xl px-4 py-3 text-black font-medium outline-none transition-colors placeholder:text-gray-300"
                 />
               )}
             </div>
@@ -265,8 +265,13 @@ function Step2Specs({
         </div>
 
         {service.minOrderNote && (
-          <p className="text-white/30 text-xs font-medium">
+          <p className="text-gray-500 text-xs font-medium">
             ℹ️ {service.minOrderNote}
+          </p>
+        )}
+        {service.remarks && (
+          <p className="rounded-lg border border-[#FF6A1A]/30 bg-[#FFE9DC] px-3 py-2 text-xs font-medium text-[#E25410]">
+            ⚠️ {service.remarks}
           </p>
         )}
 
@@ -275,8 +280,8 @@ function Step2Specs({
           disabled={!isValid}
           className={`w-full py-4 rounded-xl font-black uppercase tracking-widest text-sm transition-all duration-200 flex items-center justify-center gap-2 ${
             isValid
-              ? "bg-[#FFE600] text-black shadow-[4px_4px_0px_#FF3AF2] hover:shadow-[2px_2px_0px_#FF3AF2] hover:translate-x-[2px] hover:translate-y-[2px]"
-              : "bg-white/10 text-white/30 cursor-not-allowed"
+              ? "bg-[#FF6A1A] text-white shadow-[0_8px_24px_-8px_rgba(255,106,26,0.6)] hover:bg-[#E25410] hover:-translate-y-0.5"
+              : "bg-gray-100 text-gray-400 cursor-not-allowed"
           }`}
         >
           <Calculator size={16} />
@@ -306,7 +311,7 @@ function Step3Price({
     <div className="text-center">
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-white/50 hover:text-white mb-6 text-sm font-bold uppercase tracking-widest transition-colors"
+        className="flex items-center gap-2 text-gray-400 hover:text-black mb-6 text-sm font-bold uppercase tracking-widest transition-colors"
       >
         <ArrowLeft size={14} /> Edit specs
       </button>
@@ -317,21 +322,27 @@ function Step3Price({
         transition={{ type: "spring", stiffness: 200 }}
       >
         {/* Big price */}
-        <div className="inline-block border-4 border-[#FFE600] rounded-3xl px-10 py-8 mb-8 bg-[#FFE600]/5 shadow-[8px_8px_0px_#FF3AF2]">
-          <p className="text-white/60 text-sm font-bold uppercase tracking-widest mb-1">
+        <div className="inline-block rounded-3xl border-2 border-[#FF6A1A] bg-gradient-to-br from-[#FFE9DC] to-white px-10 py-8 mb-8 shadow-[0_20px_50px_-15px_rgba(255,106,26,0.35)]">
+          <p className="text-gray-500 text-sm font-bold uppercase tracking-widest mb-1">
             Estimated Price
           </p>
-          <div className="text-5xl md:text-6xl font-black text-[#FFE600]">
+          <div className="text-5xl md:text-6xl font-black text-[#FF6A1A]">
             {result.unit}{" "}
             {result.total.toLocaleString("en-AE", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}
           </div>
-          <p className="mt-2 text-xs text-gray-400">
+          <p className="mt-2 text-xs text-gray-500">
             {service.name} — {material.label}
           </p>
         </div>
+
+        {service.remarks && (
+          <p className="mx-auto mb-6 max-w-md rounded-lg border border-[#FF6A1A]/30 bg-[#FFE9DC] px-4 py-2 text-xs font-medium text-[#E25410]">
+            ⚠️ {service.remarks}
+          </p>
+        )}
 
         {/* Breakdown */}
         <div className="mx-auto mb-8 max-w-sm space-y-2 text-left">
@@ -340,8 +351,8 @@ function Step3Price({
               key={i}
               className={`flex items-center justify-between border-b py-2 text-sm font-medium ${
                 row.label === "Total"
-                  ? "border-t-2 border-t-[#db016e]/30 border-b-0 mt-2 pt-3 text-base font-black text-[#db016e]"
-                  : "border-gray-100 text-gray-500"
+                  ? "border-t-2 border-t-[#FF6A1A]/40 border-b-0 mt-2 pt-3 text-base font-black text-[#FF6A1A]"
+                  : "border-gray-100 text-gray-600"
               }`}
             >
               <span>{row.label}</span>
@@ -358,7 +369,7 @@ function Step3Price({
         <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
           <button
             onClick={onNext}
-            className="flex items-center justify-center gap-2 rounded-xl bg-black px-8 py-4 text-sm font-bold uppercase tracking-widest text-white transition-all hover:scale-105"
+            className="flex items-center justify-center gap-2 rounded-xl bg-[#FF6A1A] px-8 py-4 text-sm font-bold uppercase tracking-widest text-white shadow-[0_10px_24px_-12px_rgba(255,106,26,0.7)] transition-all hover:bg-[#E25410] hover:-translate-y-0.5"
           >
             <Send size={16} /> Get Formal Quote
           </button>
@@ -405,7 +416,7 @@ function Step4Submit({
         className="py-10 text-center"
       >
         <div className="mb-4 text-7xl">📧</div>
-        <h2 className="mb-3 text-3xl font-black text-[#db016e]">Email App Opened!</h2>
+        <h2 className="mb-3 text-3xl font-black text-[#FF6A1A]">Email App Opened!</h2>
         <p className="mx-auto max-w-sm font-medium text-gray-500">
           Your email client has opened with the full quote pre-filled.
           Just hit <span className="font-bold text-black">Send</span> to submit your request.
@@ -475,7 +486,7 @@ function Step4Submit({
       </h2>
       <p className="mb-6 text-sm text-gray-400">
         {service.name} estimate:{" "}
-        <span className="font-black text-[#db016e]">
+        <span className="font-black text-[#FF6A1A]">
           {result.unit}{" "}
           {result.total.toLocaleString("en-AE", {
             minimumFractionDigits: 2,
@@ -499,7 +510,7 @@ function Step4Submit({
                 placeholder={f.placeholder}
                 value={formData[f.key]}
                 onChange={(e) => onChange(f.key, e.target.value)}
-                className="w-full rounded-xl border-2 border-gray-200 bg-white py-3 pl-10 pr-4 font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#038CE3]"
+                className="w-full rounded-xl border-2 border-gray-200 bg-white py-3 pl-10 pr-4 font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#FF6A1A]"
               />
             </div>
           </div>
@@ -517,7 +528,7 @@ function Step4Submit({
               placeholder="Any additional info about your project…"
               value={formData.message}
               onChange={(e) => onChange("message", e.target.value)}
-              className="w-full resize-none rounded-xl border-2 border-gray-200 bg-white py-3 pl-10 pr-4 font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#038CE3]"
+              className="w-full resize-none rounded-xl border-2 border-gray-200 bg-white py-3 pl-10 pr-4 font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#FF6A1A]"
             />
           </div>
         </div>
@@ -527,7 +538,7 @@ function Step4Submit({
           disabled={submitting || !formData.name || !formData.phone}
           className={`flex w-full items-center justify-center gap-2 rounded-xl py-4 text-sm font-bold uppercase tracking-widest transition-all duration-200 ${
             !submitting && formData.name && formData.phone
-              ? "bg-black text-white hover:scale-[1.02] active:scale-95"
+              ? "bg-[#FF6A1A] text-white shadow-[0_10px_24px_-12px_rgba(255,106,26,0.7)] hover:bg-[#E25410] hover:-translate-y-0.5"
               : "cursor-not-allowed bg-gray-100 text-gray-400"
           }`}
         >
@@ -543,7 +554,7 @@ function Step4Submit({
           )}
         </button>
 
-        <p className="text-white/20 text-xs text-center">
+        <p className="text-gray-400 text-xs text-center">
           This will open your email app with the quote pre-filled. Just hit Send.
         </p>
       </div>
@@ -580,7 +591,7 @@ export default function QuoteBuilder({
     email: "",
     message: "",
   });
-  const [submitting, setSubmitting] = useState(false);
+  const [submitting] = useState(false);
   const [done, setDone] = useState(false);
 
   const handleSpecChange = useCallback(
@@ -677,7 +688,7 @@ export default function QuoteBuilder({
       className={`relative overflow-hidden rounded-3xl border border-gray-100 bg-white p-6 shadow-sm md:p-10 ${className}`}
     >
       {/* Subtle gradient blobs */}
-      <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#db016e]/5 blur-3xl" />
+      <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#FF6A1A]/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-[#038CE3]/5 blur-3xl" />
 
       <div className="relative z-10">
