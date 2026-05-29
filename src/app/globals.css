@@ -7,15 +7,15 @@
   --surface: #f9f9f9;
 
   /* Primary Brand Colors */
-  --brand-orange: #FF6A1A;
-  --brand-orange-dark: #E25410;
-  --brand-orange-soft: #FFE9DC;
-  --brand-yellow: #ffe724;
-  --brand-pink: #db016e;
-  --brand-blue: #038CE3;
-  --brand-cyan: #038CE3;
-  --brand-dark-pink: #C00062;
-  --brand-dark-blue: #032DAB;
+  --brand-orange: #D50367;
+  --brand-orange-dark: #A80250;
+  --brand-orange-soft: #FCE3EE;
+  --brand-yellow: #FFD705;
+  --brand-pink: #D50367;
+  --brand-blue: #00BBFE;
+  --brand-cyan: #00BBFE;
+  --brand-dark-pink: #A80250;
+  --brand-dark-blue: #0090C7;
 
   /* Neutral Palette */
   --gray-50: #f9f9f9;
@@ -106,7 +106,7 @@ body {
 
 /* Gradient text utilities */
 .gradient-text-main {
-  background: linear-gradient(135deg, #db016e 0%, #038CE3 50%, #ffe724 100%);
+  background: linear-gradient(135deg, #D50367 0%, #00BBFE 50%, #FFD705 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -115,14 +115,14 @@ body {
 }
 
 .gradient-text-brand {
-  background: linear-gradient(135deg, #038CE3 0%, #db016e 100%);
+  background: linear-gradient(135deg, #00BBFE 0%, #D50367 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-warm {
-  background: linear-gradient(135deg, #ffe724 0%, #db016e 100%);
+  background: linear-gradient(135deg, #FFD705 0%, #D50367 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -160,12 +160,12 @@ body {
 
 .card-shadow-hover:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgba(255, 106, 26, 0.18), 0 4px 14px rgba(15, 15, 25, 0.08);
+  box-shadow: 0 24px 48px rgba(213,3,103, 0.18), 0 4px 14px rgba(15, 15, 25, 0.08);
 }
 
 /* Orange gradient text */
 .gradient-text-orange {
-  background: linear-gradient(135deg, #FF6A1A 0%, #db016e 100%);
+  background: linear-gradient(135deg, #D50367 0%, #D50367 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -186,11 +186,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #db016e;
+  background: #D50367;
 }
 
 /* Focus ring system */
 *:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(3, 140, 227, 0.4);
+  box-shadow: 0 0 0 3px rgba(0,187,254, 0.4);
 }

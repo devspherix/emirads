@@ -17,9 +17,9 @@ export default function QuotePage() {
       {/* Header */}
       <section className="relative overflow-hidden bg-black py-24 text-white">
         <div className="pointer-events-none absolute inset-0 pattern-dots-light opacity-15" />
-        <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#FF6A1A]/30 blur-3xl" />
+        <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#D50367]/30 blur-3xl" />
         <Container className="relative text-center">
-          <span className="mb-5 inline-block rounded-full border border-[#FF6A1A]/40 bg-[#FF6A1A]/15 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#FFE9DC]">
+          <span className="mb-5 inline-block rounded-full border border-[#D50367]/40 bg-[#D50367]/15 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#FCE3EE]">
             ⚡ Instant Pricing
           </span>
           <h1
@@ -42,7 +42,7 @@ export default function QuotePage() {
             ].map((s) => (
               <div key={s.label} className="text-center">
                 <div
-                  className="text-4xl font-black text-[#FF6A1A]"
+                  className="text-4xl font-black text-[#D50367]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   {s.value}
@@ -76,17 +76,17 @@ export default function QuotePage() {
               {
                 title: "Estimate accuracy",
                 body: "Our quotes are typically within 5–10% of the final invoice.",
-                color: "border-t-[#FF6A1A]",
+                color: "border-t-[#D50367]",
               },
               {
                 title: "No obligation",
                 body: "Getting a quote commits you to nothing. Zero pressure.",
-                color: "border-t-[#038CE3]",
+                color: "border-t-[#00BBFE]",
               },
               {
                 title: "Human follow-up",
                 body: "A real person reviews and confirms every quote.",
-                color: "border-t-[#db016e]",
+                color: "border-t-[#D50367]",
               },
             ].map((item) => (
               <div

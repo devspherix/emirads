@@ -7,9 +7,9 @@ import { Send, Sparkles } from "lucide-react";
 
 const accents = ["orange", "blue", "pink"] as const;
 const accentHex: Record<(typeof accents)[number], { hex: string; soft: string }> = {
-  orange: { hex: "#FF6A1A", soft: "#FFE9DC" },
-  blue: { hex: "#038CE3", soft: "rgba(3,140,227,0.10)" },
-  pink: { hex: "#db016e", soft: "rgba(219,1,110,0.10)" },
+  orange: { hex: "#D50367", soft: "#FCE3EE" },
+  blue: { hex: "#00BBFE", soft: "rgba(0,187,254,0.10)" },
+  pink: { hex: "#D50367", soft: "rgba(213,3,103,0.10)" },
 };
 
 export const metadata: Metadata = {
@@ -24,10 +24,10 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-black py-24 text-white">
         <div className="pointer-events-none absolute inset-0 pattern-dots-light opacity-15" />
-        <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#FF6A1A]/30 blur-3xl" />
+        <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#D50367]/30 blur-3xl" />
         <Container className="relative">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="mb-4 inline-block rounded-full border border-[#FF6A1A]/40 bg-[#FF6A1A]/15 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#FFE9DC]">
+            <span className="mb-4 inline-block rounded-full border border-[#D50367]/40 bg-[#D50367]/15 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#FCE3EE]">
               Contact
             </span>
             <h1
@@ -78,7 +78,7 @@ export default function ContactPage() {
                       name="project"
                       rows={5}
                       placeholder="Tell us about site location, dimensions, deadlines and any authority notes."
-                      className="w-full resize-none rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#FF6A1A]"
+                      className="w-full resize-none rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#D50367]"
                     />
                   </div>
                   <Button variant="primary" size="lg" fullWidth>
@@ -129,8 +129,8 @@ export default function ContactPage() {
                 );
               })}
 
-              <div className="rounded-2xl border border-gray-100 bg-gradient-to-br from-[#FFE9DC] to-white p-6 card-shadow">
-                <div className="mb-2 flex items-center gap-2 text-[#FF6A1A]">
+              <div className="rounded-2xl border border-gray-100 bg-gradient-to-br from-[#FCE3EE] to-white p-6 card-shadow">
+                <div className="mb-2 flex items-center gap-2 text-[#D50367]">
                   <Sparkles className="h-4 w-4" />
                   <p className="text-xs font-bold uppercase tracking-widest">Fast track</p>
                 </div>
@@ -179,7 +179,7 @@ function Field({
         name={name}
         required={required}
         placeholder={placeholder}
-        className="rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#FF6A1A]"
+        className="rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-sm text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#D50367]"
       />
     </label>
   );

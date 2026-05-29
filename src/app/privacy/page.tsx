@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       <section className="bg-black py-20 text-white">
         <Container>
           <div className="mx-auto max-w-3xl">
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#FF6A1A]">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-[#D50367]">
               Legal
             </p>
             <h1
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
               <p>
                 You may request access to, correction of, or deletion of your personal data
                 at any time by emailing{" "}
-                <a href={`mailto:${SITE.email}`} className="font-bold text-[#FF6A1A] hover:underline">
+                <a href={`mailto:${SITE.email}`} className="font-bold text-[#D50367] hover:underline">
                   {SITE.email}
                 </a>.
               </p>
@@ -81,11 +81,11 @@ export default function PrivacyPage() {
             <Section title="6. Contact">
               <p>
                 If you have questions about this Privacy Policy, contact us at{" "}
-                <a href={`mailto:${SITE.email}`} className="font-bold text-[#FF6A1A] hover:underline">
+                <a href={`mailto:${SITE.email}`} className="font-bold text-[#D50367] hover:underline">
                   {SITE.email}
                 </a>{" "}
                 or{" "}
-                <a href={`tel:${SITE.phoneRaw}`} className="font-bold text-[#FF6A1A] hover:underline">
+                <a href={`tel:${SITE.phoneRaw}`} className="font-bold text-[#D50367] hover:underline">
                   {SITE.phone}
                 </a>.
               </p>

@@ -119,8 +119,8 @@ export default function ProjectsGrid() {
                 onClick={() => setActive(cat)}
                 className={`rounded-full border px-5 py-2 text-xs font-bold uppercase tracking-wider transition-all ${
                   isActive
-                    ? "border-[#FF6A1A] bg-[#FF6A1A] text-white shadow-[0_8px_20px_-10px_rgba(255,106,26,0.7)]"
-                    : "border-gray-200 bg-white text-gray-600 hover:border-[#FF6A1A] hover:text-[#FF6A1A]"
+                    ? "border-[#D50367] bg-[#D50367] text-white shadow-[0_8px_20px_-10px_rgba(213,3,103,0.7)]"
+                    : "border-gray-200 bg-white text-gray-600 hover:border-[#D50367] hover:text-[#D50367]"
                 }`}
               >
                 {cat}

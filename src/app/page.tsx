@@ -81,8 +81,8 @@ function HeroSection() {
   return (
     <section className="relative overflow-hidden pb-20 pt-12 lg:pt-20 lg:pb-28">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,_rgba(255,106,26,0.10),_transparent_70%)]" />
-        <div className="absolute -bottom-20 -left-40 h-[480px] w-[480px] rounded-full bg-[radial-gradient(circle,_rgba(219,1,110,0.07),_transparent_70%)]" />
+        <div className="absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,_rgba(213,3,103,0.10),_transparent_70%)]" />
+        <div className="absolute -bottom-20 -left-40 h-[480px] w-[480px] rounded-full bg-[radial-gradient(circle,_rgba(213,3,103,0.07),_transparent_70%)]" />
       </div>
 
       <Container className="relative">
@@ -94,7 +94,7 @@ function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
-            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-[#FFE9DC] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#E25410]">
+            <span className="inline-flex w-fit items-center gap-2 rounded-full bg-[#FCE3EE] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#A80250]">
               <Sparkles className="h-3 w-3" />
               Printing & Branding · UAE-wide
             </span>
@@ -127,10 +127,10 @@ function HeroSection() {
 
             {/* mini contact strip */}
             <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm text-gray-500">
-              <a href={`tel:${SITE.phoneRaw}`} className="font-semibold text-gray-700 hover:text-[#FF6A1A]">
+              <a href={`tel:${SITE.phoneRaw}`} className="font-semibold text-gray-700 hover:text-[#D50367]">
                 📞 {SITE.phone}
               </a>
-              <a href={`mailto:${SITE.email}`} className="font-semibold text-gray-700 hover:text-[#FF6A1A]">
+              <a href={`mailto:${SITE.email}`} className="font-semibold text-gray-700 hover:text-[#D50367]">
                 ✉ {SITE.email}
               </a>
             </div>
@@ -177,7 +177,7 @@ function HeroSlider() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
-              <span className="inline-block rounded-full bg-[#FF6A1A] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
+              <span className="inline-block rounded-full bg-[#D50367] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
                 {heroSlides[idx].label}
               </span>
               <p
@@ -213,7 +213,7 @@ function HeroSlider() {
         transition={{ duration: 0.6, delay: 0.6 }}
         className="absolute -bottom-6 -left-3 rounded-2xl border border-gray-100 bg-white p-4 card-shadow sm:-left-6"
       >
-        <p className="text-xs font-bold uppercase tracking-widest text-[#FF6A1A]">12+ Years</p>
+        <p className="text-xs font-bold uppercase tracking-widest text-[#D50367]">12+ Years</p>
         <p className="text-sm font-black text-black">Trusted in the UAE</p>
       </motion.div>
       <motion.div
@@ -223,7 +223,7 @@ function HeroSlider() {
         className="absolute -right-3 -top-4 rounded-2xl border border-gray-100 bg-white px-4 py-3 card-shadow sm:-right-6"
       >
         <p className="text-2xl font-black text-black" style={{ fontFamily: "var(--font-display)" }}>
-          95<span className="text-[#FF6A1A]">%</span>
+          95<span className="text-[#D50367]">%</span>
         </p>
         <p className="text-[10px] font-bold uppercase tracking-widest text-gray-500">Satisfaction</p>
       </motion.div>
@@ -250,7 +250,7 @@ function TrustBar() {
                 transition={{ duration: 0.4, delay: i * 0.06 }}
                 className="flex flex-col items-center gap-2 text-center"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FFE9DC] text-[#FF6A1A]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FCE3EE] text-[#D50367]">
                   <Icon className="h-5 w-5" />
                 </div>
                 <p
@@ -284,11 +284,11 @@ function ServicesOverview() {
       <Container>
         <motion.div {...fadeUp} className="mx-auto mb-12 max-w-3xl text-center">
           <div className="mb-4 flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-[#FF6A1A]" />
-            <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#FF6A1A]">
+            <span className="h-px w-8 bg-[#D50367]" />
+            <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#D50367]">
               Our Services
             </p>
-            <span className="h-px w-8 bg-[#FF6A1A]" />
+            <span className="h-px w-8 bg-[#D50367]" />
           </div>
           <h2
             className="text-3xl font-black leading-tight text-black sm:text-4xl lg:text-5xl"
@@ -351,7 +351,7 @@ function AboutSnippet() {
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent" />
             </div>
-            <div className="absolute -bottom-6 -right-4 rounded-2xl bg-[#FF6A1A] px-6 py-4 text-white card-shadow sm:-right-6">
+            <div className="absolute -bottom-6 -right-4 rounded-2xl bg-[#D50367] px-6 py-4 text-white card-shadow sm:-right-6">
               <p className="text-3xl font-black" style={{ fontFamily: "var(--font-display)" }}>
                 12+
               </p>
@@ -359,7 +359,7 @@ function AboutSnippet() {
             </div>
           </motion.div>
           <motion.div {...fadeUp}>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#FF6A1A]">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#D50367]">
               About Emir Ads
             </p>
             <h2
@@ -396,7 +396,7 @@ function ProcessSection() {
     <section className="bg-black py-20 text-white lg:py-24">
       <Container>
         <motion.div {...fadeUp} className="mb-12 text-center">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#FF6A1A]">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#D50367]">
             How We Work
           </p>
           <h2
@@ -418,7 +418,7 @@ function ProcessSection() {
               className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition-colors hover:bg-white/[0.08]"
             >
               <div
-                className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#FF6A1A] text-lg font-black text-white"
+                className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#D50367] text-lg font-black text-white"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {String(i + 1).padStart(2, "0")}
@@ -481,7 +481,7 @@ function PortfolioTeaser() {
           className="mb-12 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end"
         >
           <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#FF6A1A]">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#D50367]">
               Our Work
             </p>
             <h2
@@ -521,7 +521,7 @@ function WhyChooseUs() {
     <section className="bg-[#f9f9f9] py-20 lg:py-24">
       <Container>
         <motion.div {...fadeUp} className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#FF6A1A]">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#D50367]">
             Why Choose Us
           </p>
           <h2
@@ -546,7 +546,7 @@ function WhyChooseUs() {
               transition={{ duration: 0.4, delay: i * 0.06 }}
               className="flex items-start gap-4 rounded-2xl border border-gray-100 bg-white p-5 card-shadow card-shadow-hover"
             >
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#FFE9DC] text-[#FF6A1A]">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#FCE3EE] text-[#D50367]">
                 <Check className="h-5 w-5" />
               </div>
               <p className="font-semibold text-gray-800">{point}</p>
@@ -566,7 +566,7 @@ function CertificationsSection() {
     <section className="bg-white py-20 lg:py-24">
       <Container>
         <motion.div {...fadeUp} className="mb-12 text-center">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#FF6A1A]">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#D50367]">
             Certifications & Compliance
           </p>
           <h2
@@ -613,9 +613,9 @@ function FinalCta() {
           className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-black via-[#1a1a1a] to-black p-10 text-center sm:p-14"
         >
           <div className="pointer-events-none absolute inset-0 pattern-dots-light opacity-15" />
-          <div className="pointer-events-none absolute -right-20 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[#FF6A1A]/20 blur-3xl" />
+          <div className="pointer-events-none absolute -right-20 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full bg-[#D50367]/20 blur-3xl" />
           <div className="relative">
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.4em] text-[#FF6A1A]">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.4em] text-[#D50367]">
               Ready to stand out?
             </p>
             <h2
@@ -647,9 +647,9 @@ function FinalCta() {
                     key={m.label}
                     href={m.href}
                     target={m.href.startsWith("http") ? "_blank" : undefined}
-                    className="group flex items-center gap-3 rounded-2xl border border-white/15 bg-white/5 p-4 text-left text-white transition-all hover:border-[#FF6A1A] hover:bg-white/[0.08]"
+                    className="group flex items-center gap-3 rounded-2xl border border-white/15 bg-white/5 p-4 text-left text-white transition-all hover:border-[#D50367] hover:bg-white/[0.08]"
                   >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FF6A1A]/20 text-[#FF6A1A]">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#D50367]/20 text-[#D50367]">
                       <Icon className="h-4 w-4" />
                     </div>
                     <div>

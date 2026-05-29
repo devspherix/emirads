@@ -318,7 +318,7 @@ export function ServicePageTemplate({
         <Container>
           <motion.div
             {...fadeUp}
-            className="mx-auto max-w-3xl overflow-hidden rounded-3xl bg-gradient-to-br from-[#FF6A1A] to-[#db016e] p-10 text-center text-white card-shadow sm:p-14"
+            className="mx-auto max-w-3xl overflow-hidden rounded-3xl bg-gradient-to-br from-[#D50367] to-[#D50367] p-10 text-center text-white card-shadow sm:p-14"
           >
             <h2
               className="mb-4 text-3xl font-black sm:text-4xl"
@@ -332,7 +332,7 @@ export function ServicePageTemplate({
                 href={pricing ? "#quote" : "/contact"}
                 variant="dark"
                 size="lg"
-                className="!bg-white !text-[#FF6A1A] hover:!bg-black hover:!text-white"
+                className="!bg-white !text-[#D50367] hover:!bg-black hover:!text-white"
               >
                 {pricing ? "Get a Free Quote" : "Talk to our team"}
                 <ArrowRight className="h-4 w-4" />

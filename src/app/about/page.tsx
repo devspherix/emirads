@@ -20,11 +20,11 @@ export default function AboutPage() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-white py-20 lg:py-28">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,_rgba(255,106,26,0.10),_transparent_70%)]" />
+          <div className="absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,_rgba(213,3,103,0.10),_transparent_70%)]" />
         </div>
         <Container className="relative">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#FFE9DC] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#E25410]">
+            <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#FCE3EE] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#A80250]">
               <Sparkles className="h-3 w-3" /> About Emir Ads
             </span>
             <h1
@@ -47,7 +47,7 @@ export default function AboutPage() {
       <section className="bg-white py-20 lg:py-24">
         <Container>
           <motion.div {...fadeUp} className="mx-auto mb-12 max-w-3xl text-center">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#FF6A1A]">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#D50367]">
               The Team
             </p>
             <h2
@@ -74,7 +74,7 @@ export default function AboutPage() {
       <section className="bg-[#f9f9f9] py-20 lg:py-24">
         <Container>
           <motion.div {...fadeUp} className="mx-auto mb-12 max-w-3xl text-center">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#FF6A1A]">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#D50367]">
               What We Stand For
             </p>
             <h2
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
                 className="rounded-2xl border border-gray-100 bg-white p-6 card-shadow card-shadow-hover"
-                style={{ borderTopWidth: 4, borderTopColor: "#FF6A1A" }}
+                style={{ borderTopWidth: 4, borderTopColor: "#D50367" }}
               >
                 <h3
                   className="mb-2 text-base font-black text-black"
@@ -131,7 +131,7 @@ export default function AboutPage() {
         <Container>
           <motion.div
             {...fadeUp}
-            className="mx-auto max-w-3xl rounded-3xl bg-gradient-to-br from-[#FF6A1A] to-[#db016e] p-10 text-center text-white card-shadow sm:p-14"
+            className="mx-auto max-w-3xl rounded-3xl bg-gradient-to-br from-[#D50367] to-[#D50367] p-10 text-center text-white card-shadow sm:p-14"
           >
             <h2
               className="mb-4 text-3xl font-black sm:text-4xl"
@@ -147,7 +147,7 @@ export default function AboutPage() {
                 href="/quote"
                 variant="dark"
                 size="lg"
-                className="!bg-white !text-[#FF6A1A] hover:!bg-black hover:!text-white"
+                className="!bg-white !text-[#D50367] hover:!bg-black hover:!text-white"
               >
                 Get a Free Quote <ArrowRight className="h-4 w-4" />
               </Button>

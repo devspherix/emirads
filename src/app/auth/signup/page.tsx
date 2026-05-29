@@ -18,7 +18,7 @@ export default function SignupPage() {
   return (
     <main className="min-h-screen bg-white">
       <div className="border-b border-gray-100 py-16 text-center">
-        <span className="mb-3 inline-block rounded-full border border-[#038CE3]/20 bg-[#038CE3]/5 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#038CE3]">
+        <span className="mb-3 inline-block rounded-full border border-[#00BBFE]/20 bg-[#00BBFE]/5 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#00BBFE]">
           <Star size={10} className="mr-1 inline" /> Create Account
         </span>
         <h1 className="text-4xl font-black text-black" style={{ fontFamily: "var(--font-display)" }}>
@@ -40,31 +40,31 @@ export default function SignupPage() {
               {["First name", "Last name"].map((label) => (
                 <div key={label}>
                   <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-gray-500">{label}</label>
-                  <input type="text" required placeholder={label} className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#038CE3]" />
+                  <input type="text" required placeholder={label} className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#00BBFE]" />
                 </div>
               ))}
             </div>
             <div>
               <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-gray-500">Email address</label>
-              <input type="email" required placeholder="you@company.com" className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#038CE3]" />
+              <input type="email" required placeholder="you@company.com" className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#00BBFE]" />
             </div>
             <div>
               <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-gray-500">Company / Organization <span className="font-normal normal-case text-gray-400">(optional)</span></label>
-              <input type="text" placeholder="Emirads LLC" className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#038CE3]" />
+              <input type="text" placeholder="Emirads LLC" className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#00BBFE]" />
             </div>
             <div>
               <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-gray-500">Password</label>
-              <input type="password" required placeholder="••••••••" className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#038CE3]" />
+              <input type="password" required placeholder="••••••••" className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#00BBFE]" />
             </div>
-            <button type="submit" className="w-full rounded-xl bg-black py-3.5 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#038CE3]">
+            <button type="submit" className="w-full rounded-xl bg-black py-3.5 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#00BBFE]">
               Create my account
             </button>
             {message && (
-              <p className="rounded-xl bg-[#ffe724]/30 px-4 py-3 text-sm font-bold text-black">✅ {message}</p>
+              <p className="rounded-xl bg-[#FFD705]/30 px-4 py-3 text-sm font-bold text-black">✅ {message}</p>
             )}
             <p className="text-center text-sm text-gray-500">
               Already onboard?{" "}
-              <Link href="/auth/login" className="font-bold text-[#db016e] underline-offset-4 hover:underline">Log in</Link>
+              <Link href="/auth/login" className="font-bold text-[#D50367] underline-offset-4 hover:underline">Log in</Link>
             </p>
           </motion.form>
 
@@ -74,7 +74,7 @@ export default function SignupPage() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="rounded-2xl border border-gray-100 bg-[#f9f9f9] p-8"
           >
-            <div className="mb-2 h-1 w-10 rounded-full bg-[#038CE3]" />
+            <div className="mb-2 h-1 w-10 rounded-full bg-[#00BBFE]" />
             <h2 className="mb-1 text-xl font-black text-black" style={{ fontFamily: "var(--font-display)" }}>Why clients love the portal</h2>
             <p className="mb-8 text-sm text-gray-500">Securely hosted. Multi-user access for agencies and teams.</p>
             <ul className="space-y-5">
@@ -85,7 +85,7 @@ export default function SignupPage() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 rounded-xl border border-[#ffe724]/40 bg-[#ffe724]/10 p-4">
+            <div className="mt-8 rounded-xl border border-[#FFD705]/40 bg-[#FFD705]/10 p-4">
               <p className="text-xs font-bold text-black">🔒 Secure &amp; encrypted</p>
               <p className="mt-1 text-xs text-gray-500">Your data is protected and never shared with third parties.</p>
             </div>

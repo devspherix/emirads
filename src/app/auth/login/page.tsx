@@ -18,7 +18,7 @@ export default function LoginPage() {
   return (
     <main className="min-h-screen bg-white">
       <div className="border-b border-gray-100 py-16 text-center">
-        <span className="mb-3 inline-block rounded-full border border-[#db016e]/20 bg-[#db016e]/5 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#db016e]">
+        <span className="mb-3 inline-block rounded-full border border-[#D50367]/20 bg-[#D50367]/5 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#D50367]">
           Client Portal
         </span>
         <h1 className="text-4xl font-black text-black" style={{ fontFamily: "var(--font-display)" }}>
@@ -35,7 +35,7 @@ export default function LoginPage() {
             transition={{ duration: 0.5 }}
             className="rounded-2xl border border-gray-100 bg-[#f9f9f9] p-8"
           >
-            <div className="mb-2 h-1 w-10 rounded-full bg-[#db016e]" />
+            <div className="mb-2 h-1 w-10 rounded-full bg-[#D50367]" />
             <h2 className="mb-1 text-xl font-black text-black" style={{ fontFamily: "var(--font-display)" }}>What you get</h2>
             <p className="mb-8 text-sm text-gray-500">Multi-user access available for agencies and enterprise teams.</p>
             <ul className="space-y-5">
@@ -48,8 +48,8 @@ export default function LoginPage() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 rounded-xl border border-[#038CE3]/20 bg-[#038CE3]/5 p-4">
-              <p className="text-xs font-bold text-[#038CE3]">🔒 Secure &amp; encrypted</p>
+            <div className="mt-8 rounded-xl border border-[#00BBFE]/20 bg-[#00BBFE]/5 p-4">
+              <p className="text-xs font-bold text-[#00BBFE]">🔒 Secure &amp; encrypted</p>
               <p className="mt-1 text-xs text-gray-500">End-to-end encrypted. Your data is never shared.</p>
             </div>
           </motion.div>
@@ -64,24 +64,24 @@ export default function LoginPage() {
           >
             <div>
               <label className="mb-1.5 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-500">
-                <Mail size={12} className="text-[#db016e]" /> Email address
+                <Mail size={12} className="text-[#D50367]" /> Email address
               </label>
               <input
                 type="email"
                 required
                 placeholder="you@company.com"
-                className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#038CE3]"
+                className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#00BBFE]"
               />
             </div>
             <div>
               <label className="mb-1.5 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-500">
-                <Lock size={12} className="text-[#db016e]" /> Password
+                <Lock size={12} className="text-[#D50367]" /> Password
               </label>
               <input
                 type="password"
                 required
                 placeholder="••••••••"
-                className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#038CE3]"
+                className="w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-sm font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#00BBFE]"
               />
             </div>
             <div className="flex items-center justify-between text-xs">
@@ -89,24 +89,24 @@ export default function LoginPage() {
                 <input type="checkbox" className="rounded" />
                 Keep me signed in
               </label>
-              <Link href="/contact" className="font-bold text-[#db016e] underline-offset-4 hover:underline">
+              <Link href="/contact" className="font-bold text-[#D50367] underline-offset-4 hover:underline">
                 Forgot password?
               </Link>
             </div>
             <button
               type="submit"
-              className="w-full rounded-xl bg-black py-3.5 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#db016e]"
+              className="w-full rounded-xl bg-black py-3.5 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#D50367]"
             >
               Sign in
             </button>
             {message && (
-              <p className="rounded-xl bg-[#ffe724]/30 px-4 py-3 text-sm font-bold text-black">
+              <p className="rounded-xl bg-[#FFD705]/30 px-4 py-3 text-sm font-bold text-black">
                 ✅ {message}
               </p>
             )}
             <p className="text-center text-sm text-gray-500">
               New to Emirads?{" "}
-              <Link href="/auth/signup" className="font-bold text-[#038CE3] underline-offset-4 hover:underline">
+              <Link href="/auth/signup" className="font-bold text-[#00BBFE] underline-offset-4 hover:underline">
                 Create an account
               </Link>
             </p>

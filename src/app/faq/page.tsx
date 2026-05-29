@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Answers to common questions about pricing, lead times, permits, materials and installation.",
 };
 
-const accents = ["#FF6A1A", "#038CE3", "#db016e", "#ffe724"];
+const accents = ["#D50367", "#00BBFE", "#D50367", "#FFD705"];
 
 export default function FaqPage() {
   return (
@@ -18,10 +18,10 @@ export default function FaqPage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-black py-24 text-white">
         <div className="pointer-events-none absolute inset-0 pattern-dots-light opacity-15" />
-        <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#FF6A1A]/30 blur-3xl" />
+        <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#D50367]/30 blur-3xl" />
         <Container className="relative">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="mb-4 inline-block rounded-full border border-[#FF6A1A]/40 bg-[#FF6A1A]/15 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#FFE9DC]">
+            <span className="mb-4 inline-block rounded-full border border-[#D50367]/40 bg-[#D50367]/15 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#FCE3EE]">
               Knowledge base
             </span>
             <h1
@@ -35,7 +35,7 @@ export default function FaqPage() {
               Can&apos;t find what you need? Email{" "}
               <a
                 href={`mailto:${SITE.email}`}
-                className="font-bold text-[#FF6A1A] hover:underline"
+                className="font-bold text-[#D50367] hover:underline"
               >
                 {SITE.email}
               </a>{" "}
@@ -62,7 +62,7 @@ export default function FaqPage() {
                       style={{
                         backgroundColor: accents[i % accents.length],
                         fontFamily: "var(--font-display)",
-                        color: accents[i % accents.length] === "#ffe724" ? "#000" : "#fff",
+                        color: accents[i % accents.length] === "#FFD705" ? "#000" : "#fff",
                       }}
                     >
                       {String(i + 1).padStart(2, "0")}

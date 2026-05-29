@@ -167,27 +167,27 @@ export const accentMap: Record<
   { hex: string; soft: string; ring: string; text: string }
 > = {
   orange: {
-    hex: "#FF6A1A",
-    soft: "rgba(255,106,26,0.10)",
-    ring: "rgba(255,106,26,0.35)",
-    text: "#E25410",
+    hex: "#D50367",
+    soft: "rgba(213,3,103,0.10)",
+    ring: "rgba(213,3,103,0.35)",
+    text: "#A80250",
   },
   pink: {
-    hex: "#db016e",
-    soft: "rgba(219,1,110,0.08)",
-    ring: "rgba(219,1,110,0.35)",
-    text: "#db016e",
+    hex: "#D50367",
+    soft: "rgba(213,3,103,0.08)",
+    ring: "rgba(213,3,103,0.35)",
+    text: "#D50367",
   },
   blue: {
-    hex: "#038CE3",
-    soft: "rgba(3,140,227,0.08)",
-    ring: "rgba(3,140,227,0.35)",
-    text: "#038CE3",
+    hex: "#00BBFE",
+    soft: "rgba(0,187,254,0.08)",
+    ring: "rgba(0,187,254,0.35)",
+    text: "#00BBFE",
   },
   yellow: {
-    hex: "#ffe724",
-    soft: "rgba(255,231,36,0.18)",
-    ring: "rgba(255,231,36,0.55)",
+    hex: "#FFD705",
+    soft: "rgba(255,215,5,0.18)",
+    ring: "rgba(255,215,5,0.55)",
     text: "#7a6400",
   },
 };

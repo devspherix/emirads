@@ -5,15 +5,15 @@ type TagTone = "yellow" | "pink" | "blue" | "dark" | "neutral" |
   /* legacy aliases */ "magenta" | "cyan" | "orange" | "purple";
 
 const toneMap: Record<TagTone, string> = {
-  yellow:  "bg-[#ffe724]/25 border-[#ffe724] text-[#7a6400]",
-  pink:    "bg-[#db016e]/10 border-[#db016e] text-[#db016e]",
-  blue:    "bg-[#038CE3]/10 border-[#038CE3] text-[#038CE3]",
+  yellow:  "bg-[#FFD705]/25 border-[#FFD705] text-[#7a6400]",
+  pink:    "bg-[#D50367]/10 border-[#D50367] text-[#D50367]",
+  blue:    "bg-[#00BBFE]/10 border-[#00BBFE] text-[#00BBFE]",
   dark:    "bg-black text-white border-black",
   neutral: "bg-gray-100 border-gray-200 text-gray-600",
   /* legacy aliases mapped to new tones */
-  magenta: "bg-[#db016e]/10 border-[#db016e] text-[#db016e]",
-  cyan:    "bg-[#038CE3]/10 border-[#038CE3] text-[#038CE3]",
-  orange:  "bg-[#ffe724]/25 border-[#ffe724] text-[#7a6400]",
+  magenta: "bg-[#D50367]/10 border-[#D50367] text-[#D50367]",
+  cyan:    "bg-[#00BBFE]/10 border-[#00BBFE] text-[#00BBFE]",
+  orange:  "bg-[#FFD705]/25 border-[#FFD705] text-[#7a6400]",
   purple:  "bg-gray-100 border-gray-200 text-gray-600",
 };
 

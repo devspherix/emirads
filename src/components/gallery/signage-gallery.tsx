@@ -46,11 +46,11 @@ export function SignageGallery({ showHeading = true }: SignageGalleryProps) {
             <motion.div {...fadeUp} viewport={{ once: true, amount: 0.3 }}>
               <div className="rounded-3xl bg-black p-10 text-center sm:p-12">
                 <div className="mb-4 flex items-center justify-center gap-3">
-                  <span className="h-px w-8 bg-[#FF6A1A]" />
-                  <p className="text-xs font-bold uppercase tracking-[0.5em] text-[#FF6A1A]">
+                  <span className="h-px w-8 bg-[#D50367]" />
+                  <p className="text-xs font-bold uppercase tracking-[0.5em] text-[#D50367]">
                     Our Portfolio
                   </p>
-                  <span className="h-px w-8 bg-[#FF6A1A]" />
+                  <span className="h-px w-8 bg-[#D50367]" />
                 </div>
                 <h2
                   className="text-4xl font-black text-white sm:text-5xl lg:text-6xl"

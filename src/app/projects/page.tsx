@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 };
 
 const statsData = [
-  { label: "Projects delivered", value: "500+", color: "text-[#db016e]" },
-  { label: "Vehicle wraps", value: "180+", color: "text-[#038CE3]" },
+  { label: "Projects delivered", value: "500+", color: "text-[#D50367]" },
+  { label: "Vehicle wraps", value: "180+", color: "text-[#00BBFE]" },
   { label: "Sq ft installed", value: "250K+", color: "text-[#7a6400]" },
   { label: "Years active", value: "12+", color: "text-white" },
 ];
@@ -25,7 +25,7 @@ export default function ProjectsPage() {
       <section className="relative overflow-hidden bg-black py-28 text-white">
         <div className="pointer-events-none absolute inset-0 pattern-dots-light opacity-10" />
         <Container className="relative text-center">
-          <span className="mb-5 inline-block rounded-full border border-[#ffe724]/30 bg-[#ffe724]/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#ffe724]">
+          <span className="mb-5 inline-block rounded-full border border-[#FFD705]/30 bg-[#FFD705]/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#FFD705]">
             Our Work
           </span>
           <h1
@@ -81,7 +81,7 @@ export default function ProjectsPage() {
                   <Zap className="h-4 w-4" />
                   Get Instant Price
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#db016e] to-[#C00062] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#D50367] to-[#A80250] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </Link>
               <a
                 href="https://wa.me/971585806956"

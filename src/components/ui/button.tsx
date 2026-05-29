@@ -18,13 +18,13 @@ const sizes: Record<ButtonSize, string> = {
 const variants: Record<ButtonVariant, string> = {
   // 🟠 Primary = bright brand orange ("Get a Free Quote")
   primary:
-    "bg-[#FF6A1A] text-white shadow-[0_8px_20px_rgba(255,106,26,0.35)] hover:shadow-[0_12px_28px_rgba(255,106,26,0.45)] hover:-translate-y-0.5 hover:bg-[#E25410]",
+    "bg-[#D50367] text-white shadow-[0_8px_20px_rgba(213,3,103,0.35)] hover:shadow-[0_12px_28px_rgba(213,3,103,0.45)] hover:-translate-y-0.5 hover:bg-[#A80250]",
   secondary:
     "bg-white text-black border-2 border-gray-200 hover:border-black hover:bg-black hover:text-white",
   outline:
-    "bg-transparent text-[#FF6A1A] border-2 border-[#FF6A1A] hover:bg-[#FF6A1A] hover:text-white",
-  ghost: "bg-transparent text-gray-700 hover:text-[#FF6A1A] hover:bg-[#FFE9DC]",
-  dark: "bg-black text-white hover:bg-[#FF6A1A] hover:-translate-y-0.5",
+    "bg-transparent text-[#D50367] border-2 border-[#D50367] hover:bg-[#D50367] hover:text-white",
+  ghost: "bg-transparent text-gray-700 hover:text-[#D50367] hover:bg-[#FCE3EE]",
+  dark: "bg-black text-white hover:bg-[#D50367] hover:-translate-y-0.5",
   whatsapp: "bg-[#25D366] text-white hover:bg-[#1FAE54] hover:-translate-y-0.5",
 };
 

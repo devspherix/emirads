@@ -43,23 +43,13 @@ export function Navbar() {
           onClick={close}
           aria-label={SITE.name}
         >
-          {/* Mobile / tablet: square E logo */}
-          <Image
-            src="/E_logo.png"
-            alt={`${SITE.name} logo`}
-            width={160}
-            height={160}
-            priority
-            className="h-10 w-10 object-contain lg:hidden"
-          />
-          {/* Desktop: full banner logo */}
           <Image
             src="/E_logo_banner.png"
             alt={`${SITE.name} logo`}
             width={1200}
             height={300}
             priority
-            className="hidden h-10 w-auto object-contain lg:block"
+            className="h-9 w-auto object-contain sm:h-10 lg:h-11"
           />
         </Link>
 
@@ -77,14 +67,14 @@ export function Navbar() {
                 className={cn(
                   "relative rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-200",
                   isActive
-                    ? "text-[#FF6A1A]"
-                    : "text-gray-700 hover:text-[#FF6A1A]",
+                    ? "text-[#D50367]"
+                    : "text-gray-700 hover:text-[#D50367]",
                 )}
               >
                 {isActive && (
                   <motion.span
                     layoutId="nav-pill"
-                    className="absolute inset-0 -z-10 rounded-full bg-[#FFE9DC]"
+                    className="absolute inset-0 -z-10 rounded-full bg-[#FCE3EE]"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -103,7 +93,7 @@ export function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-black transition-all hover:border-[#FF6A1A] hover:text-[#FF6A1A] lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-black transition-all hover:border-[#D50367] hover:text-[#D50367] lg:hidden"
           onClick={() => setOpen((p) => !p)}
           aria-label="Toggle navigation"
         >
@@ -162,8 +152,8 @@ export function Navbar() {
                       className={cn(
                         "flex items-center gap-3 rounded-xl px-4 py-3 text-base font-semibold transition-all",
                         isActive
-                          ? "bg-[#FFE9DC] text-[#FF6A1A]"
-                          : "text-gray-700 hover:bg-gray-50 hover:text-[#FF6A1A]",
+                          ? "bg-[#FCE3EE] text-[#D50367]"
+                          : "text-gray-700 hover:bg-gray-50 hover:text-[#D50367]",
                       )}
                     >
                       {item.label}

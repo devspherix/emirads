@@ -17,10 +17,10 @@ export default function ServicesPage() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-black py-20 text-white lg:py-28">
         <div className="pointer-events-none absolute inset-0 pattern-dots-light opacity-15" />
-        <div className="pointer-events-none absolute -right-32 top-1/2 h-[480px] w-[480px] -translate-y-1/2 rounded-full bg-[#FF6A1A]/25 blur-3xl" />
+        <div className="pointer-events-none absolute -right-32 top-1/2 h-[480px] w-[480px] -translate-y-1/2 rounded-full bg-[#D50367]/25 blur-3xl" />
         <Container className="relative">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#FF6A1A]/40 bg-[#FF6A1A]/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#FF6A1A]">
+            <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#D50367]/40 bg-[#D50367]/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#D50367]">
               <Sparkles className="h-3 w-3" /> Our Services
             </span>
             <h1
@@ -72,7 +72,7 @@ export default function ServicesPage() {
       {/* PRICING NOTE */}
       <section className="bg-[#f9f9f9] py-16">
         <Container>
-          <div className="mx-auto max-w-3xl rounded-3xl border border-[#FF6A1A]/20 bg-white p-8 text-center card-shadow">
+          <div className="mx-auto max-w-3xl rounded-3xl border border-[#D50367]/20 bg-white p-8 text-center card-shadow">
             <h2
               className="mb-3 text-2xl font-black text-black sm:text-3xl"
               style={{ fontFamily: "var(--font-display)" }}

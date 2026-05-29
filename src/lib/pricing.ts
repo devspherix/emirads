@@ -164,7 +164,7 @@ export const servicePricingList: ServicePricing[] = [
     description:
       "Full and partial vehicle wraps plus plotter-cut graphics for cars, vans, trucks and buses.",
     emoji: "🚗",
-    accentColor: "#FF6A1A",
+    accentColor: "#D50367",
     materials: [
       {
         key: "full-wrap-cast",
@@ -218,7 +218,7 @@ export const servicePricingList: ServicePricing[] = [
     description:
       "PVC flex, fabric, mesh and roller banners — printed fast on premium media.",
     emoji: "🖨️",
-    accentColor: "#db016e",
+    accentColor: "#D50367",
     remarks:
       "Prices shown are for printing only — installation is not included.",
     materials: [
@@ -274,7 +274,7 @@ export const servicePricingList: ServicePricing[] = [
     description:
       "Indoor and outdoor LED video walls with fine pitch options from P1.8 to P4.",
     emoji: "📺",
-    accentColor: "#038CE3",
+    accentColor: "#00BBFE",
     materials: [
       {
         key: "indoor-p18",
@@ -328,7 +328,7 @@ export const servicePricingList: ServicePricing[] = [
     description:
       "Light box panels, totems, gypsum hoardings and directional signs for offices, malls and hotels.",
     emoji: "✨",
-    accentColor: "#FF6A1A",
+    accentColor: "#D50367",
     materials: [
       {
         key: "light-box-panel",
@@ -375,7 +375,7 @@ export const servicePricingList: ServicePricing[] = [
     description:
       "Hoardings, pylon/totem signs, outdoor LED boxes and aluminium light boxes for facades and entrances.",
     emoji: "🏗️",
-    accentColor: "#FF6A1A",
+    accentColor: "#D50367",
     materials: [
       {
         key: "hoarding",

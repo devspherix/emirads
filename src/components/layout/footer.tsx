@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="relative border-t border-gray-100 bg-black text-white">
       {/* Orange CTA strip on top */}
-      <div className="border-b border-white/10 bg-[#FF6A1A]">
+      <div className="border-b border-white/10 bg-[#D50367]">
         <Container className="flex flex-col items-center justify-between gap-5 py-8 sm:flex-row">
           <div className="text-center sm:text-left">
             <p
@@ -25,7 +25,7 @@ export function Footer() {
             href="/quote"
             variant="dark"
             size="lg"
-            className="!bg-black hover:!bg-white hover:!text-[#FF6A1A]"
+            className="!bg-black hover:!bg-white hover:!text-[#D50367]"
           >
             Get a Free Quote <ArrowRight className="h-4 w-4" />
           </Button>
@@ -37,7 +37,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-tr from-[#FF6A1A] via-[#db016e] to-[#ffe724]">
+              <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-tr from-[#D50367] via-[#D50367] to-[#FFD705]">
                 <span className="text-xl font-black text-white">E</span>
               </div>
               <span
@@ -56,7 +56,7 @@ export function Footer() {
                 href={SITE.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-[#FF6A1A] hover:text-[#FF6A1A]"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:border-[#D50367] hover:text-[#D50367]"
                 aria-label="Instagram"
               >
                 <Instagram className="h-4 w-4" />
@@ -74,7 +74,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-[#FF6A1A]">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-[#D50367]">
               Explore
             </p>
             <ul className="space-y-2.5">
@@ -109,7 +109,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-[#FF6A1A]">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-[#D50367]">
               Services
             </p>
             <ul className="space-y-2.5">
@@ -128,7 +128,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-[#FF6A1A]">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-[#D50367]">
               Get in Touch
             </p>
             <ul className="space-y-3">
@@ -137,7 +137,7 @@ export function Footer() {
                   href={`tel:${SITE.phoneRaw}`}
                   className="group flex items-start gap-3 text-sm text-white/80 hover:text-white"
                 >
-                  <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#FF6A1A]" />
+                  <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#D50367]" />
                   <span>{SITE.phone}</span>
                 </a>
               </li>
@@ -146,7 +146,7 @@ export function Footer() {
                   href={`mailto:${SITE.email}`}
                   className="group flex items-start gap-3 text-sm text-white/80 hover:text-white"
                 >
-                  <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#FF6A1A]" />
+                  <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#D50367]" />
                   <span>{SITE.email}</span>
                 </a>
               </li>
@@ -157,7 +157,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="group flex items-start gap-3 text-sm text-white/80 hover:text-white"
                 >
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#FF6A1A]" />
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#D50367]" />
                   <span>{SITE.address}</span>
                 </a>
               </li>

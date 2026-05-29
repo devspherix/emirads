@@ -27,11 +27,11 @@ export function SectionHeading({
       )}
     >
       <div className={cn("flex items-center gap-3", align === "center" && "justify-center")}>
-        <span className="h-px w-8 bg-[#db016e]" />
-        <p className="text-xs font-bold uppercase tracking-[0.5em] text-[#db016e]">
+        <span className="h-px w-8 bg-[#D50367]" />
+        <p className="text-xs font-bold uppercase tracking-[0.5em] text-[#D50367]">
           {eyebrow}
         </p>
-        <span className="h-px w-8 bg-[#db016e]" />
+        <span className="h-px w-8 bg-[#D50367]" />
       </div>
       <div
         className={cn(

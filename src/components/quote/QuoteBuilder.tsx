@@ -47,7 +47,7 @@ function StepBar({ step }: { step: number }) {
             <div
               className={`flex h-10 w-10 items-center justify-center rounded-full border-2 text-sm font-black transition-all duration-300 ${
                 step >= s.n
-                  ? "border-[#FF6A1A] bg-[#FF6A1A] text-white shadow-sm"
+                  ? "border-[#D50367] bg-[#D50367] text-white shadow-sm"
                   : "border-gray-200 bg-white text-gray-400"
               }`}
             >
@@ -55,7 +55,7 @@ function StepBar({ step }: { step: number }) {
             </div>
             <span
               className={`text-[10px] font-bold uppercase tracking-widest transition-all duration-300 ${
-                step >= s.n ? "text-[#FF6A1A]" : "text-gray-400"
+                step >= s.n ? "text-[#D50367]" : "text-gray-400"
               }`}
             >
               {s.label}
@@ -64,7 +64,7 @@ function StepBar({ step }: { step: number }) {
           {i < steps.length - 1 && (
             <div
               className={`mx-1 mb-5 h-0.5 w-12 rounded-full transition-all duration-500 md:w-20 ${
-                step > s.n ? "bg-[#FF6A1A]" : "bg-gray-200"
+                step > s.n ? "bg-[#D50367]" : "bg-gray-200"
               }`}
             />
           )}
@@ -202,13 +202,13 @@ function Step2Specs({
                 onClick={() => onMaterialChange(m)}
                 className={`rounded-xl border-2 p-3 text-left transition-all duration-150 ${
                   selectedMaterial?.key === m.key
-                    ? "border-[#FF6A1A] bg-[#FFE9DC]"
+                    ? "border-[#D50367] bg-[#FCE3EE]"
                     : "border-gray-200 bg-white hover:border-gray-400"
                 }`}
               >
                 <div className="text-sm font-bold text-black">{m.label}</div>
                 <div className="mt-0.5 text-xs text-gray-500">{m.description}</div>
-                <div className="mt-1 text-xs font-black text-[#FF6A1A]">
+                <div className="mt-1 text-xs font-black text-[#D50367]">
                   AED {m.ratePerUnit.toLocaleString()} / {m.unit}
                 </div>
               </button>
@@ -233,7 +233,7 @@ function Step2Specs({
                   <select
                     value={specValues[field.key] ?? ""}
                     onChange={(e) => onSpecChange(field.key, e.target.value)}
-                    className="w-full appearance-none rounded-xl border-2 border-gray-200 bg-white px-4 py-3 font-medium text-black outline-none transition-colors focus:border-[#FF6A1A] pr-10"
+                    className="w-full appearance-none rounded-xl border-2 border-gray-200 bg-white px-4 py-3 font-medium text-black outline-none transition-colors focus:border-[#D50367] pr-10"
                   >
                     <option value="" disabled>
                       Select…
@@ -257,7 +257,7 @@ function Step2Specs({
                   placeholder={field.placeholder}
                   value={specValues[field.key] ?? ""}
                   onChange={(e) => onSpecChange(field.key, e.target.value)}
-                  className="w-full bg-white border-2 border-gray-200 focus:border-[#FF6A1A] rounded-xl px-4 py-3 text-black font-medium outline-none transition-colors placeholder:text-gray-300"
+                  className="w-full bg-white border-2 border-gray-200 focus:border-[#D50367] rounded-xl px-4 py-3 text-black font-medium outline-none transition-colors placeholder:text-gray-300"
                 />
               )}
             </div>
@@ -270,7 +270,7 @@ function Step2Specs({
           </p>
         )}
         {service.remarks && (
-          <p className="rounded-lg border border-[#FF6A1A]/30 bg-[#FFE9DC] px-3 py-2 text-xs font-medium text-[#E25410]">
+          <p className="rounded-lg border border-[#D50367]/30 bg-[#FCE3EE] px-3 py-2 text-xs font-medium text-[#A80250]">
             ⚠️ {service.remarks}
           </p>
         )}
@@ -280,7 +280,7 @@ function Step2Specs({
           disabled={!isValid}
           className={`w-full py-4 rounded-xl font-black uppercase tracking-widest text-sm transition-all duration-200 flex items-center justify-center gap-2 ${
             isValid
-              ? "bg-[#FF6A1A] text-white shadow-[0_8px_24px_-8px_rgba(255,106,26,0.6)] hover:bg-[#E25410] hover:-translate-y-0.5"
+              ? "bg-[#D50367] text-white shadow-[0_8px_24px_-8px_rgba(213,3,103,0.6)] hover:bg-[#A80250] hover:-translate-y-0.5"
               : "bg-gray-100 text-gray-400 cursor-not-allowed"
           }`}
         >
@@ -322,11 +322,11 @@ function Step3Price({
         transition={{ type: "spring", stiffness: 200 }}
       >
         {/* Big price */}
-        <div className="inline-block rounded-3xl border-2 border-[#FF6A1A] bg-gradient-to-br from-[#FFE9DC] to-white px-10 py-8 mb-8 shadow-[0_20px_50px_-15px_rgba(255,106,26,0.35)]">
+        <div className="inline-block rounded-3xl border-2 border-[#D50367] bg-gradient-to-br from-[#FCE3EE] to-white px-10 py-8 mb-8 shadow-[0_20px_50px_-15px_rgba(213,3,103,0.35)]">
           <p className="text-gray-500 text-sm font-bold uppercase tracking-widest mb-1">
             Estimated Price
           </p>
-          <div className="text-5xl md:text-6xl font-black text-[#FF6A1A]">
+          <div className="text-5xl md:text-6xl font-black text-[#D50367]">
             {result.unit}{" "}
             {result.total.toLocaleString("en-AE", {
               minimumFractionDigits: 2,
@@ -339,7 +339,7 @@ function Step3Price({
         </div>
 
         {service.remarks && (
-          <p className="mx-auto mb-6 max-w-md rounded-lg border border-[#FF6A1A]/30 bg-[#FFE9DC] px-4 py-2 text-xs font-medium text-[#E25410]">
+          <p className="mx-auto mb-6 max-w-md rounded-lg border border-[#D50367]/30 bg-[#FCE3EE] px-4 py-2 text-xs font-medium text-[#A80250]">
             ⚠️ {service.remarks}
           </p>
         )}
@@ -351,7 +351,7 @@ function Step3Price({
               key={i}
               className={`flex items-center justify-between border-b py-2 text-sm font-medium ${
                 row.label === "Total"
-                  ? "border-t-2 border-t-[#FF6A1A]/40 border-b-0 mt-2 pt-3 text-base font-black text-[#FF6A1A]"
+                  ? "border-t-2 border-t-[#D50367]/40 border-b-0 mt-2 pt-3 text-base font-black text-[#D50367]"
                   : "border-gray-100 text-gray-600"
               }`}
             >
@@ -369,7 +369,7 @@ function Step3Price({
         <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
           <button
             onClick={onNext}
-            className="flex items-center justify-center gap-2 rounded-xl bg-[#FF6A1A] px-8 py-4 text-sm font-bold uppercase tracking-widest text-white shadow-[0_10px_24px_-12px_rgba(255,106,26,0.7)] transition-all hover:bg-[#E25410] hover:-translate-y-0.5"
+            className="flex items-center justify-center gap-2 rounded-xl bg-[#D50367] px-8 py-4 text-sm font-bold uppercase tracking-widest text-white shadow-[0_10px_24px_-12px_rgba(213,3,103,0.7)] transition-all hover:bg-[#A80250] hover:-translate-y-0.5"
           >
             <Send size={16} /> Get Formal Quote
           </button>
@@ -416,18 +416,18 @@ function Step4Submit({
         className="py-10 text-center"
       >
         <div className="mb-4 text-7xl">📧</div>
-        <h2 className="mb-3 text-3xl font-black text-[#FF6A1A]">Email App Opened!</h2>
+        <h2 className="mb-3 text-3xl font-black text-[#D50367]">Email App Opened!</h2>
         <p className="mx-auto max-w-sm font-medium text-gray-500">
           Your email client has opened with the full quote pre-filled.
           Just hit <span className="font-bold text-black">Send</span> to submit your request.
         </p>
         <p className="mx-auto mt-3 max-w-xs text-sm text-gray-400">
           Email didn&apos;t open?{" "}
-          <a href="mailto:info@emirads.ae" className="font-bold text-[#038CE3] underline">
+          <a href="mailto:info@emirads.ae" className="font-bold text-[#00BBFE] underline">
             Click here to email us
           </a>
           {" "}or call{" "}
-          <a href="tel:+971585806956" className="font-bold text-[#038CE3] underline">
+          <a href="tel:+971585806956" className="font-bold text-[#00BBFE] underline">
             +971 58 580 6956
           </a>
         </p>
@@ -486,7 +486,7 @@ function Step4Submit({
       </h2>
       <p className="mb-6 text-sm text-gray-400">
         {service.name} estimate:{" "}
-        <span className="font-black text-[#FF6A1A]">
+        <span className="font-black text-[#D50367]">
           {result.unit}{" "}
           {result.total.toLocaleString("en-AE", {
             minimumFractionDigits: 2,
@@ -510,7 +510,7 @@ function Step4Submit({
                 placeholder={f.placeholder}
                 value={formData[f.key]}
                 onChange={(e) => onChange(f.key, e.target.value)}
-                className="w-full rounded-xl border-2 border-gray-200 bg-white py-3 pl-10 pr-4 font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#FF6A1A]"
+                className="w-full rounded-xl border-2 border-gray-200 bg-white py-3 pl-10 pr-4 font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#D50367]"
               />
             </div>
           </div>
@@ -528,7 +528,7 @@ function Step4Submit({
               placeholder="Any additional info about your project…"
               value={formData.message}
               onChange={(e) => onChange("message", e.target.value)}
-              className="w-full resize-none rounded-xl border-2 border-gray-200 bg-white py-3 pl-10 pr-4 font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#FF6A1A]"
+              className="w-full resize-none rounded-xl border-2 border-gray-200 bg-white py-3 pl-10 pr-4 font-medium text-black outline-none transition-colors placeholder:text-gray-300 focus:border-[#D50367]"
             />
           </div>
         </div>
@@ -538,7 +538,7 @@ function Step4Submit({
           disabled={submitting || !formData.name || !formData.phone}
           className={`flex w-full items-center justify-center gap-2 rounded-xl py-4 text-sm font-bold uppercase tracking-widest transition-all duration-200 ${
             !submitting && formData.name && formData.phone
-              ? "bg-[#FF6A1A] text-white shadow-[0_10px_24px_-12px_rgba(255,106,26,0.7)] hover:bg-[#E25410] hover:-translate-y-0.5"
+              ? "bg-[#D50367] text-white shadow-[0_10px_24px_-12px_rgba(213,3,103,0.7)] hover:bg-[#A80250] hover:-translate-y-0.5"
               : "cursor-not-allowed bg-gray-100 text-gray-400"
           }`}
         >
@@ -688,8 +688,8 @@ export default function QuoteBuilder({
       className={`relative overflow-hidden rounded-3xl border border-gray-100 bg-white p-6 shadow-sm md:p-10 ${className}`}
     >
       {/* Subtle gradient blobs */}
-      <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#FF6A1A]/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-[#038CE3]/5 blur-3xl" />
+      <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#D50367]/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-[#00BBFE]/5 blur-3xl" />
 
       <div className="relative z-10">
         <StepBar step={step} />
