@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
@@ -36,16 +37,30 @@ export function Navbar() {
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 sm:px-8 lg:px-12">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3" onClick={close}>
-          <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-tr from-[#FF6A1A] via-[#db016e] to-[#ffe724]">
-            <span className="text-xl font-black text-white">E</span>
-          </div>
-          <span
-            className="text-xl font-black uppercase tracking-tighter text-black"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            {SITE.name}
-          </span>
+        <Link
+          href="/"
+          className="flex items-center"
+          onClick={close}
+          aria-label={SITE.name}
+        >
+          {/* Mobile / tablet: square E logo */}
+          <Image
+            src="/E_logo.png"
+            alt={`${SITE.name} logo`}
+            width={160}
+            height={160}
+            priority
+            className="h-10 w-10 object-contain lg:hidden"
+          />
+          {/* Desktop: full banner logo */}
+          <Image
+            src="/E_logo_banner.png"
+            alt={`${SITE.name} logo`}
+            width={1200}
+            height={300}
+            priority
+            className="hidden h-10 w-auto object-contain lg:block"
+          />
         </Link>
 
         {/* Desktop nav */}
