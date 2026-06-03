@@ -73,7 +73,7 @@ export default function BlogPage() {
               className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs font-bold uppercase tracking-widest text-white/60 backdrop-blur-sm"
             >
               <Sparkles className="h-3 w-3 text-[#D50367]" />
-              Emir Ads Blog
+              EmirAds Blog
             </motion.span>
 
             <h1
