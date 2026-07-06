@@ -8,7 +8,7 @@ import { servicesCatalog, SITE } from "@/content/site";
 export const metadata: Metadata = {
   title: "Services | Emir Ads — Printing & Branding UAE",
   description:
-    "Vehicle branding, banner printing, LED screens, indoor & outdoor signage, illuminated, non-illuminated and safety signage in the UAE.",
+    "Vehicle branding, banner printing, custom signage, backdrops & displays, exhibition stands and custom flags — over 120 services across the UAE.",
 };
 
 export default function ServicesPage() {
@@ -31,8 +31,8 @@ export default function ServicesPage() {
               <span className="gradient-text-orange">stand out</span>.
             </h1>
             <p className="text-base text-white/70 sm:text-lg">
-              From vehicle wraps to LED displays and shopfront signage — eight
-              specialist services, one trusted UAE team.
+              From vehicle wraps to exhibition stands and illuminated signage
+              — six specialist categories, 120+ services, one trusted UAE team.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Button href="/quote" variant="primary" size="lg">
@@ -49,7 +49,7 @@ export default function ServicesPage() {
       {/* SERVICES GRID */}
       <section className="bg-white py-20 lg:py-24">
         <Container>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {servicesCatalog.map((s, i) => {
               const Icon = s.icon;
               return (
@@ -77,12 +77,12 @@ export default function ServicesPage() {
               className="mb-3 text-2xl font-black text-black sm:text-3xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Transparent rates, no surprises.
+              Transparent pricing, no surprises.
             </h2>
             <p className="mb-6 text-gray-600">
-              Every service page lists our standard AED rates. For custom sizes,
-              special finishes or large projects we&apos;ll send a tailored
-              quote within one business day.
+              Every service is custom-quoted for your exact sizes, materials
+              and finishes. Tell us what you need and we&apos;ll send a
+              tailored quote within one business day.
             </p>
             <Button href="/quote" variant="primary" size="lg">
               Try the Instant Quote Tool <ArrowRight className="h-4 w-4" />

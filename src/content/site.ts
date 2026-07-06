@@ -4,11 +4,9 @@ import {
   Lightbulb,
   Mail,
   MapPin,
-  MonitorPlay,
   Phone,
   Printer,
   ShieldCheck,
-  Store,
   Square,
   type LucideIcon,
 } from "lucide-react";
@@ -42,7 +40,9 @@ export const navLinks = [
 ];
 
 // ─────────────────────────────────────────────────────────────
-//  SERVICES CATALOG — 8 categories
+//  SERVICES CATALOG — 6 categories (sourced from the client's word-file
+//  catalog; full per-service pages live under /services/[category]/[slug],
+//  defined in src/content/services.ts)
 // ─────────────────────────────────────────────────────────────
 export type ServiceAccent = "orange" | "pink" | "blue" | "yellow";
 
@@ -65,100 +65,73 @@ export const servicesCatalog: ServiceCatalogItem[] = [
     shortName: "Vehicle Branding",
     tagline: "Turn your fleet into a moving billboard",
     description:
-      "Full wraps, partial wraps and plotter-cut graphics for cars, vans, trucks and buses.",
+      "Full wraps, partial wraps, vinyl lettering and specialist branding for cars, vans, trucks, boats and containers.",
     icon: Car,
-    heroImage: "/images/3D-Signage-25.jpg",
+    heroImage: "/images/services/vehicle-branding/boat-yachts-branding/img1.jpeg",
     accent: "orange",
     hasQuote: true,
   },
   {
-    slug: "banner-printing",
+    slug: "banners-printing",
     name: "Banner Printing",
     shortName: "Banner Printing",
     tagline: "High-impact banners for every space",
     description:
-      "PVC flex, fabric, mesh and roller banners — printed sharp and ready when you need them.",
+      "PVC flex, fabric, mesh, blockout and roll-up banners — printed sharp and ready when you need them.",
     icon: Printer,
-    heroImage: "/images/HOARDINGS 01.jpg",
+    heroImage: "/images/services/banners-printing/backlit-banner-printing/img1.jpeg",
     accent: "pink",
     hasQuote: true,
   },
   {
-    slug: "led-screens",
-    name: "LED Screens",
-    shortName: "LED Screens",
-    tagline: "Bright, dynamic displays that grab attention",
+    slug: "custom-signage",
+    name: "Custom Signage",
+    shortName: "Custom Signage",
+    tagline: "3D letters, LED and illuminated signage that gets noticed",
     description:
-      "Indoor and outdoor LED video walls with fine pitch options from P1.8 to P4.",
-    icon: MonitorPlay,
-    heroImage: "/images/LED NEON INDOOR SIGNS.webp",
+      "Acrylic, stainless steel, backlit and frontlit 3D letters, LED screens, directory boards and wayfinding signage.",
+    icon: Lightbulb,
+    heroImage: "/images/services/custom-signage/3d-acrylic-signage/img1.jpeg",
     accent: "blue",
     hasQuote: true,
   },
   {
-    slug: "indoor-signage",
-    name: "Indoor Signage",
-    shortName: "Indoor Signage",
-    tagline: "Reception logos, wayfinding & branded interiors",
+    slug: "backdrop-and-display",
+    name: "Backdrop & Display",
+    shortName: "Backdrop & Display",
+    tagline: "Indoor backdrops, outdoor displays and portable stands",
     description:
-      "Light box panels, totems, gypsum hoardings and directional signs for offices, malls and hotels.",
-    icon: Building2,
-    heroImage: "/images/Reception Logo 01.webp",
+      "Fabric and MDF backdrops, pop-up displays, A-frames and exhibition counters for events of every size.",
+    icon: Square,
+    heroImage: "/images/services/backdrop-and-display/backlit-exhibition-backdrops/img1.jpeg",
     accent: "yellow",
     hasQuote: true,
   },
   {
-    slug: "outdoor-signage",
-    name: "Outdoor Signage",
-    shortName: "Outdoor Signage",
-    tagline: "Built to last in the UAE sun",
+    slug: "exhibition-and-stands",
+    name: "Exhibition & Stands",
+    shortName: "Exhibition & Stands",
+    tagline: "Stands, booths and full event branding",
     description:
-      "Hoardings, pylon/totem signs, outdoor LED boxes and aluminium light boxes for facades and entrances.",
-    icon: Store,
-    heroImage: "/images/BUILDING SIGNBOARDS 01.webp",
+      "Custom exhibition stands, modular booths, wedding arches and complete event branding builds.",
+    icon: Building2,
+    heroImage: "/images/services/exhibition-and-stands/custom-exhibition-stands/img1.jpeg",
     accent: "orange",
     hasQuote: true,
   },
   {
-    slug: "illuminated-signage",
-    name: "Illuminated Signage",
-    shortName: "Illuminated Signage",
-    tagline: "Glow that gets you noticed at night",
+    slug: "custom-flags",
+    name: "Custom Flags",
+    shortName: "Custom Flags",
+    tagline: "Flags that move with the wind and the crowd",
     description:
-      "Frontlit & backlit 3D letters, push-through acrylic, cutout letters and LED neon.",
-    icon: Lightbulb,
-    heroImage: "/images/FRONTLIT 3D LETTERS 02.avif",
-    accent: "pink",
-    hasQuote: false,
-  },
-  {
-    slug: "non-illuminated-signage",
-    name: "Non-Illuminated Signage",
-    shortName: "Non-Illuminated",
-    tagline: "Clean, classic signs without the lights",
-    description:
-      "Directory boards, joinery work and crisp acrylic lettering for elegant interiors.",
-    icon: Square,
-    heroImage: "/images/DIRECTORY BOARDS 01.webp",
-    accent: "blue",
-    hasQuote: false,
-  },
-  {
-    slug: "safety-compliance-signage",
-    name: "Safety & Compliance Signage",
-    shortName: "Safety & Compliance",
-    tagline: "Code-compliant safety made simple",
-    description:
-      "Emergency exit signs, fire safety boards and regulation-ready signage for every premises.",
+      "Teardrop, blade, hoisting, boat and body flags — vivid full-colour printing on durable outdoor fabric.",
     icon: ShieldCheck,
-    heroImage: "/images/EMERGENCY EXIT SIGNS 01.webp",
-    accent: "yellow",
-    hasQuote: false,
+    heroImage: "/images/services/custom-flags/blade-flags/img1.jpeg",
+    accent: "pink",
+    hasQuote: true,
   },
 ];
-
-export const getServiceBySlug = (slug: string) =>
-  servicesCatalog.find((s) => s.slug === slug);
 
 // ─────────────────────────────────────────────────────────────
 //  Accent → tailwind / hex helper
