@@ -1,0 +1,518 @@
+# Role
+
+Act as a **Senior Frontend Engineer, UI/UX Designer, and Web Experience Architect** with strong expertise in building premium, modern, high-converting business websites.
+
+Your task is to **fully assess, redesign, enhance, and implement the Emirads website** based on the existing codebase, the provided reference website, the reference screenshot, and the Emirads company profile.
+
+Do not make superficial changes. Think independently, analyze the available resources carefully, and make professional design and implementation decisions throughout the process.
+
+---
+
+# Primary Goal
+
+Transform the existing **Emirads website** into a **premium, modern, visually engaging, content-rich, and highly intuitive website** that has the same level of visual impact and content richness as the reference website, while maintaining **Emirads' existing brand identity and current color scheme**.
+
+The final website should feel like a professionally designed UAE/Dubai-based business website rather than a basic template.
+
+The website should:
+
+* Have a highly attractive and engaging homepage.
+* Clearly communicate Emirads' services and capabilities.
+* Include all relevant services and service categories.
+* Include detailed service descriptions.
+* Showcase Emirads' work and capabilities visually.
+* Use high-quality, relevant imagery throughout the website.
+* Include Dubai/UAE-relevant visual content where appropriate.
+* Have smooth, intuitive navigation.
+* Be responsive across desktop, tablet, and mobile.
+* Have strong visual hierarchy and modern UX.
+* Feel premium, trustworthy, and conversion-focused.
+* Preserve the existing Emirads color scheme and overall brand identity.
+
+---
+
+# Step 1 — Thoroughly Analyze the Existing Codebase
+
+Before making major changes:
+
+1. Inspect the entire existing codebase.
+2. Understand the current:
+
+   * Framework and architecture.
+   * Component structure.
+   * Routing.
+   * Styling system.
+   * Existing pages.
+   * Existing reusable components.
+   * Assets.
+   * Images.
+   * Fonts.
+   * Responsive behavior.
+   * Existing functionality.
+3. Identify what is already good and should be preserved.
+4. Identify outdated, weak, incomplete, duplicated, or poorly structured sections.
+5. Identify opportunities to create reusable components instead of duplicating code.
+
+Do not unnecessarily rewrite working functionality.
+
+Reuse and improve existing components wherever practical.
+
+---
+
+# Step 2 — Analyze the Reference Website
+
+Reference website:
+
+https://mprinthouse.ae/
+
+Use this website as a **design, UX, content-structure, and inspiration reference**, not as a website to copy blindly.
+
+Analyze the reference website carefully and identify:
+
+* Homepage structure.
+* Header and navigation.
+* Hero section.
+* Hero messaging.
+* CTA placement.
+* Service categories.
+* Service cards.
+* Individual service details.
+* Image usage.
+* Portfolio/work showcase.
+* Sliders and carousels.
+* Promotional sections.
+* Dubai/UAE-related content.
+* Company introduction.
+* Trust-building sections.
+* Statistics.
+* Testimonials.
+* Client logos.
+* Call-to-action sections.
+* Footer.
+* Overall spacing and visual hierarchy.
+* Animations and interactions.
+* How the website keeps users engaged while scrolling.
+
+The goal is to understand **why the reference website feels catchy, intuitive, content-rich, and professional**, and then apply those principles to Emirads.
+
+Do not directly copy copyrighted text, branding, images, or assets.
+
+Instead, recreate the **same level of quality, structure, richness, and user experience** using original Emirads content.
+
+---
+
+# Step 3 — Analyze the Reference Screenshot
+
+Reference homepage screenshot:
+
+/Users/applechoice/Documents/Hashim/emirads/screencapture-mprinthouse-ae-2026-08-03-06_03_51.png
+
+Carefully inspect the screenshot and use it to understand:
+
+* Page layout.
+* Section ordering.
+* Visual hierarchy.
+* Image placement.
+* Section proportions.
+* Typography.
+* CTA placement.
+* Card layouts.
+* Sliders.
+* Content density.
+* Scrolling experience.
+* Visual storytelling.
+
+Use the screenshot as a visual reference for the overall experience.
+
+Do not simply reproduce the screenshot pixel-for-pixel.
+
+Instead, create a better and more polished version tailored specifically to Emirads.
+
+---
+
+# Step 4 — Analyze the Emirads Company Profile
+
+Company profile:
+
+/Users/applechoice/Documents/Hashim/emirads/EMIRADS PROFILE s01.pdf
+
+Read and analyze the entire PDF carefully.
+
+Extract all relevant information, including:
+
+* Company introduction.
+* About Emirads.
+* Services.
+* Service categories.
+* Capabilities.
+* Products.
+* Industries served.
+* Company strengths.
+* Key differentiators.
+* Mission.
+* Vision.
+* Values.
+* Any statistics.
+* Contact information.
+* Locations.
+* Client information.
+* Certifications.
+* Partnerships.
+* Any other useful company information.
+
+Use this information to create authentic Emirads website content.
+
+Do not invent company claims, statistics, certifications, clients, or achievements that are not supported by the provided materials.
+
+If some information is missing, use neutral and professional placeholder content rather than making false claims.
+
+---
+
+# Step 5 — Build a Comprehensive Service Architecture
+
+The Emirads website should contain a comprehensive and well-organized service structure.
+
+Analyze the reference website to understand its service categories and service depth.
+
+Then compare those services with the information available in the Emirads company profile.
+
+Create a logical service architecture that combines:
+
+1. Services that Emirads actually provides according to its company profile.
+2. Relevant service categories that should be represented based on the reference website's structure.
+3. Any additional services clearly supported by the Emirads profile or existing codebase.
+
+For every service, include where appropriate:
+
+* Service name.
+* Short description.
+* Detailed description.
+* Benefits.
+* Key features.
+* Process or workflow.
+* Relevant visual.
+* CTA.
+* Related services.
+
+IMPORTANT:
+
+Do not simply copy the reference website's text.
+
+Use the reference website to understand the **type and depth of content required**, but write original descriptions specifically for Emirads.
+
+Maintain a consistent, professional tone suitable for a Dubai/UAE-based business.
+
+---
+
+# Step 6 — Redesign the Homepage
+
+The homepage should be the primary focus of the redesign.
+
+Create a visually rich, engaging homepage with a strong storytelling flow.
+
+Consider including sections such as:
+
+### 1. Premium Header
+
+* Logo.
+* Navigation.
+* Services dropdown/mega menu if appropriate.
+* About.
+* Portfolio/Our Work.
+* Contact.
+* Strong CTA.
+* Mobile navigation.
+
+### 2. Hero Section
+
+Create a visually impressive hero section with:
+
+* Strong Emirads-focused headline.
+* Supporting message.
+* Primary CTA.
+* Secondary CTA where appropriate.
+* High-quality visual.
+* Optional image/video slider.
+* Strong first impression.
+
+### 3. Services Overview
+
+Showcase major Emirads service categories using attractive cards or visual blocks.
+
+### 4. Featured Services
+
+Highlight key services with:
+
+* Large visuals.
+* Short descriptions.
+* "Explore Service" CTA.
+
+### 5. About Emirads
+
+Use content from the company profile to introduce Emirads.
+
+### 6. Why Choose Emirads
+
+Highlight genuine differentiators supported by the company profile.
+
+### 7. Our Work / Portfolio
+
+Create a visually engaging portfolio section.
+
+Use:
+
+* Image grids.
+* Masonry layouts where appropriate.
+* Horizontal sliders.
+* Category filters if useful.
+* Hover interactions.
+* Project/service labels.
+
+### 8. UAE / Dubai Visual Storytelling
+
+Since Emirads operates in the UAE/Dubai context, incorporate relevant Dubai/UAE visual storytelling where it genuinely supports the brand.
+
+Examples may include:
+
+* Dubai skyline.
+* UAE business environment.
+* Modern architecture.
+* Corporate environments.
+* Events.
+* Branding.
+* Printing/production.
+* Advertising.
+* Visual campaigns.
+
+Do not add irrelevant Dubai imagery just for decoration.
+
+### 9. Process / How We Work
+
+Explain the customer journey in a visually engaging way.
+
+### 10. Testimonials
+
+Only use real testimonials if they are available in the provided materials.
+
+Otherwise, create the section structure but do not fabricate customer quotes.
+
+### 11. Client/Partner Logos
+
+Only use genuine logos available in the provided materials or existing codebase.
+
+### 12. CTA Section
+
+Create a strong conversion-focused CTA.
+
+### 13. Footer
+
+Include:
+
+* Navigation.
+* Services.
+* Contact information.
+* Social links if available.
+* Company information.
+* Legal links if applicable.
+
+---
+
+# Step 7 — Create Original Visual Assets
+
+The website needs high-quality images that match the services and content.
+
+For each section, determine what type of visual would best communicate the content.
+
+Where suitable, create original visuals yourself.
+
+You may use HTML/CSS to generate visual compositions and then capture them as images if needed.
+
+For example:
+
+1. Create a temporary HTML/CSS file.
+2. Build the visual using HTML/CSS.
+3. Capture the rendered result as an image/screenshot.
+4. Add the resulting image to the project's assets.
+5. Remove the temporary HTML/CSS generation files afterward.
+
+However:
+
+* Do not create low-quality placeholder graphics.
+* Ensure the generated visuals look professional.
+* Ensure image dimensions are appropriate for their usage.
+* Optimize images for web performance.
+* Use consistent visual styling.
+* Ensure images match the corresponding service descriptions.
+
+If an image can be sourced from an existing project asset, prefer reusing it where appropriate.
+
+Do not use copyrighted images from the reference website.
+
+---
+
+# Step 8 — Preserve Emirads' Brand Identity
+
+The current Emirads color scheme should remain the foundation of the design.
+
+Do not blindly copy the reference website's colors.
+
+Instead:
+
+* Keep the existing Emirads brand colors.
+* Improve contrast where necessary.
+* Establish a professional color hierarchy.
+* Use appropriate neutral/background colors.
+* Maintain consistency across buttons, cards, sections, and navigation.
+* Ensure accessibility and readability.
+
+The final result should clearly feel like **Emirads**, not a clone of the reference website.
+
+---
+
+# Step 9 — Add Modern UI/UX
+
+Use modern frontend best practices.
+
+Consider:
+
+* Smooth scrolling.
+* Subtle animations.
+* Scroll-triggered animations.
+* Hover effects.
+* Image transitions.
+* Carousels/sliders.
+* Micro-interactions.
+* Sticky navigation where appropriate.
+* Lazy loading.
+* Responsive layouts.
+* Proper loading states.
+* Accessible interactions.
+
+Animations should enhance the experience rather than make the website feel excessive or slow.
+
+---
+
+# Step 10 — Responsive Design
+
+Ensure the entire website works properly on:
+
+* Large desktop screens.
+* Standard desktop screens.
+* Tablets.
+* Mobile phones.
+
+Do not simply shrink the desktop design.
+
+Instead, intentionally redesign layouts for smaller screens.
+
+Pay particular attention to:
+
+* Navigation.
+* Hero sections.
+* Typography.
+* Service cards.
+* Sliders.
+* Image crops.
+* Spacing.
+* Buttons.
+* Forms.
+* Footer.
+
+---
+
+# Step 11 — Technical Quality
+
+While implementing the redesign:
+
+* Follow the existing project's framework and conventions.
+* Use reusable components.
+* Avoid unnecessary duplication.
+* Keep components maintainable.
+* Use semantic HTML.
+* Optimize performance.
+* Optimize image loading.
+* Avoid unnecessary dependencies.
+* Ensure no broken links.
+* Ensure no console errors.
+* Ensure all routes work.
+* Ensure all buttons and CTAs have appropriate behavior.
+* Ensure forms work correctly if already implemented.
+* Ensure the website builds successfully.
+
+Do not replace the entire application architecture unless there is a strong technical reason to do so.
+
+---
+
+# Step 12 — Final Quality Audit
+
+After implementation, perform a complete review of the website.
+
+Check:
+
+* Does the homepage feel premium and visually engaging?
+* Does the website feel content-rich?
+* Does it communicate Emirads clearly?
+* Are all relevant services represented?
+* Are service descriptions detailed and original?
+* Does the website visually showcase the services?
+* Does the homepage have enough visual storytelling?
+* Are the images relevant and high quality?
+* Does the design maintain Emirads' color scheme?
+* Does it feel inspired by the reference website without copying it?
+* Is the website responsive?
+* Are there any broken layouts?
+* Are there any console errors?
+* Are there any missing images?
+* Are there any dead links?
+* Are there any accessibility issues?
+* Is the website fast and optimized?
+
+Fix all issues you identify.
+
+---
+
+# Important Instructions
+
+1. **Do not stop at analysis. Implement the changes directly in the codebase.**
+
+2. **Do not ask me to manually implement each step.** Make reasonable engineering decisions yourself.
+
+3. **Do not blindly copy the reference website.** Use it as inspiration for structure, UX, content depth, and visual quality.
+
+4. **Use Emirads' actual company profile as the source of truth for company-specific information.**
+
+5. **Do not fabricate clients, testimonials, statistics, certifications, partnerships, or achievements.**
+
+6. **Create original service descriptions for Emirads.**
+
+7. **Keep the existing Emirads color scheme and brand identity.**
+
+8. **Make the homepage visually rich and content-heavy, similar in engagement level to the reference website.**
+
+9. **Use original/generated visual assets instead of copying images from the reference website.**
+
+10. **Reuse existing code and components where practical, but refactor them when necessary for maintainability.**
+
+11. **Before finishing, run the application and verify the actual rendered website, not just the source code.**
+
+12. **Check every major section visually and fix layout issues before considering the task complete.**
+
+---
+
+# Expected Final Result
+
+The final Emirads website should feel like a **premium, modern, professionally designed UAE business website** with:
+
+* A highly engaging homepage.
+* Strong visual storytelling.
+* Comprehensive service coverage.
+* Detailed service information.
+* High-quality visuals.
+* Professional animations.
+* Excellent responsive behavior.
+* Clear CTAs.
+* Strong brand consistency.
+* Intuitive navigation.
+* A polished and trustworthy user experience.
+
+The end result should be **significantly more visually compelling, content-rich, and professional than the current implementation**, while preserving Emirads' unique brand identity.

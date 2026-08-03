@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import ProjectsGrid from "./ProjectsGrid";
 import { Container } from "@/components/layout/container";
+import { SITE } from "@/content/site";
 import { Zap } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -11,10 +12,10 @@ export const metadata: Metadata = {
 };
 
 const statsData = [
-  { label: "Projects delivered", value: "500+", color: "text-[#D50367]" },
-  { label: "Vehicle wraps", value: "180+", color: "text-[#00BBFE]" },
-  { label: "Sq ft installed", value: "250K+", color: "text-[#7a6400]" },
-  { label: "Years active", value: "12+", color: "text-white" },
+  { label: "In-House", value: "Design to Install", color: "text-[#D50367]" },
+  { label: "Materials", value: "Certified", color: "text-[#00BBFE]" },
+  { label: "Turnaround", value: "Fast", color: "text-[#7a6400]" },
+  { label: "Coverage", value: "UAE-Wide", color: "text-white" },
 ];
 
 export default function ProjectsPage() {
@@ -36,7 +37,7 @@ export default function ProjectsPage() {
             <span className="gradient-text-warm block">Made to Impress.</span>
           </h1>
           <p className="mx-auto mb-10 max-w-xl text-lg text-white/60">
-            500+ projects completed across the UAE. Every job delivered on time and on spec.
+            In-house design, production and installation. Every job delivered on time and on spec.
           </p>
           <div className="flex flex-wrap justify-center gap-10">
             {statsData.map((s) => (
@@ -84,7 +85,7 @@ export default function ProjectsPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-[#D50367] to-[#A80250] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </Link>
               <a
-                href="https://wa.me/971585806956"
+                href={SITE.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-4 text-sm font-bold uppercase tracking-wider text-white"

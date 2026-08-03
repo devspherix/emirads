@@ -17,19 +17,19 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Al Jaber Optical Fleet Wrap",
+    title: "Full Fleet Vehicle Wrap",
     category: "Vehicle Branding",
     description:
-      "Full 3M cast vinyl wrap for a 12-vehicle fleet. Design, production and install across Dubai & Abu Dhabi.",
+      "Full cast-vinyl fleet wrap — design, production and installation handled in-house, start to finish.",
     image: "/images/3D-Signage-25.jpg",
     accent: "orange",
   },
   {
     id: 2,
-    title: "Dubai Mall Retail Fascia",
+    title: "Illuminated Retail Fascia",
     category: "Outdoor Signage",
     description:
-      "Halo-lit aluminium letters for a flagship retail unit — bespoke chrome finish, overnight install.",
+      "Halo-lit frontlit letters for a retail shopfront — bespoke finish, overnight installation.",
     image: "/images/FRONTLIT 3D LETTERS 02.avif",
     accent: "pink",
   },
@@ -38,25 +38,25 @@ const projects: Project[] = [
     title: "Corporate Office Wayfinding",
     category: "Indoor Signage",
     description:
-      "120+ wayfinding signs across a 14-floor HQ — floor directories, door signs and emergency egress.",
+      "Wayfinding signage across a multi-floor office — floor directories, door signs and emergency egress.",
     image: "/images/ACRYLIC LETTERING 02.avif",
     accent: "blue",
   },
   {
     id: 4,
-    title: "GITEX 2024 Exhibition Banners",
+    title: "Exhibition Banner Display",
     category: "Banner Printing",
     description:
-      "600+ sq ft of fabric and PVC for a major tech exhibitor — tensioned walls, rollers and hanging displays.",
+      "Fabric and PVC exhibition banners for a trade-show stand — tensioned walls, rollers and hanging displays.",
     image: "/images/MENU BOARDS 01.avif",
     accent: "yellow",
   },
   {
     id: 5,
-    title: "Retail Video Wall — Mall of Emirates",
+    title: "Indoor LED Video Wall",
     category: "LED Screens",
     description:
-      "4×2m P4 indoor video wall for a luxury fashion boutique — full CMS and day-parting schedule.",
+      "Indoor LED video wall for a retail boutique — full content management system integration.",
     image: "/images/BACKLIT 3D LETTERS 02.webp",
     accent: "orange",
   },
@@ -65,7 +65,7 @@ const projects: Project[] = [
     title: "Compound Entrance Pylon Signs",
     category: "Outdoor Signage",
     description:
-      "Twin 6m pylon signs with LED-illuminated faces for a residential compound — permit managed end-to-end.",
+      "Twin pylon signs with LED-illuminated faces for a residential compound entrance.",
     image: "/images/PYLON AND TOTEM SIGNS 03.jpeg",
     accent: "pink",
   },
@@ -74,7 +74,7 @@ const projects: Project[] = [
     title: "Hospitality Reception Logo",
     category: "Indoor Signage",
     description:
-      "Brushed-metal 3D logo with halo lighting for a 5-star hotel reception wall.",
+      "Brushed-metal 3D logo with halo lighting for a hotel reception wall.",
     image: "/images/Reception Logo 01.webp",
     accent: "blue",
   },
@@ -83,7 +83,7 @@ const projects: Project[] = [
     title: "Construction Site Hoarding",
     category: "Outdoor Signage",
     description:
-      "Large-format printed hoarding for a major Dubai development — installed in a single overnight shift.",
+      "Large-format printed hoarding for a Dubai development — installed in a single overnight shift.",
     image: "/images/HOARDINGS 01.jpg",
     accent: "orange",
   },

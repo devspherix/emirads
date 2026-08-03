@@ -113,7 +113,13 @@ export function CategoryLandingTemplate({
                 const subServices = services.filter((s) => s.subcategorySlug === sub.slug);
                 if (subServices.length === 0) return null;
                 return (
-                  <motion.div key={sub.slug} {...fadeUp} transition={{ ...fadeUp.transition, delay: si * 0.05 }}>
+                  <motion.div
+                    key={sub.slug}
+                    id={sub.slug}
+                    {...fadeUp}
+                    transition={{ ...fadeUp.transition, delay: si * 0.05 }}
+                    className="scroll-mt-28"
+                  >
                     <div className="mb-8 flex items-center gap-4">
                       <span className="h-px flex-1 bg-gray-200" />
                       <h2

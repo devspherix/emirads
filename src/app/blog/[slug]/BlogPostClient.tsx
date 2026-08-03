@@ -13,6 +13,7 @@ import {
   ChevronRight,
   MessageCircle,
 } from "lucide-react";
+import { SITE } from "@/content/site";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import type { BlogPost, ContentBlock } from "@/content/blog";
@@ -342,7 +343,7 @@ export function BlogPostClient({ post, related }: Props) {
                   Turn These Insights into Action
                 </h3>
                 <p className="mb-6 text-sm leading-relaxed text-white/60">
-                  Get a free consultation and quote from Emir Ads — Dubai&apos;s
+                  Get a free consultation and quote from Emirads — Dubai&apos;s
                   trusted signage specialists since 2012.
                 </p>
                 <div className="flex flex-wrap gap-3">
@@ -350,7 +351,7 @@ export function BlogPostClient({ post, related }: Props) {
                     Get a Free Quote
                     <ArrowRight className="h-4 w-4" />
                   </Button>
-                  <Button variant="whatsapp" href="https://wa.me/971585806956" external size="md">
+                  <Button variant="whatsapp" href={SITE.whatsapp} external size="md">
                     <MessageCircle className="h-4 w-4" />
                     WhatsApp Us
                   </Button>

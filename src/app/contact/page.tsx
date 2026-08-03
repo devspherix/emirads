@@ -13,9 +13,9 @@ const accentHex: Record<(typeof accents)[number], { hex: string; soft: string }>
 };
 
 export const metadata: Metadata = {
-  title: "Contact Us | Emir Ads — Dubai",
+  title: "Contact Us | Emirads — Dubai",
   description:
-    "Get in touch with Emir Ads. Share your signage, wrap or LED screen brief — we reply within 24 hours with timelines and pricing.",
+    "Get in touch with Emirads. Share your signage, wrap or LED screen brief — we reply within 24 hours with timelines and pricing.",
 };
 
 export default function ContactPage() {

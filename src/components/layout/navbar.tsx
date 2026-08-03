@@ -5,16 +5,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { navLinks, SITE } from "@/content/site";
+import { categories, getFullCategoryColumns, type CategoryMeta } from "@/content/services";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { CategoryBar } from "@/components/layout/category-bar";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const pathname = usePathname();
-  const close = () => setOpen(false);
+  const close = () => {
+    setOpen(false);
+    setMobileServicesOpen(false);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -22,6 +28,11 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    close();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   return (
     <motion.header
@@ -123,6 +134,9 @@ export function Navbar() {
         </button>
       </div>
 
+      {/* Category bar — separate services menu (desktop) */}
+      <CategoryBar />
+
       {/* Mobile menu */}
       <AnimatePresence>
         {open && (
@@ -139,6 +153,65 @@ export function Navbar() {
                   item.href === "/"
                     ? pathname === "/"
                     : pathname === item.href || pathname.startsWith(`${item.href}/`);
+                const isServices = item.href === "/services";
+
+                if (isServices) {
+                  return (
+                    <motion.div
+                      key={item.href}
+                      initial={{ opacity: 0, x: -16 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.25, delay: idx * 0.05 }}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setMobileServicesOpen((v) => !v)}
+                        aria-expanded={mobileServicesOpen}
+                        className={cn(
+                          "flex w-full items-center justify-between gap-3 rounded-xl px-4 py-3 text-base font-semibold transition-all",
+                          isActive || mobileServicesOpen
+                            ? "bg-[#FCE3EE] text-[#D50367]"
+                            : "text-gray-700 hover:bg-gray-50 hover:text-[#D50367]",
+                        )}
+                      >
+                        {item.label}
+                        <ChevronDown
+                          className={cn(
+                            "h-4 w-4 transition-transform duration-200",
+                            mobileServicesOpen && "rotate-180",
+                          )}
+                        />
+                      </button>
+                      <AnimatePresence initial={false}>
+                        {mobileServicesOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.25 }}
+                            className="overflow-hidden pl-4"
+                          >
+                            <ul className="flex flex-col gap-0.5 border-l border-gray-100 py-1 pl-3">
+                              {categories.map((cat) => (
+                                <MobileCategoryItem key={cat.slug} cat={cat} onNavigate={close} />
+                              ))}
+                              <li>
+                                <Link
+                                  href="/services"
+                                  onClick={close}
+                                  className="block rounded-lg px-3 py-2 text-sm font-bold text-[#D50367]"
+                                >
+                                  View All Services
+                                </Link>
+                              </li>
+                            </ul>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  );
+                }
+
                 return (
                   <motion.div
                     key={item.href}
@@ -174,5 +247,83 @@ export function Navbar() {
         )}
       </AnimatePresence>
     </motion.header>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
+//  Mobile "Services" accordion — one nested collapsible per
+//  category, expanding into that category's full subcategory /
+//  service list (same data as the desktop CategoryBar dropdown).
+// ─────────────────────────────────────────────────────────────
+function MobileCategoryItem({
+  cat,
+  onNavigate,
+}: {
+  cat: CategoryMeta;
+  onNavigate: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const groups = getFullCategoryColumns(cat.slug);
+
+  return (
+    <li>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className={cn(
+          "flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2 text-left text-sm font-medium transition-colors",
+          open ? "text-[#D50367]" : "text-gray-600 hover:bg-gray-50 hover:text-[#D50367]",
+        )}
+      >
+        {cat.name}
+        <ChevronDown
+          className={cn("h-3.5 w-3.5 shrink-0 transition-transform duration-200", open && "rotate-180")}
+        />
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="overflow-hidden pl-3"
+          >
+            <div className="flex flex-col gap-3 border-l border-gray-100 py-2 pl-3">
+              {groups.map((group) => (
+                <div key={group.heading ?? "flat"}>
+                  {group.heading && (
+                    <p className="mb-1 text-[11px] font-bold uppercase tracking-widest text-gray-400">
+                      {group.heading}
+                    </p>
+                  )}
+                  <ul className="flex flex-col gap-0.5">
+                    {group.links.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          onClick={onNavigate}
+                          className="block rounded-md px-2 py-1.5 text-sm text-gray-500 transition-colors hover:bg-gray-50 hover:text-[#D50367]"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              <Link
+                href={`/services/${cat.slug}`}
+                onClick={onNavigate}
+                className="text-xs font-bold uppercase tracking-wider text-[#D50367]"
+              >
+                View Full Category
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </li>
   );
 }

@@ -6,7 +6,7 @@ import { ServiceCard } from "@/components/ui/card";
 import { servicesCatalog, SITE } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Services | Emir Ads — Printing & Branding UAE",
+  title: "Services | Emirads — Printing & Branding UAE",
   description:
     "Vehicle branding, banner printing, custom signage, backdrops & displays, exhibition stands and custom flags — over 120 services across the UAE.",
 };

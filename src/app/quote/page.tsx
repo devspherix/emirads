@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { SITE } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Get a Free Quote | Emir Ads — Dubai",
+  title: "Get a Free Quote | Emirads — Dubai",
   description:
     "Use our instant price calculator to get an estimate for vehicle branding, banners, LED screens and indoor/outdoor signage. No obligation.",
 };
@@ -38,7 +38,7 @@ export default function QuotePage() {
             {[
               { label: "Services", value: "8" },
               { label: "Quote time", value: "<60s" },
-              { label: "Response SLA", value: "2 hrs" },
+              { label: "Response Time", value: "24 hrs" },
             ].map((s) => (
               <div key={s.label} className="text-center">
                 <div
@@ -69,7 +69,7 @@ export default function QuotePage() {
       <section className="border-t border-gray-100 bg-[#f9f9f9] py-16">
         <Container>
           <p className="mb-8 text-center text-xs font-bold uppercase tracking-widest text-gray-400">
-            Trusted by 100+ businesses across the UAE
+            In-house design, production and installation — Dubai-based, UAE-wide
           </p>
           <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
             {[

@@ -20,6 +20,7 @@ import {
   type MaterialOption,
   type PriceResult,
 } from "@/lib/pricing";
+import { SITE } from "@/content/site";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -374,7 +375,7 @@ function Step3Price({
             <Send size={16} /> Get Formal Quote
           </button>
           <a
-            href="https://wa.me/971585806956"
+            href={SITE.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-8 py-4 text-sm font-bold uppercase tracking-widest text-white transition-all hover:scale-105"
@@ -423,16 +424,16 @@ function Step4Submit({
         </p>
         <p className="mx-auto mt-3 max-w-xs text-sm text-gray-400">
           Email didn&apos;t open?{" "}
-          <a href="mailto:info@emirads.ae" className="font-bold text-[#00BBFE] underline">
+          <a href={`mailto:${SITE.email}`} className="font-bold text-[#00BBFE] underline">
             Click here to email us
           </a>
           {" "}or call{" "}
-          <a href="tel:+971585806956" className="font-bold text-[#00BBFE] underline">
-            +971 58 580 6956
+          <a href={`tel:${SITE.phoneRaw}`} className="font-bold text-[#00BBFE] underline">
+            {SITE.phone}
           </a>
         </p>
         <a
-          href="https://wa.me/971585806956"
+          href={SITE.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-sm font-bold uppercase tracking-widest text-white"
@@ -668,7 +669,7 @@ export default function QuoteBuilder({
       `Quote Request — ${selectedService.name} | ${totalFormatted}`
     );
     const encodedBody = encodeURIComponent(body);
-    const mailto = `mailto:info@emirads.ae?subject=${subject}&body=${encodedBody}`;
+    const mailto = `mailto:${SITE.email}?subject=${subject}&body=${encodedBody}`;
 
     window.open(mailto, "_self");
     setDone(true);

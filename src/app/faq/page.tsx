@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { faqs, SITE } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "FAQs | Emir Ads — Dubai",
+  title: "FAQs | Emirads — Dubai",
   description:
     "Answers to common questions about pricing, lead times, permits, materials and installation.",
 };

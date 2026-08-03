@@ -15,16 +15,17 @@ import {
 //  CONTACT — single source of truth
 // ─────────────────────────────────────────────────────────────
 export const SITE = {
-  name: "Emir Ads",
-  legalName: "Emir Ads",
-  phone: "+971 58 580 6956",
-  phoneRaw: "+971585806956",
-  whatsapp: "https://wa.me/971585806956",
-  email: "info@emirads.ae",
-  address: "Dubai Production City, UAE",
-  mapUrl: "https://www.google.com/maps/search/Dubai+Production+City",
-  instagram: "https://instagram.com/",
-  foundedYear: 2012,
+  name: "Emirads",
+  legalName: "Emirads Advertising L.L.C",
+  tagline: "Branding | Signage | Vehicle & Event Solutions – Dubai",
+  phone: "+971 58 580 6950",
+  phoneRaw: "+971585806950",
+  whatsapp: "https://wa.me/971585806950",
+  email: "abdul@emirads.ae",
+  address: "17A Street, Al Quoz Industrial Area 2, Warehouse C-24, Near Jotun Paints, Dubai, UAE",
+  mapUrl: "https://www.google.com/maps/search/Al+Quoz+Industrial+Area+2+Dubai",
+  instagram: "https://instagram.com/emirads.ae",
+  website: "https://www.emirads.ae",
 };
 
 // ─────────────────────────────────────────────────────────────
@@ -167,38 +168,46 @@ export const accentMap: Record<
 };
 
 // ─────────────────────────────────────────────────────────────
-//  HOME PAGE COPY
+//  HOME PAGE COPY — sourced from the Emirads Advertising L.L.C
+//  company profile (About Us / Mission / Vision / Quality Policy)
 // ─────────────────────────────────────────────────────────────
 export const trustBar = [
-  { value: "100+", label: "Successful Projects" },
-  { value: "Premium", label: "Quality Materials" },
-  { value: "Fast", label: "Reliable Delivery" },
-  { value: "Creative", label: "Professional Team" },
-  { value: "95%", label: "Client Satisfaction" },
-  { value: "Startups → Enterprise", label: "Trusted Across the UAE" },
+  { value: "In-House", label: "Design, Print & Fabrication" },
+  { value: "Fast", label: "Turnaround, Including Urgent Jobs" },
+  { value: "Certified", label: "Quality Materials & Equipment" },
+  { value: "Trained", label: "Installation Team" },
+  { value: "24/7", label: "Support for Night Jobs" },
+  { value: "Dubai", label: "Al Quoz Industrial Area 2" },
 ];
 
 export const whyChooseUs = [
-  "High-quality printing materials",
-  "Creative branding solutions",
-  "Fast delivery & installation",
-  "Friendly, professional team",
-  "Transparent, fair pricing",
-  "Permit & approval handling",
+  "In-house design, printing, fabrication and installation",
+  "Fast turnaround — including urgent and night jobs",
+  "High-grade, certified materials and modern equipment",
+  "Experienced, trained installation team",
+  "Transparent pricing with clear, honest communication",
+  "End-to-end project ownership from concept to install",
 ];
 
-export const heroStats = [
-  { label: "Projects delivered", value: "100+" },
-  { label: "Vehicles wrapped", value: "180+" },
-  { label: "Client satisfaction", value: "95%" },
-  { label: "Years in business", value: "12" },
-];
+export const missionStatement =
+  "Our mission is to deliver premium-quality branding and signage solutions that elevate the identity and visibility of every client we serve — combining creativity, technology and craftsmanship into impactful visual communication, with consistency, durability and precision on every project.";
+
+export const visionStatement =
+  "Our vision is to become the UAE's most trusted and innovative signage and branding company — known for excellence, creativity and reliability, leading the industry through modern technology and sustainable production while continuously investing in people, machinery and materials.";
+
+export const aboutIntro =
+  "Emirads Advertising L.L.C is a Dubai-based advertising and branding company specializing in vehicle branding, event branding and custom signage solutions. We provide end-to-end services — design, printing, fabrication and installation — ensuring high-quality results, timely delivery and competitive pricing.";
 
 export const processSteps = [
   {
+    title: "Inquiry",
+    detail:
+      "Share your brief with us — service, sizes and where it needs to go. No obligation, no pressure.",
+  },
+  {
     title: "Consult & Survey",
     detail:
-      "We listen to your brief, visit your site and confirm sizes — no guesswork, no surprises.",
+      "We confirm scope and, where needed, visit your site to verify sizes — no guesswork, no surprises.",
   },
   {
     title: "Design & Approval",
@@ -208,37 +217,69 @@ export const processSteps = [
   {
     title: "Fabricate & Print",
     detail:
-      "Everything is built and printed in our Dubai workshop using premium, weather-tested materials.",
+      "Everything is built and printed in-house using certified, high-grade materials and modern equipment.",
   },
   {
-    title: "Install & Hand Over",
+    title: "Install",
     detail:
-      "Our installers fit your signage cleanly, then walk you through the final result and warranty.",
+      "Our trained installers fit your signage cleanly and safely, including urgent and night jobs.",
   },
+  {
+    title: "Hand Over & Warranty",
+    detail:
+      "We walk you through the final result, backed by our written Quality Policy warranty.",
+  },
+];
+
+// Quality Policy principles — verbatim from the Emirads Quality Policy Statement
+export const qualityPrinciples = [
+  {
+    title: "Customer Focus",
+    body: "We prioritize understanding customer needs and delivering solutions that meet their exact requirements with clear communication, transparency and dependable after-sales support.",
+  },
+  {
+    title: "Compliance & Standards",
+    body: "We follow all applicable industry standards, regulations and internal procedures to ensure safe, durable and professional results.",
+  },
+  {
+    title: "Quality Materials & Equipment",
+    body: "We use high-grade, certified materials and modern equipment to guarantee durability, accuracy and long-lasting performance in all our products.",
+  },
+  {
+    title: "On-Time Delivery",
+    body: "We commit to delivering every project on schedule while maintaining uncompromised quality.",
+  },
+];
+
+export const warrantyHighlights = [
+  "1 year warranty on standard signages and LED frontlit/backlit signages",
+  "6 months–1 year on vinyl prints, depending on material grade",
+  "Covers manufacturing, fabrication and installation defects",
+  "Extended warranty available on specific projects by agreement",
 ];
 
 export const certifications = [
   {
-    title: "3M Certified Installer",
-    body: "Authorised by 3M to install and warranty their premium vinyl and film products.",
+    title: "Licensed Advertising Company",
+    body: "Emirads Advertising L.L.C operates under a registered UAE trade licence from our Al Quoz, Dubai workshop.",
   },
   {
-    title: "Dubai Economy Licensed",
-    body: "Fully licensed trade licence holder operating across the UAE.",
+    title: "Quality Policy & Warranty",
+    body: "Every project follows our documented Quality Policy, backed by a written warranty covering materials, fabrication and installation.",
   },
   {
-    title: "RTA Compliant",
-    body: "All vehicle wraps comply with RTA regulations for commercial fleet branding.",
+    title: "In-House Production",
+    body: "Design, printing, fabrication and installation are all handled in-house — no third-party handoffs, no lost accountability.",
   },
   {
-    title: "Municipality Approved",
-    body: "Registered for outdoor signage NOC permits across Dubai and Sharjah.",
+    title: "Urgent & Night Job Support",
+    body: "Our team is equipped to support tight deadlines, including urgent turnarounds and out-of-hours installation.",
   },
 ];
 
 // ─────────────────────────────────────────────────────────────
-//  ABOUT PAGE — Owner + Team
-//  Names are placeholders. Replace with real team info.
+//  ABOUT PAGE — Team, described by function/department (per the
+//  company's organisation chart, not by invented individual names)
 // ─────────────────────────────────────────────────────────────
 export type TeamMember = {
   name: string;
@@ -249,67 +290,53 @@ export type TeamMember = {
   accent: ServiceAccent;
 };
 
-export const founder: TeamMember = {
-  name: "Mr. Hashim",
-  role: "Founder & Managing Director",
-  summary:
-    "Building Emir Ads from a single workshop into one of the UAE's most trusted signage and branding partners.",
-  bio: [
-    "Mr. Hashim founded Emir Ads with a simple belief: every brand deserves to be seen — clearly, beautifully and without hassle.",
-    "With over 12 years of hands-on experience in printing, signage and large-format branding across the Gulf, he leads every project with a craftsman's eye for quality and an entrepreneur's drive for results.",
-    "Under his leadership, Emir Ads has grown from a small print shop into a full-service branding partner trusted by startups, retailers and enterprise clients across Dubai, Sharjah and Abu Dhabi.",
-  ],
-  initials: "H",
-  accent: "orange",
-};
-
 export const team: TeamMember[] = [
   {
-    name: "Operations Manager",
-    role: "Operations Manager",
+    name: "Sales",
+    role: "Sales Manager & Executives",
     summary:
-      "Keeps every project moving on schedule — from quote to final install.",
+      "Your first point of contact — understanding the brief and turning it into a clear quotation.",
     bio: [
-      "Our Operations Manager oversees the day-to-day running of the workshop, schedules installation crews and acts as your single point of contact from kickoff to handover.",
-      "With deep experience in logistics, permits and on-site coordination, they make sure every project lands on time and on spec.",
+      "Our Sales Manager and Sales Executives take your brief, confirm requirements and prepare a tailored quotation.",
+      "They stay involved through approval and production, so you always have one point of contact for your project.",
     ],
-    initials: "OM",
+    initials: "SL",
     accent: "pink",
   },
   {
-    name: "Lead Designer",
-    role: "Lead Designer",
+    name: "Production",
+    role: "Design, Graphics & Fabrication",
     summary:
-      "Turns your brand brief into print-ready visuals that look great in real life.",
+      "Design, graphics pasting and fabrication — turning approved visuals into finished signage.",
     bio: [
-      "Our Lead Designer handles everything visual — from logo placement on vehicle wraps to colour matching for illuminated signage.",
-      "With a strong eye for proportion and detail, they ensure your brand reads cleanly at any size and any distance.",
+      "Our Production department covers Design, Graphics Pasters, Machine Operators and Fabrication — everything between an approved mock-up and a finished product.",
+      "Working in-house end-to-end keeps quality consistent and turnaround fast, including urgent jobs.",
     ],
-    initials: "LD",
+    initials: "PR",
     accent: "blue",
   },
   {
-    name: "Head of Installation",
-    role: "Head of Installation",
+    name: "Sign Installation Team",
+    role: "On-Site Fitting",
     summary:
-      "Leads our certified install team — fast, safe and finished to a high standard.",
+      "Our trained install crew — fast, safe and finished to a high standard.",
     bio: [
-      "Our Head of Installation runs our on-site crews and is personally 3M-certified for vehicle wraps and large-format installations.",
-      "From overnight mall fascias to compound pylons, they make sure every install is delivered safely and looks perfect on day one.",
+      "Our Sign Installation Team, under Production, handles on-site fitting for vehicle wraps, signage and large-format branding, including urgent and night jobs.",
+      "From shopfront fascias to fleet branding, they make sure every install is delivered safely and looks right on day one.",
     ],
-    initials: "HI",
+    initials: "IN",
     accent: "yellow",
   },
   {
-    name: "Project Manager",
-    role: "Project Manager",
+    name: "Administration & Accounts",
+    role: "Quality, Logistics & Accounts",
     summary:
-      "Your dedicated contact, keeping every brief on track and every client in the loop.",
+      "Quality inspection, logistics coordination and accounts — keeping every project accountable.",
     bio: [
-      "Our Project Manager owns the client experience — from the first quote response through to post-installation support.",
-      "They keep updates clear, timelines transparent and surprises off the table.",
+      "Our Administration team runs Quality Inspection and Logistics Coordination, while Accounts manages invoicing and payments.",
+      "Together they keep communication transparent and every project accountable, in line with our Quality Policy.",
     ],
-    initials: "PM",
+    initials: "AD",
     accent: "orange",
   },
 ];
@@ -319,22 +346,22 @@ export const team: TeamMember[] = [
 // ─────────────────────────────────────────────────────────────
 export const featuredProjects = [
   {
-    name: "Glow District Retail",
+    name: "Illuminated Frontlit Signage",
     scope: "Indoor Signage",
     image: "/images/FRONTLIT 3D LETTERS 02.avif",
-    stats: ["2 week turnaround", "IP65 lighting", "12m custom fascia"],
+    stats: ["In-house fabrication", "Certified materials", "Clean installation"],
   },
   {
-    name: "Velocity Motorsports",
+    name: "Full Vehicle Wrap",
     scope: "Vehicle Branding",
     image: "/images/3D-Signage-25.jpg",
-    stats: ["18 vehicles", "Weatherproof vinyl", "Carbon accents"],
+    stats: ["Weatherproof vinyl", "Full-colour print", "In-house installation"],
   },
   {
-    name: "Expo Pavilion Pop-up",
+    name: "Pylon & Totem Signage",
     scope: "Outdoor Signage",
     image: "/images/PYLON AND TOTEM SIGNS.jpg",
-    stats: ["600 sqm build", "Modular joinery", "AV integration"],
+    stats: ["Weather-resistant build", "High visibility", "On-site installation"],
   },
 ];
 
@@ -351,7 +378,7 @@ export const contactMethods = [
   {
     label: "Email us",
     value: SITE.email,
-    href: `mailto:${SITE.email}?subject=Project%20Brief%20-%20Emir%20Ads`,
+    href: `mailto:${SITE.email}?subject=Project%20Brief%20-%20Emirads`,
     icon: Mail,
   },
   {

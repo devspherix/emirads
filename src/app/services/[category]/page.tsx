@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = getCategory(categorySlug);
   if (!category) return {};
   return {
-    title: `${category.name} | Emir Ads — Dubai`,
+    title: `${category.name} | Emirads — Dubai`,
     description: category.description,
   };
 }

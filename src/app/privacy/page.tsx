@@ -3,9 +3,9 @@ import { Container } from "@/components/layout/container";
 import { SITE } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Emir Ads",
+  title: "Privacy Policy | Emirads",
   description:
-    "How Emir Ads collects, uses and protects your personal information.",
+    "How Emirads collects, uses and protects your personal information.",
 };
 
 export default function PrivacyPage() {

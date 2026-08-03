@@ -16,10 +16,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getService(categorySlug, serviceSlug);
   if (!service) return {};
   return {
-    title: `${service.title} | Emir Ads — Dubai`,
+    title: `${service.title} | Emirads — Dubai`,
     description:
       service.description.blocks.find((b) => b.type === "paragraph")?.text ??
-      `${service.title} in Dubai, Sharjah and across the UAE by Emir Ads.`,
+      `${service.title} in Dubai, Sharjah and across the UAE by Emirads.`,
   };
 }
 

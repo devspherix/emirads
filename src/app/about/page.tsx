@@ -5,7 +5,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
-import { team, SITE, accentMap, type TeamMember } from "@/content/site";
+import {
+  team,
+  SITE,
+  accentMap,
+  aboutIntro,
+  missionStatement,
+  visionStatement,
+  qualityPrinciples,
+  warrantyHighlights,
+  type TeamMember,
+} from "@/content/site";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -25,7 +35,7 @@ export default function AboutPage() {
         <Container className="relative">
           <div className="mx-auto max-w-3xl text-center">
             <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#FCE3EE] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#A80250]">
-              <Sparkles className="h-3 w-3" /> About Emir Ads
+              <Sparkles className="h-3 w-3" /> About {SITE.name}
             </span>
             <h1
               className="mb-5 text-4xl font-black leading-tight text-black sm:text-5xl lg:text-6xl"
@@ -34,11 +44,36 @@ export default function AboutPage() {
               The People Behind <span className="gradient-text-orange">Your Brand.</span>
             </h1>
             <p className="text-base leading-relaxed text-gray-600 sm:text-lg">
-              We&apos;re a tight-knit team of designers, fabricators and installers
-              based in Dubai. Since {SITE.foundedYear} we&apos;ve helped hundreds
-              of businesses across the UAE put their brand in front of the right
-              people — clearly, beautifully and without hassle.
+              {aboutIntro}
             </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* MISSION & VISION */}
+      <section className="bg-[#f9f9f9] py-20 lg:py-24">
+        <Container>
+          <div className="grid gap-6 sm:grid-cols-2">
+            <motion.div
+              {...fadeUp}
+              className="rounded-2xl border border-gray-100 bg-white p-8 card-shadow"
+              style={{ borderTopWidth: 4, borderTopColor: "#D50367" }}
+            >
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#D50367]">
+                Our Mission
+              </p>
+              <p className="text-base leading-relaxed text-gray-700">{missionStatement}</p>
+            </motion.div>
+            <motion.div
+              {...fadeUp}
+              className="rounded-2xl border border-gray-100 bg-white p-8 card-shadow"
+              style={{ borderTopWidth: 4, borderTopColor: "#00BBFE" }}
+            >
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#00BBFE]">
+                Our Vision
+              </p>
+              <p className="text-base leading-relaxed text-gray-700">{visionStatement}</p>
+            </motion.div>
           </div>
         </Container>
       </section>
@@ -70,40 +105,23 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* VALUES STRIP */}
-      <section className="bg-[#f9f9f9] py-20 lg:py-24">
+      {/* QUALITY POLICY */}
+      <section className="bg-white py-20 lg:py-24">
         <Container>
           <motion.div {...fadeUp} className="mx-auto mb-12 max-w-3xl text-center">
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#D50367]">
-              What We Stand For
+              Our Quality Policy
             </p>
             <h2
               className="text-3xl font-black text-black sm:text-4xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Four simple rules we never break.
+              Principles we hold every project to.
             </h2>
           </motion.div>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                title: "Quality first",
-                body: "We only use premium materials and tested processes.",
-              },
-              {
-                title: "Honest pricing",
-                body: "Clear rates, no hidden fees, no surprise invoices.",
-              },
-              {
-                title: "On-time delivery",
-                body: "We commit to a date and we hit it. Every time.",
-              },
-              {
-                title: "Real support",
-                body: "We answer the phone. Before, during and after.",
-              },
-            ].map((v, i) => (
+            {qualityPrinciples.map((v, i) => (
               <motion.div
                 key={v.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -122,6 +140,41 @@ export default function AboutPage() {
                 <p className="text-sm leading-relaxed text-gray-500">{v.body}</p>
               </motion.div>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* WARRANTY */}
+      <section className="bg-[#f9f9f9] py-20 lg:py-24">
+        <Container>
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+            <motion.div {...fadeUp}>
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#D50367]">
+                Warranty
+              </p>
+              <h2
+                className="mb-5 text-3xl font-black leading-tight text-black sm:text-4xl"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Every signage backed by a written warranty.
+              </h2>
+              <p className="text-base leading-relaxed text-gray-600">
+                Our warranty covers manufacturing defects, installation issues
+                and material-related problems within the specified warranty
+                period — so you can install with confidence.
+              </p>
+            </motion.div>
+            <motion.ul {...fadeUp} className="space-y-3">
+              {warrantyHighlights.map((point) => (
+                <li
+                  key={point}
+                  className="flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-4 text-sm font-medium text-gray-700 card-shadow"
+                >
+                  <span className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-[#D50367]" />
+                  {point}
+                </li>
+              ))}
+            </motion.ul>
           </div>
         </Container>
       </section>

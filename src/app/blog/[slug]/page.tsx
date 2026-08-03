@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
   return {
-    title: `${post.title} | Emir Ads Blog`,
+    title: `${post.title} | Emirads Blog`,
     description: post.excerpt,
   };
 }

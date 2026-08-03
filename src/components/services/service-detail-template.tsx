@@ -29,7 +29,7 @@ export function ServiceDetailTemplate({
   const a = accentMap[category.accent];
   const related = getRelatedServices(service, 3);
   const waMessage = encodeURIComponent(
-    `Hi Emir Ads, I'd like a quote for ${service.title}.`,
+    `Hi Emirads, I'd like a quote for ${service.title}.`,
   );
 
   return (

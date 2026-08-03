@@ -4,7 +4,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Emir Ads | Premium Printing & Branding Solutions in the UAE",
+  title: "Emirads | Premium Printing & Branding Solutions in the UAE",
   description:
     "We Print. We Brand. We Make You Visible. Vehicle wraps, signage, LED screens, banners and indoor/outdoor branding across Dubai and the UAE.",
   keywords: [
@@ -12,20 +12,19 @@ export const metadata: Metadata = {
     "vehicle branding UAE",
     "LED screens Dubai",
     "banner printing",
-    "Emir Ads",
     "Emirads",
     "outdoor signage",
     "indoor signage Dubai",
   ],
   openGraph: {
-    title: "Emir Ads — Premium Printing & Branding Solutions",
+    title: "Emirads — Premium Printing & Branding Solutions",
     description:
-      "From vehicle wraps to LED screens and signage — Emir Ads makes your brand visible across the UAE.",
-    siteName: "Emir Ads",
+      "From vehicle wraps to LED screens and signage — Emirads makes your brand visible across the UAE.",
+    siteName: "Emirads",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Emir Ads — Premium Printing & Branding Solutions",
+    title: "Emirads — Premium Printing & Branding Solutions",
     description:
       "Vehicle wraps, signage, LED screens, banners and full branding across the UAE.",
   },

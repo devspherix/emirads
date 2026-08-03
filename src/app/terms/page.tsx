@@ -3,9 +3,9 @@ import { Container } from "@/components/layout/container";
 import { SITE } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Emir Ads",
+  title: "Terms of Service | Emirads",
   description:
-    "Terms and conditions for using Emir Ads services and website.",
+    "Terms and conditions for using Emirads services and website.",
 };
 
 export default function TermsPage() {
