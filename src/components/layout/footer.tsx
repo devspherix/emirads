@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, MapPin, Phone, Instagram, ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
@@ -36,12 +37,16 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-tr from-[#D50367] via-[#D50367] to-[#FFD705]">
-                <span className="text-xl font-black text-white">E</span>
-              </div>
+            <Link href="/" className="flex items-center gap-1.5">
+              <Image
+                src="/E_logo_trimmed.png"
+                alt=""
+                width={730}
+                height={710}
+                className="h-11 w-auto object-contain"
+              />
               <span
-                className="text-xl font-black uppercase tracking-tight text-white"
+                className="text-2xl font-black uppercase tracking-tight text-white"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {SITE.name}
