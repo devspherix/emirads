@@ -80,7 +80,7 @@ export function ServiceCard({
             {icon && (
               <div
                 className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl backdrop-blur-md"
-                style={{ backgroundColor: "rgba(255,255,255,0.9)", color: a.hex }}
+                style={{ backgroundColor: "rgba(255,255,255,0.9)", color: a.text }}
               >
                 {icon}
               </div>
@@ -92,7 +92,7 @@ export function ServiceCard({
           {!image && icon && (
             <div
               className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl"
-              style={{ backgroundColor: a.soft, color: a.hex }}
+              style={{ backgroundColor: a.soft, color: a.text }}
             >
               {icon}
             </div>
@@ -108,7 +108,7 @@ export function ServiceCard({
           </p>
           <span
             className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider transition-all group-hover:gap-2.5"
-            style={{ color: a.hex }}
+            style={{ color: a.text }}
           >
             Learn More <ArrowRight className="h-3.5 w-3.5" />
           </span>
@@ -158,8 +158,8 @@ export function PortfolioCard({
         />
         {category && (
           <span
-            className="absolute left-3 top-3 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white shadow-sm"
-            style={{ backgroundColor: a.hex }}
+            className="absolute left-3 top-3 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow-sm"
+            style={{ backgroundColor: a.hex, color: a.onHex }}
           >
             {category}
           </span>
@@ -228,7 +228,7 @@ export function FeatureCard({
       {Icon && (
         <div
           className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl"
-          style={{ backgroundColor: a.soft, color: a.hex }}
+          style={{ backgroundColor: a.soft, color: a.text }}
         >
           <Icon className="h-5 w-5" />
         </div>

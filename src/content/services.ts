@@ -131,7 +131,16 @@ export const categories: CategoryMeta[] = catalog.categories.map((c) => {
   };
 });
 
-export const services: Service[] = catalog.services;
+// Temporarily disabled services -- hidden from listings, menus and routing
+// without touching the underlying catalog data. Remove a slug from this set
+// to bring the service back.
+const DISABLED_SERVICES = new Set<string>([
+  "vehicle-branding/boat-yachts-branding", // Boat / Yacht Branding -- on hold for now
+]);
+
+export const services: Service[] = catalog.services.filter(
+  (s) => !DISABLED_SERVICES.has(`${s.categorySlug}/${s.slug}`),
+);
 
 export function getCategory(categorySlug: string): CategoryMeta | undefined {
   return categories.find((c) => c.slug === categorySlug);

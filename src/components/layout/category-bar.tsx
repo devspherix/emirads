@@ -74,7 +74,7 @@ export function CategoryBar() {
                   href={`/services/${activeCategory.slug}`}
                   onClick={close}
                   className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap text-xs font-bold uppercase tracking-wider transition-all hover:gap-2.5"
-                  style={{ color: accentMap[activeCategory.accent].hex }}
+                  style={{ color: accentMap[activeCategory.accent].text }}
                 >
                   View Full Category <ArrowRight className="h-3.5 w-3.5" />
                 </Link>

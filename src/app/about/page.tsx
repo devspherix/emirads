@@ -245,7 +245,7 @@ function TeamCard({ member, delay = 0 }: { member: TeamMember; delay?: number })
           >
             {member.name}
           </h3>
-          <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: a.hex }}>
+          <p className="mb-3 text-xs font-bold uppercase tracking-widest" style={{ color: a.text }}>
             {member.role}
           </p>
           <p className="text-sm leading-relaxed text-gray-600">{member.summary}</p>
@@ -253,7 +253,7 @@ function TeamCard({ member, delay = 0 }: { member: TeamMember; delay?: number })
           <button
             onClick={() => setOpen((v) => !v)}
             className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider transition-colors hover:text-black"
-            style={{ color: a.hex }}
+            style={{ color: a.text }}
           >
             {open ? "Show Less" : "Read More"}
             <ChevronDown

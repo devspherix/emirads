@@ -23,7 +23,7 @@ function BulletList({ items, accent }: { items: string[]; accent: ServiceAccent 
     <ul className="grid gap-2.5 sm:grid-cols-2">
       {items.map((item, i) => (
         <li key={i} className="flex items-start gap-2.5">
-          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" style={{ color: a.hex }} />
+          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" style={{ color: a.text }} />
           <span className="text-sm leading-relaxed text-gray-700">{item}</span>
         </li>
       ))}

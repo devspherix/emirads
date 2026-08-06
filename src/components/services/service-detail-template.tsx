@@ -88,7 +88,7 @@ export function ServiceDetailTemplate({
             >
               <span
                 className="mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-bold uppercase tracking-wider"
-                style={{ borderColor: `${a.hex}66`, backgroundColor: a.soft, color: a.hex }}
+                style={{ borderColor: `${a.hex}66`, backgroundColor: a.soft, color: a.text }}
               >
                 <Sparkles className="h-3 w-3" /> {category.name}
               </span>
@@ -104,14 +104,14 @@ export function ServiceDetailTemplate({
                   <div key={g.label}>
                     <p
                       className="mb-2.5 text-xs font-bold uppercase tracking-widest"
-                      style={{ color: a.hex }}
+                      style={{ color: a.text }}
                     >
                       {g.label}
                     </p>
                     <ul className="space-y-2">
                       {g.items.map((item, i) => (
                         <li key={i} className="flex items-start gap-2.5 text-sm text-gray-700">
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" style={{ color: a.hex }} />
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" style={{ color: a.text }} />
                           <span className="leading-relaxed">{item}</span>
                         </li>
                       ))}
@@ -165,7 +165,7 @@ export function ServiceDetailTemplate({
         <section className="bg-white py-16 lg:py-20">
           <Container>
             <motion.div {...fadeUp} className="mb-8 text-center">
-              <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em]" style={{ color: a.hex }}>
+              <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em]" style={{ color: a.text }}>
                 Related
               </p>
               <h2

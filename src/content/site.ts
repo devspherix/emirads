@@ -139,31 +139,37 @@ export const servicesCatalog: ServiceCatalogItem[] = [
 // ─────────────────────────────────────────────────────────────
 export const accentMap: Record<
   ServiceAccent,
-  { hex: string; soft: string; ring: string; text: string }
+  { hex: string; soft: string; ring: string; text: string; onHex: string }
 > = {
   orange: {
     hex: "#D50367",
     soft: "rgba(213,3,103,0.10)",
     ring: "rgba(213,3,103,0.35)",
     text: "#A80250",
+    onHex: "#ffffff",
   },
   pink: {
     hex: "#D50367",
     soft: "rgba(213,3,103,0.08)",
     ring: "rgba(213,3,103,0.35)",
     text: "#D50367",
+    onHex: "#ffffff",
   },
   blue: {
     hex: "#00BBFE",
     soft: "rgba(0,187,254,0.08)",
     ring: "rgba(0,187,254,0.35)",
     text: "#00BBFE",
+    onHex: "#ffffff",
   },
   yellow: {
     hex: "#FFD705",
     soft: "rgba(255,215,5,0.18)",
     ring: "rgba(255,215,5,0.55)",
     text: "#7a6400",
+    // Solid yellow badges (e.g. the PortfolioCard category tag) need dark
+    // text -- white-on-yellow fails contrast the same way yellow-on-white did.
+    onHex: "#1a1a1a",
   },
 };
 
