@@ -68,7 +68,7 @@ export const servicesCatalog: ServiceCatalogItem[] = [
     description:
       "Full wraps, partial wraps, vinyl lettering and specialist branding for cars, vans, trucks, boats and containers.",
     icon: Car,
-    heroImage: "/images/services/vehicle-branding/boat-yachts-branding/img1.jpeg",
+    heroImage: "/images/services/vehicle-branding/full-vehicle-branding/img1.jpeg",
     accent: "orange",
     hasQuote: true,
   },
